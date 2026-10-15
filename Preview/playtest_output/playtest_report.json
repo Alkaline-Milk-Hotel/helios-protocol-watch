@@ -1,0 +1,170 @@
+﻿{
+    "timestamp":  "2026-10-16T03:24:49.2489622+08:00",
+    "htmlPath":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\CyberStrideSimulator.html",
+    "screenshots":  {
+                        "03_gameplay_early_2s":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\03_gameplay_early_2s.png",
+                        "05_gameplay_late":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\05_gameplay_late.png",
+                        "00_full_simulator":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\00_full_simulator.png",
+                        "02_menu_armory":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\02_menu_armory.png",
+                        "04_gameplay_boss_fever":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\04_gameplay_boss_fever.png",
+                        "01_menu_home":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\01_menu_home.png"
+                    },
+    "menuAudit":  {
+                      "watchScreenSize":  {
+                                              "width":  272,
+                                              "height":  334
+                                          },
+                      "smallTexts":  [
+
+                                     ],
+                      "smallHitboxes":  [
+
+                                        ]
+                  },
+    "timeline":  [
+                     {
+                         "t":  0.5,
+                         "score":  "150",
+                         "combo":  "1.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S1 · 开启总闸",
+                         "skills":  "ADVANCE_T1",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  1,
+                         "score":  "150",
+                         "combo":  "1.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S1 · 开启总闸",
+                         "skills":  "ADVANCE_T1",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  1.5,
+                         "score":  "150",
+                         "combo":  "1.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S1 · 开启总闸",
+                         "skills":  "INTERACT",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  2,
+                         "score":  "1175",
+                         "combo":  "1.5x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "ADVANCE_T2",
+                         "centerBrightPct":  2.5
+                     },
+                     {
+                         "t":  2.5,
+                         "score":  "1475",
+                         "combo":  "1.5x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "ENGAGING_T2",
+                         "centerBrightPct":  2.5
+                     },
+                     {
+                         "t":  3,
+                         "score":  "1475",
+                         "combo":  "1.5x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "ENGAGING_T2",
+                         "centerBrightPct":  2.5
+                     },
+                     {
+                         "t":  3.5,
+                         "score":  "1475",
+                         "combo":  "1.5x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "ENGAGING_T2",
+                         "centerBrightPct":  2.5
+                     },
+                     {
+                         "t":  4,
+                         "score":  "2475",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "INTERACT",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  4.5,
+                         "score":  "2475",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
+                         "skills":  "INTERACT",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  5,
+                         "score":  "3375",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "skills":  "INTERACT",
+                         "centerBrightPct":  2.2
+                     },
+                     {
+                         "t":  5.5,
+                         "score":  "3375",
+                         "combo":  "3.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  2.2
+                     },
+                     {
+                         "t":  6,
+                         "score":  "3375",
+                         "combo":  "3.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  2.2
+                     },
+                     {
+                         "t":  6.5,
+                         "score":  "6375",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  2.2
+                     },
+                     {
+                         "t":  7,
+                         "score":  "6375",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  7.5,
+                         "score":  "6975",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  2.9
+                     },
+                     {
+                         "t":  8,
+                         "score":  "6975",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "E1M1 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  2.9
+                     }
+                 ]
+}

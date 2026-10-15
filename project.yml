@@ -1,0 +1,23 @@
+name: HeliosProtocolWatch
+options:
+  bundleIdPrefix: com.alkalinemilkhotel
+  deploymentTarget:
+    watchOS: "10.0"
+  xcodeVersion: "15.0"
+
+targets:
+  HeliosProtocolWatch:
+    type: application.watchapp2
+    platform: watchOS
+    deploymentTarget: "10.0"
+    sources:
+      - path: WatchApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.alkalinemilkhotel.heliosprotocol.watchkitapp
+        INFOPLIST_KEY_WKCompanionAppBundleIdentifier: com.alkalinemilkhotel.heliosprotocol
+        INFOPLIST_KEY_WKRunsIndependentlyOfCompanionPhoneApp: YES
+        INFOPLIST_KEY_CFBundleDisplayName: "Helios Protocol"
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "4"
