@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DOOM WATCH // 铁血回廊 - Ultra-Realistic Textured 2.5D FPS</title>
+  <title>曙光协议 · 腕上硬核第一人称射击模拟器</title>
   <style>
     :root {
       --bg: #07080a;
@@ -393,52 +393,52 @@
             <!-- 1. HOME MENU & PANORAMIC CAMPAIGN MAP OVERLAY -->
             <div id="menuHome" class="watch-overlay">
               <div class="menu-top-bar">
-                <span id="homeWeaponBadge" class="watch-pill mono">N01 · E1M1 · SHOTGUN</span>
-                <span class="watch-time mono">点选节点出击</span>
+                <span id="homeWeaponBadge" class="watch-pill mono">第 01 关 · 霰弹枪</span>
+                <span class="watch-time mono">点选节点选关</span>
               </div>
               <div class="menu-actions">
-                <button id="btnStartGame" class="watch-btn-primary">空降当前节点 DEPLOY</button>
-                <button id="btnOpenArmory" class="watch-btn-secondary">军火库与配装 ARMORY</button>
+                <button id="btnStartGame" class="watch-btn-primary">立即出击</button>
+                <button id="btnOpenArmory" class="watch-btn-secondary">武器军火库</button>
               </div>
             </div>
 
             <!-- 2. ARMORY OVERLAY -->
             <div id="menuArmory" class="watch-overlay hidden">
               <div class="menu-top-bar">
-                <span class="watch-pill mono">ARMORY</span>
-                <span class="watch-time mono">选择制式重武</span>
+                <span class="watch-pill mono">军火库</span>
+                <span class="watch-time mono">选择主战武器</span>
               </div>
               <div class="armory-list">
                 <button id="btnWeapon0" class="armory-item active" data-weapon="0">
-                  <span>M870 战术泵动霰弹枪</span>
-                  <span class="mono" style="color:#f59e0b;">破墙碎甲</span>
+                  <span>重型泵动霰弹枪</span>
+                  <span class="mono" style="color:#f59e0b;">破墙碎尸</span>
                 </button>
                 <button id="btnWeapon1" class="armory-item" data-weapon="1">
-                  <span>GAU-19 六管转管机枪</span>
-                  <span class="mono" style="color:#ef4444;">金属风暴</span>
+                  <span>六管加特林机枪</span>
+                  <span class="mono" style="color:#ef4444;">高速压制</span>
                 </button>
                 <button id="btnWeapon2" class="armory-item" data-weapon="2">
-                  <span>MK-IV 相位等离子步枪</span>
-                  <span class="mono" style="color:#38bdf8;">高能电弧</span>
+                  <span>高能等离子步枪</span>
+                  <span class="mono" style="color:#38bdf8;">高能贯穿</span>
                 </button>
               </div>
-              <button id="btnCloseArmory" class="watch-btn-primary">确认装填 CONFIRM</button>
+              <button id="btnCloseArmory" class="watch-btn-primary">确认装备</button>
             </div>
 
             <!-- 3. RESULT OVERLAY -->
             <div id="menuResult" class="watch-overlay hidden">
               <div class="menu-top-bar">
-                <span id="resultBadge" class="watch-pill mono">COMBAT REPORT</span>
+                <span id="resultBadge" class="watch-pill mono">作战结算</span>
                 <span class="watch-time mono">战报</span>
               </div>
               <div class="menu-hero">
                 <div id="resultScore" class="menu-title mono" style="font-size:26px;">04,850</div>
-                <div id="resultSub" class="menu-sub">战区清剿战绩</div>
-                <div id="resultRankHint" class="menu-weapon-badge mono">点击立即重返战场</div>
+                <div id="resultSub" class="menu-sub">本局歼敌战绩</div>
+                <div id="resultRankHint" class="menu-weapon-badge mono">点击下方按钮重返战场</div>
               </div>
               <div class="menu-actions">
-                <button id="btnQuickRetry" class="watch-btn-primary">再次杀入 RETRY</button>
-                <button id="btnResultHome" class="watch-btn-secondary">返回全景地图 MAP</button>
+                <button id="btnQuickRetry" class="watch-btn-primary">重新挑战本关</button>
+                <button id="btnResultHome" class="watch-btn-secondary">返回战役地图</button>
               </div>
             </div>
           </div>
@@ -447,7 +447,7 @@
         <!-- Hardware Digital Crown & Side Button -->
         <div class="hardware-controls">
           <div id="crownDial" title="上下拖拽或滚动滚轮：1:1 精准转向"></div>
-          <div id="sideButton" title="按下侧键：展开全景战术地图 / 暂停"></div>
+          <div id="sideButton" title="按下侧键：展开全景战役地图 / 暂停"></div>
         </div>
       </div>
       <div class="watch-strap-bottom"></div>
@@ -457,68 +457,68 @@
     <div class="dashboard">
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">HELIOS PROTOCOL // 全景闯关地图 · 关卡内零UI · 刚体物理与霰弹破墙引擎 v8.0</div>
-          <span id="telemetryStateBadge" class="badge mono">124 FREEDOOM ASSETS · RIGID-BODY PHYSICS</span>
+          <div class="card-title mono">曙光协议 · 腕上硬核第一人称射击模拟器</div>
+          <span id="telemetryStateBadge" class="badge mono">124 项开源材质 · 刚体与碎尸物理</span>
         </div>
         <div class="telemetry-grid">
           <div class="stat-box">
-            <div class="stat-label">杀敌得分 SCORE</div>
+            <div class="stat-label">歼敌得分</div>
             <div id="hudScore" class="stat-val mono">0</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">处决倍率 COMBO</div>
-            <div id="hudCombo" class="stat-val mono" style="color:#f59e0b;">1.0x</div>
+            <div class="stat-label">连杀倍率</div>
+            <div id="hudCombo" class="stat-val mono" style="color:#f59e0b;">1.0倍</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">生命装甲 HEALTH</div>
+            <div class="stat-label">生命状态</div>
             <div id="hudHpText" class="stat-val mono" style="color:#10b981;">100%</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">战役节点 NODE</div>
-            <div id="hudWaveTarget" class="stat-val mono" style="color:#38bdf8;">N01 · E1M1</div>
+            <div class="stat-label">当前关卡</div>
+            <div id="hudWaveTarget" class="stat-val mono" style="color:#38bdf8;">第 01 关</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">物理与破坏 PHYSICS</div>
-            <div id="hudActiveSkills" class="stat-val mono" style="font-size:13px;color:#10b981;">SLIDE_3D</div>
+            <div class="stat-label">物理反馈</div>
+            <div id="hudActiveSkills" class="stat-val mono" style="font-size:13px;color:#10b981;">刚体就绪</div>
           </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">战术调试与全景闯关节点切换台 (SIMULATOR BENCH)</div>
-          <span class="mono" style="font-size:12px;color:#94a3b8;">点选全景地图节点直接跳关 · 关卡内100%无UI · 霰弹枪轰碎裂隙墙与护柱</span>
+          <div class="card-title mono">战术调试与全景闯关工作台</div>
+          <span class="mono" style="font-size:12px;color:#94a3b8;">方向键移动 · 鼠标拖拽或滚轮转向 · 左键或空格开火 · 点击地图节点跳关</span>
         </div>
         <div class="controls-grid">
-          <button id="btnRestart" class="sim-btn">展开全景闯关地图 / 切换节点</button>
-          <button id="btnAutoPilot" class="sim-btn">AI 自动寻路推进 + 破墙战斗托管</button>
-          <button id="btnSpawnBoss" class="sim-btn">召唤地狱赛博领主 (BOSS)</button>
-          <button id="btnFeverChamber" class="sim-btn">肾上腺素超载 + 满护甲</button>
-          <button id="btnCycleSector" class="sim-btn">切换 M870霰弹 / GAU-19 / 等离子</button>
+          <button id="btnRestart" class="sim-btn">进入当前关 / 切换下一关</button>
+          <button id="btnAutoPilot" class="sim-btn">开启自动寻路与战斗托管</button>
+          <button id="btnSpawnBoss" class="sim-btn">召唤深渊赛博领主</button>
+          <button id="btnFeverChamber" class="sim-btn">肾上腺素狂暴 + 满状态</button>
+          <button id="btnCycleSector" class="sim-btn">切换武器：霰弹 / 机枪 / 等离子</button>
           <button id="btnWristDrop" class="sim-btn">侧键：呼出全景战役地图</button>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">v8.0 四大核心进化：全景战术跳关地图 · 关卡内100%零UI · 连续切线碰撞与刚体物理 · 霰弹枪物理破墙</div>
+          <div class="card-title mono">核心机制：尸体滑行与碎尸物理 · 紧凑走廊关卡流程 · 纯净全中文交互</div>
         </div>
         <div class="guide-list">
           <div class="guide-item">
-            <strong>1. 全景等高线闯关地图 (点选任意节点即刻空降当前关卡)</strong><br/>
-            绘制火卫一 5 大战术闯关节点 (`NODE 01 ~ 05`) 与任务指示，点击地图上任意关卡节点即可直接切入对应战区与阶段，过关时自动展开全景战区简报。
+            <strong>一、真实尸体碰撞、踢尸滑行与霰弹轰碎尸体</strong><br/>
+            敌人被击毙后保留完整刚体动量继续滑行撞墙；玩家走过尸体可将其一脚踢飞并拖出血痕；用霰弹枪或爆炸油桶轰击地上尸体可将其炸成满地残肢碎肉。
           </div>
           <div class="guide-item">
-            <strong>2. 关卡内 100% 零 UI 纯净第一人称沉浸体验 (`Zero-HUD`)</strong><br/>
-            关卡内彻底移除小地图、顶栏状态框、底部血条框与文字弹窗！全靠 3D 空间垂直光柱信标 (`tlmpa0~d0`)、准星微反馈与面罩血滴/低血量边缘脉冲传递信息。
+            <strong>二、五大紧凑走廊闯关流程（拒绝空旷迷路）</strong><br/>
+            借鉴开源高分经典关卡拓扑：从起点走廊 → 门旁电闸或裂隙破片墙 → 中厅门禁卡或反应核心 → 北侧绿色撤离电梯，目标动线一目了然。
           </div>
           <div class="guide-item">
-            <strong>3. 连续圆形-AABB 法线切向滑行 (`v_slide`) 与刚体动量物理引擎</strong><br/>
-            彻底重构碰撞检测，斜向贴墙如丝般顺滑滑行零卡顿；怪物具备真实质量与动量传递，被轰飞时撞击后排怪物产生保龄球连环击退，撞墙触发猛烈碎骨伤害。
+            <strong>三、纯正第一人称手动操控 + 可选自动寻路托管</strong><br/>
+            彻底移除强制推墙与贴墙乱转视角；支持键盘前后平移、鼠标横向拖拽或滚轮精准瞄准、左键连发开火，推撞油桶与切向擦墙丝滑顺畅。
           </div>
           <div class="guide-item">
-            <strong>4. M870 霰弹枪 8 鹿弹物理破墙、碎柱 (`col1~colu`) 与 3D 弹跳碎块</strong><br/>
-            霰弹枪发射 8 颗独立物理射线鹿弹，可直接轰塌裂隙破片墙 (`Tile 5`) 开辟捷径、打碎 3D 护柱 (`col1a0/col2a0`)，迸射受重力与地面弹性系数 (`e=0.48`) 驱动的 3D 弹跳碎石与火花 (`puff`/`blud`)。
+            <strong>四、全中文纯净界面 + 空间三维目标微标</strong><br/>
+            全面统一纯中文界面与关卡简报，摒弃生硬中英混排；关卡内保持无边框沉浸视野，仅在当前目标上方投射空间菱形微标与距离读数。
           </div>
         </div>
       </div>
@@ -1125,14 +1125,18 @@
     }
 
     // =========================================================================
-    // 3. 24x24 MULTI-ZONE CAMPAIGN MAPS WITH SLIDING DOORS & INTERACTIVE MECHANICS
+    // 3. 24x24 AUTHORED CORRIDOR & ROOM CAMPAIGN MAPS (RetroRampage / DOOM Topology)
     // =========================================================================
     const MAP_W = 24;
     const MAP_H = 24;
 
-    // Helper to build a 24x24 multi-sector map with South Courtyard (y=16..22),
-    // Sliding Blast Door A (y=15, x=11..12) flanked by Destructible Breach Walls (Tile 10 at x=9..10 & x=13..14),
-    // Central Twin-Wing Facility (y=8..14), Sliding Blast Door B (y=7, x=11..12), and North Command Arena (y=1..6).
+    // Builds a tight, readable room-and-corridor dungeon layout (inspired by nicklockwood/RetroRampage & DOOM E1M1):
+    // - South Breach Corridor (x=7..16, y=16..22): Player spawns at (12.0, 21.0) facing North (-PI/2) directly at
+    //   patrolling guards, explosive barrels, destructible columns, South Blast Door A (x=11..12, y=15),
+    //   Switch Console right beside the door (13.6, 16.2), and Shotgun-Breachable Cracked Walls (Tile 10 at x=9..10, y=15).
+    // - Central Reactor / Armory Hall (x=4..19, y=8..14): Side alcoves with emissive light strips (Tile 11),
+    //   Keycard / Reactor Core objectives in clear sightlines, and North Blast Door B (x=11..12, y=7).
+    // - North Extraction Chamber (x=7..16, y=1..6): Guarded by elite squad / Boss, leading to the Exit Switch & Pad (12.0, 3.0).
     function createMultiZoneGrid(outerWall, midWall, accentWall) {
       const g = new Array(MAP_W * MAP_H).fill(0);
       for (let y = 0; y < MAP_H; y++) {
@@ -1142,53 +1146,78 @@
           }
         }
       }
-      // Divider Wall A at y = 15 separating South Landing Zone from Central Plaza
-      // Includes Sliding Blast Door A (x=11..12) AND Shotgun-Breachable Cracked Walls (Tile 10 at x=8..9 & x=14..15)
+
+      // Frame South Breach Hall (x=6 and x=17 walls for y=16..22, with doorways at y=18..19)
+      for (let y = 16; y <= 22; y++) {
+        if (y !== 18 && y !== 19) {
+          g[y * MAP_W + 6] = (y === 20) ? 11 : midWall;
+          g[y * MAP_W + 17] = (y === 20) ? 11 : midWall;
+        }
+      }
+
+      // Frame Central Combat Hall (x=3 and x=20 walls for y=8..14, with emissive lights)
+      for (let y = 8; y <= 14; y++) {
+        if (y !== 11) {
+          g[y * MAP_W + 3] = (y === 10 || y === 13) ? 11 : midWall;
+          g[y * MAP_W + 20] = (y === 10 || y === 13) ? 11 : midWall;
+        }
+      }
+
+      // Frame North Extraction Hall (x=6 and x=17 walls for y=1..6)
+      for (let y = 1; y <= 6; y++) {
+        if (y !== 4) {
+          g[y * MAP_W + 6] = (y === 3) ? 11 : accentWall;
+          g[y * MAP_W + 17] = (y === 3) ? 11 : accentWall;
+        }
+      }
+
+      // Divider Wall A at y = 15 separating South Breach Hall from Central Combat Hall
+      // Includes Sliding Blast Door A (x=11..12), Switch Panel Wall (Tile 4 at x=13), AND Cracked Breach Walls (Tile 10 at x=9..10)
       for (let x = 1; x < MAP_W - 1; x++) {
         if (x === 11 || x === 12) {
-          g[15 * MAP_W + x] = 3;
-        } else if (x === 8 || x === 9 || x === 14 || x === 15) {
-          g[15 * MAP_W + x] = 10; // Destructible Breach Wall!
-        } else if (x === 5 || x === 18) {
-          g[15 * MAP_W + x] = 11; // Emissive Industrial Light Strip Bulkhead!
+          g[15 * MAP_W + x] = 3;  // Sliding Hydraulic Blast Door A
+        } else if (x === 13) {
+          g[15 * MAP_W + x] = 4;  // Wall Breaker Switch right beside Door A!
+        } else if (x === 9 || x === 10 || x === 14) {
+          g[15 * MAP_W + x] = 10; // Shotgun-Breachable Cracked Wall right next to Door A!
+        } else if (x === 8 || x === 15) {
+          g[15 * MAP_W + x] = 11; // Emissive Industrial Light Strip Bulkhead
         } else {
           g[15 * MAP_W + x] = midWall;
         }
       }
-      // Divider Wall B at y = 7 separating Central Plaza from North Command Terrace
+
+      // Divider Wall B at y = 7 separating Central Combat Hall from North Extraction Chamber
       for (let x = 1; x < MAP_W - 1; x++) {
         if (x === 11 || x === 12) {
-          g[7 * MAP_W + x] = 3;
-        } else if (x === 8 || x === 9 || x === 14 || x === 15) {
-          g[7 * MAP_W + x] = 10; // Destructible Breach Wall!
-        } else if (x === 5 || x === 18) {
+          g[7 * MAP_W + x] = 3;   // Sliding Hydraulic Blast Door B
+        } else if (x === 13) {
+          g[7 * MAP_W + x] = 4;   // North Gate Status Panel
+        } else if (x === 9 || x === 10 || x === 14) {
+          g[7 * MAP_W + x] = 10;  // Shotgun-Breachable Cracked Wall
+        } else if (x === 8 || x === 15) {
           g[7 * MAP_W + x] = 11;
         } else {
           g[7 * MAP_W + x] = accentWall;
         }
       }
-      // Interactive Wall Console Tile (Tile 4) in South-East Power Room (x=22, y=19) & South-West (x=1, y=19)
-      g[19 * MAP_W + 22] = 4;
-      g[19 * MAP_W + 1] = 4;
-      // Destructible Breach Cover Walls (Tile 10) right in the combat lanes so Shotgun blasts shatter cover!
+
+      // North Exit Elevator Switch Wall at (11..12, 1)
+      g[1 * MAP_W + 11] = 4;
+      g[1 * MAP_W + 12] = 4;
+
+      // Destructible Breach Cover Walls (Tile 10) in combat lanes so Shotgun blasts shatter cover!
       g[18 * MAP_W + 10] = 10;
       g[18 * MAP_W + 13] = 10;
-      g[11 * MAP_W + 9] = 10;
-      g[11 * MAP_W + 14] = 10;
-      // Architectural cover pillars in South Zone, Central Wings & North Arena
-      g[19 * MAP_W + 7] = accentWall;
-      g[19 * MAP_W + 16] = accentWall;
-      g[11 * MAP_W + 6] = midWall;
-      g[11 * MAP_W + 17] = midWall;
-      g[4 * MAP_W + 7] = accentWall;
-      g[4 * MAP_W + 16] = accentWall;
+      g[11 * MAP_W + 8]  = 10;
+      g[11 * MAP_W + 15] = 10;
       return g;
     }
 
     const LEVEL_CONFIGS = [
       {
-        code: "E1M1",
-        name: "曙光峡谷基地 · HELIOS CANYON",
+        code: "第 01 关",
+        name: "曙光外围突破口",
         isOpenAir: true,
         skyTheme: "HELIOS_OASIS",
         floorTex: 7,
@@ -1197,8 +1226,8 @@
         grid: createMultiZoneGrid(8, 1, 2)
       },
       {
-        code: "E1M2",
-        name: "黑山量子实验室 · BLACK MESA LAB",
+        code: "第 02 关",
+        name: "黑山地下实验区",
         isOpenAir: false,
         skyTheme: "NONE",
         floorTex: 5,
@@ -1207,8 +1236,8 @@
         grid: createMultiZoneGrid(1, 2, 1)
       },
       {
-        code: "E1M3",
-        name: "苍穹极光反应堆 · AURORA CITADEL",
+        code: "第 03 关",
+        name: "苍穹极光反应堆",
         isOpenAir: true,
         skyTheme: "AURORA",
         floorTex: 9,
@@ -1218,66 +1247,66 @@
       }
     ];
 
-    // 5 Interactive Panoramic Campaign Nodes (Tap any node on the watch canvas to deploy directly into that stage!)
+    // 5 Pure-Chinese Interactive Campaign Levels (Tap any node on the watch canvas to deploy directly into that level!)
     const CAMPAIGN_NODES = [
       {
         id: 0,
-        code: "NODE 01",
-        zoneCode: "E1M1-A",
+        code: "第 01 关",
+        zoneCode: "01 外围突破",
         title: "曙光外围配电区",
-        directive: "霰弹轰开裂隙墙 或拉下东侧总闸",
+        directive: "拉下门旁电闸或轰开裂隙墙，拾取蓝卡撤离",
         mapIdx: 0,
         startStage: 1,
-        cx: 54,
-        cy: 186,
-        color: "#f59e0b"
-      },
-      {
-        id: 1,
-        code: "NODE 02",
-        zoneCode: "E1M1-B",
-        title: "双翼反应堆冷却区",
-        directive: "突入中央防区 摧毁两座高热冷却塔",
-        mapIdx: 0,
-        startStage: 2,
-        cx: 112,
-        cy: 138,
-        color: "#38bdf8"
-      },
-      {
-        id: 2,
-        code: "NODE 03",
-        zoneCode: "E1M2-A",
-        title: "黑山地下生化翼",
-        directive: "轰碎封锁护柱 夺取门禁磁卡",
-        mapIdx: 1,
-        startStage: 1,
-        cx: 174,
+        cx: 52,
         cy: 176,
         color: "#f59e0b"
       },
       {
+        id: 1,
+        code: "第 02 关",
+        zoneCode: "02 军械仓库",
+        title: "重装军械弹药库",
+        directive: "使用转管机枪肃清走廊，拾取门禁卡开启北门",
+        mapIdx: 1,
+        startStage: 1,
+        cx: 104,
+        cy: 142,
+        color: "#38bdf8"
+      },
+      {
+        id: 2,
+        code: "第 03 关",
+        zoneCode: "03 冷却核心",
+        title: "双翼反应堆核心",
+        directive: "突入中央防区，轰爆两座高热反应堆核心",
+        mapIdx: 0,
+        startStage: 2,
+        cx: 162,
+        cy: 174,
+        color: "#f59e0b"
+      },
+      {
         id: 3,
-        code: "NODE 04",
-        zoneCode: "E1M3-B",
-        title: "极光超载反应堆",
-        directive: "驻守反应堆核心 完成 100% 超载",
+        code: "第 04 关",
+        zoneCode: "04 生化走廊",
+        title: "地下超载实验室",
+        directive: "驻守中央超载终端完成 100% 充能，突破北门",
         mapIdx: 2,
         startStage: 2,
-        cx: 218,
-        cy: 124,
+        cx: 216,
+        cy: 142,
         color: "#38bdf8"
       },
       {
         id: 4,
-        code: "NODE 05",
-        zoneCode: "FINAL",
-        title: "赛博领主指挥台",
-        directive: "决战赛博恶魔领主 启动轨道撤离",
+        code: "第 05 关",
+        zoneCode: "05 领主决战",
+        title: "陨石坑指挥高台",
+        directive: "决战深渊赛博领主，登上北侧绿色撤离电梯",
         mapIdx: 2,
         startStage: 3,
-        cx: 142,
-        cy: 84,
+        cx: 156,
+        cy: 108,
         color: "#ef4444"
       }
     ];
@@ -1291,7 +1320,7 @@
       return null;
     }
 
-    // For collision & AI line-of-sight: if a sliding door is >= 70% open, it is passable (returns 0)!
+    // For collision & AI line-of-sight: if a sliding door is >= 65% open, it is passable (returns 0)!
     function getMapTile(tx, ty) {
       const ix = tx | 0;
       const iy = ty | 0;
@@ -1300,7 +1329,7 @@
       const raw = cfg.grid[iy * MAP_W + ix];
       if (raw === 3) {
         const door = getDoorAt(ix, iy);
-        if (door && door.open >= 0.70) return 0;
+        if (door && door.open >= 0.65) return 0;
       }
       return raw;
     }
@@ -1320,32 +1349,32 @@
     const WEAPONS = [
       {
         id: 0,
-        name: "M870 战术霰弹枪 · SHOTGUN",
-        shortName: "SHOTGUN",
-        fireInterval: 0.44,
-        damage: 48,
+        name: "M870 战术霰弹枪",
+        shortName: "霰弹枪",
+        fireInterval: 0.42,
+        damage: 52,
         gimbalDeg: 16.5,
-        knockback: 2.2,
+        knockback: 2.8,
         spread: true
       },
       {
         id: 1,
-        name: "火神六管加特林 · CHAINGUN",
-        shortName: "CHAINGUN",
-        fireInterval: 0.10,
-        damage: 16,
+        name: "GAU-19 六管转管机枪",
+        shortName: "转管机枪",
+        fireInterval: 0.09,
+        damage: 18,
         gimbalDeg: 15.5,
-        knockback: 0.75,
+        knockback: 1.1,
         spread: false
       },
       {
         id: 2,
-        name: "重型等离子步枪 · PLASMA",
-        shortName: "PLASMA",
-        fireInterval: 0.20,
-        damage: 32,
+        name: "MK-IV 相位等离子步枪",
+        shortName: "等离子枪",
+        fireInterval: 0.18,
+        damage: 36,
         gimbalDeg: 15.5,
-        knockback: 1.3,
+        knockback: 1.8,
         spread: false
       }
     ];
@@ -1356,7 +1385,7 @@
     const W = 272;
     const H = 334;
 
-    // Full Native 272x334 Raycaster Buffer (4x pixel density over v4.0!)
+    // Full Native 272x334 Raycaster Buffer
     const RW = 272;
     const RH = 334;
     const offCanvas = document.createElement("canvas");
@@ -1377,16 +1406,16 @@
       multiplier: 1.0,
       hp: 100,
       maxHp: 100,
-      armor: 50,
+      armor: 60,
       sector: 1,
       wave: 1,
 
-      // Multi-Stage Interactive Campaign & Progression Ceremony State
-      stage: 1,              // Stage 1 -> Stage 2 -> Stage 3 per map
-      stageProgress: 0,      // 0.0 .. 1.0 progress within current stage
-      weaponTier: 1,         // Evolves: Tier 1 (Standard) -> Tier 2 (Supercharged) -> Tier 3 (Apex Arc)
-      missionText: "⚡ 拉下东侧发电室总闸 开启装甲门",
-      missionShort: "S1 · 开启总闸",
+      // Multi-Stage Interactive Campaign & Progression State
+      stage: 1,              // Stage 1 -> Stage 2 -> Stage 3 within current level
+      stageProgress: 0,      // 0.0 .. 1.0 progress within current level
+      weaponTier: 1,         // Evolves: Tier 1 -> Tier 2 -> Tier 3
+      missionText: "拉下门旁电闸或用霰弹轰开裂隙墙",
+      missionShort: "开启南门",
       interactPrompt: "",
       nearbyInteractable: null,
       doors: [],             // Animated sliding blast doors [{ tx, ty, group, open, targetOpen }]
@@ -1397,19 +1426,19 @@
       hackTickAccum: 0,
       bossSpawnedForMission: false,
 
-      // Stage Breakthrough Banner & Sector Clear Victory Ceremony
       stageBanner: null,     // { timer, maxTimer, stageNum, badge, title, reward, color }
-      sectorClearTimer: 0,   // > 0 when showing the Grand Sector Clear S+ Medal Overlay
-      hitStopTimer: 0,       // Brief tactical time-dilation on stage clear / boss execute
-      orbComboPitch: 0,      // Ascending chime counter for magnetized loot orbs
+      sectorClearTimer: 0,   // > 0 when showing the Campaign Map victory transition
+      hitStopTimer: 0,
+      orbComboPitch: 0,
       orbComboResetTimer: 0,
 
-      // Player 3C in 24x24 Tile Coordinates
+      // Player 3C in 24x24 Tile Coordinates (Spawns facing straight North -PI/2 down the corridor!)
       px: 12.0,
-      py: 20.5,
-      yaw: -Math.PI * 0.35,
-      walkSpeed: 2.75,
-      curSpeed: 2.75,
+      py: 20.8,
+      yaw: -Math.PI * 0.5,
+      walkSpeed: 3.1,
+      curSpeed: 0.0,
+      strafeSpeed: 0.0,
       jumpPadBoostTimer: 0,
       aimBlend: 0,
       bobPhase: 0,
@@ -1421,7 +1450,7 @@
       interactFlash: 0,
       bassTimer: 0,
       radarAngle: 0,
-      moveState: "ADVANCE",
+      moveState: "待命",
       isWallStopped: false,
       quickTurnTimer: 0,
       quickTurnStartYaw: 0,
@@ -1440,29 +1469,32 @@
       berserkTimer: 0,
       countdownTimer: 0,
       autoPilot: false,
+      manualFireRequested: false,
 
       enemies: [],
       barrels: [],
-      destructibles: [],     // 3D Destructible Freedoom Tech Columns & Crates (col1a0 / col2a0 -> colua0)
-      debris: [],            // 3D Rigid-Body Bouncing Concrete/Metal Debris Chunks with gravity & restitution
+      destructibles: [],     // 3D Destructible Freedoom Tech Columns (col1a0 / col2a0 -> colua0)
+      debris: [],            // 3D Rigid-Body Bouncing Concrete/Metal/Gore Chunks with gravity & restitution
       impactPuffs: [],       // Animated Freedoom Bullet Sparks (puffa0..d0) & Blood Bursts (bluda0..c0)
       wallHp: {},            // Per-tile HP for Destructible Breach Walls (Tile 10)
       wallsBreached: 0,
+      corpsesGibbed: 0,      // Count of enemy corpses physically shattered into pol5a0 gore piles
       campaignNodeIdx: 0,    // Active node on the Panoramic Tactical Campaign Map (0..4)
       nodesCleared: [false, false, false, false, false],
       objectives: [],
       projectiles: [],
       pickups: [],
-      lootOrbs: [],          // 3D Magnetized Energy Orbs that erupt on Stage Clear / Kills & fly to player
-      shockwaves: [],        // 3D Expanding Floor Energy Rings on Stage Breakthrough & Explosions
-      floatingTexts: [],     // 3D Floating High-DPI Combat & Milestone Callouts
-      tracers: [],           // 3D Weapon Laser/Plasma Tracer Beams
+      lootOrbs: [],
+      shockwaves: [],
+      floatingTexts: [],
+      tracers: [],
       bloodParticles: [],
       bloodPools: [],
       shellCasings: [],
       gunSmoke: [],
       visorBlood: []
     };
+
 
     // =========================================================================
     // 5. STAGE BREAKTHROUGH CEREMONY, 3D RIGID-BODY DEBRIS & COLLISION PHYSICS
@@ -1531,6 +1563,12 @@
           state.stageProgress = 0.45;
           state.weaponTier = Math.max(state.weaponTier, 2);
           setDoorGroupTarget("DOOR_A", 1.0);
+          const sw = state.interactables.find(s => s.id === "STAGE1_SWITCH");
+          if (sw) sw.used = true;
+          const hasKey = state.interactables.some(x => x.id === "STAGE2_KEYCARD");
+          const hasRes = state.objectives.some(x => x.kind === "RESONATOR");
+          state.missionShort = hasKey ? "拾取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
+          triggerStageBreakthrough(1, "裂隙墙已轰破", "已强行炸开捷径通道 — 进入中央大厅推进目标", "", "#f59e0b");
         } else if (iy === 7 && state.stage === 2) {
           state.stage = 3;
           state.stageProgress = 0.88;
@@ -1538,6 +1576,8 @@
           setDoorGroupTarget("DOOR_B", 1.0);
           const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
           if (goal) goal.active = true;
+          state.missionShort = "前往撤离点";
+          triggerStageBreakthrough(2, "北侧裂隙墙已轰破", "已炸开撤离通道 — 前往北侧绿色撤离电梯", "", "#10b981");
         }
         return true;
       }
@@ -1611,23 +1651,23 @@
     }
 
     const SPAWN_SPOTS = [
-      // South Courtyard (Zone 1)
-      { x: 6.5,  y: 18.5, zone: 1 },
-      { x: 17.5, y: 18.5, zone: 1 },
-      { x: 12.0, y: 17.0, zone: 1 },
-      // Central Twin-Wing Facility (Zone 2)
-      { x: 4.5,  y: 12.5, zone: 2 },
-      { x: 19.5, y: 12.5, zone: 2 },
-      { x: 12.0, y: 10.5, zone: 2 },
-      { x: 8.5,  y: 9.5,  zone: 2 },
-      { x: 15.5, y: 9.5,  zone: 2 },
-      // North Command Terrace (Zone 3)
-      { x: 6.5,  y: 4.5,  zone: 3 },
-      { x: 17.5, y: 4.5,  zone: 3 },
-      { x: 12.0, y: 3.5,  zone: 3 }
+      // South Breach Corridor (Zone 1: x=7..16, y=16..22)
+      { x: 12.0, y: 18.0, zone: 1 },
+      { x: 9.2,  y: 17.2, zone: 1 },
+      { x: 14.8, y: 17.2, zone: 1 },
+      // Central Combat Hall (Zone 2: x=4..19, y=8..14)
+      { x: 12.0, y: 12.2, zone: 2 },
+      { x: 7.5,  y: 11.2, zone: 2 },
+      { x: 16.5, y: 11.2, zone: 2 },
+      { x: 9.5,  y: 9.2,  zone: 2 },
+      { x: 14.5, y: 9.2,  zone: 2 },
+      // North Extraction Hall (Zone 3: x=7..16, y=2..6)
+      { x: 9.2,  y: 5.0,  zone: 3 },
+      { x: 14.8, y: 5.0,  zone: 3 },
+      { x: 12.0, y: 4.2,  zone: 3 }
     ];
 
-    function canOccupy(nx, ny, r = 0.42) {
+    function canOccupy(nx, ny, r = 0.36) {
       return (
         getMapTile(nx - r, ny - r) === 0 &&
         getMapTile(nx + r, ny - r) === 0 &&
@@ -1637,16 +1677,16 @@
     }
 
     // =========================================================================
-    // 5B. CONTINUOUS CIRCLE-VS-AABB NORMAL SLIDING & RIGID-BODY IMPULSE ENGINE
+    // 5B. CONTINUOUS CIRCLE-VS-AABB NORMAL SLIDING, PUSHABLE BARRELS & CORPSE ENGINE
     // =========================================================================
-    // Replaces discrete axis corner checks with true Closest-Point Contact Normal
-    // and Tangent Velocity Projection: v_new = v - (1 + e) * (v · n) * n
+    // Modeled on DOOM's P_TryMove / P_SlideMove & RetroRampage's swept AABB-circle intersection,
+    // without snap-teleport artifacts. Supports smooth wall tangent glide (e = 0.0) and elastic wall-slam (e > 0).
     function resolveCircleMapPhysics(body, dt, restitution = 0.0) {
-      const radius = body.radius || 0.42;
+      const radius = body.radius || 0.36;
       const startX = body.x;
       const startY = body.y;
       const totalDist = Math.hypot(body.vx || 0, body.vy || 0) * dt;
-      const subSteps = Math.max(1, Math.min(8, Math.ceil(totalDist / 0.045)));
+      const subSteps = Math.max(1, Math.min(8, Math.ceil(totalDist / 0.04)));
       const subDt = dt / subSteps;
 
       let maxImpactSpeed = 0;
@@ -1656,11 +1696,11 @@
         body.x += (body.vx || 0) * subDt;
         body.y += (body.vy || 0) * subDt;
 
-        // 1. Collide against intact 3D Destructible Columns & Barrels
+        // 1. Collide against intact 3D Destructible Stone Columns
         if (state.destructibles) {
           for (const col of state.destructibles) {
             if (col.hp <= 0) continue;
-            const minD = radius + (col.radius || 0.34);
+            const minD = radius + (col.radius || 0.30);
             const dx = body.x - col.x;
             const dy = body.y - col.y;
             const dSq = dx * dx + dy * dy;
@@ -1668,8 +1708,8 @@
               const d = Math.sqrt(dSq);
               const nx = dx / d;
               const ny = dy / d;
-              body.x += nx * (minD - d + 0.002);
-              body.y += ny * (minD - d + 0.002);
+              body.x += nx * (minD - d + 0.001);
+              body.y += ny * (minD - d + 0.001);
               const vn = (body.vx || 0) * nx + (body.vy || 0) * ny;
               if (vn < 0) {
                 if (-vn > maxImpactSpeed) {
@@ -1683,20 +1723,30 @@
           }
         }
 
-        // 2. Continuous Circle-vs-Tile-AABB Contact Normal & Tangent Sliding
+        // 2. Continuous Circle-vs-Tile-AABB Closest-Point Contact Normal & Tangent Projection
         for (let iter = 0; iter < 3; iter++) {
-          const baseTx = body.x | 0;
-          const baseTy = body.y | 0;
+          const baseTx = Math.floor(body.x);
+          const baseTy = Math.floor(body.y);
 
-          // Emergency eject if center somehow inside solid tile
+          // Smooth minimum-translation pushout if center ever enters a solid tile (e.g. closing door)
           if (getMapTile(baseTx, baseTy) > 0) {
+            let bestOx = 0, bestOy = 0, bestDist = 99;
             const dirs = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [-1, 1], [1, -1], [-1, -1]];
             for (const [ox, oy] of dirs) {
               if (getMapTile(baseTx + ox, baseTy + oy) === 0) {
-                body.x = baseTx + ox + 0.5;
-                body.y = baseTy + oy + 0.5;
-                break;
+                const txCenter = baseTx + ox + 0.5;
+                const tyCenter = baseTy + oy + 0.5;
+                const dd = Math.hypot(body.x - txCenter, body.y - tyCenter);
+                if (dd < bestDist) {
+                  bestDist = dd;
+                  bestOx = txCenter;
+                  bestOy = tyCenter;
+                }
               }
+            }
+            if (bestDist < 90) {
+              body.x = bestOx;
+              body.y = bestOy;
             }
           }
 
@@ -1709,10 +1759,25 @@
               const dy = body.y - cy;
               const distSq = dx * dx + dy * dy;
               if (distSq < radius * radius) {
-                const dist = Math.sqrt(Math.max(1e-8, distSq));
-                const nx = dx / dist;
-                const ny = dy / dist;
-                const pen = radius - dist + 0.002;
+                let nx = 0, ny = 0, pen = 0;
+                if (distSq > 1e-7) {
+                  const dist = Math.sqrt(distSq);
+                  nx = dx / dist;
+                  ny = dy / dist;
+                  pen = radius - dist + 0.0015;
+                } else {
+                  // Exact edge fallback
+                  const dl = Math.abs(body.x - tx);
+                  const dr = Math.abs(tx + 1.0 - body.x);
+                  const dtTop = Math.abs(body.y - ty);
+                  const db = Math.abs(ty + 1.0 - body.y);
+                  const m = Math.min(dl, dr, dtTop, db);
+                  if (m === dl) nx = -1;
+                  else if (m === dr) nx = 1;
+                  else if (m === dtTop) ny = -1;
+                  else ny = 1;
+                  pen = radius + 0.002;
+                }
                 body.x += nx * pen;
                 body.y += ny * pen;
 
@@ -1733,26 +1798,58 @@
 
       const movedDist = Math.hypot(body.x - startX, body.y - startY);
       return {
-        moved: movedDist > 0.002,
+        moved: movedDist > 0.0015,
         movedDist,
         maxImpactSpeed,
         hitNormal
       };
     }
 
-    function resolveWallPenetration(ent, radius = 0.42) {
+    function resolveWallPenetration(ent, radius = 0.36) {
       const proxy = { x: ent.x, y: ent.y, vx: 0, vy: 0, radius };
       resolveCircleMapPhysics(proxy, 0.016, 0.0);
       ent.x = proxy.x;
       ent.y = proxy.y;
     }
 
+    // Shatter a fallen enemy corpse into a permanent Freedoom crushed-gore pool (pol5a0) + 3D bouncing meat/bone chunks!
+    function gibCorpse(e) {
+      if (!e || e.gibbed) return;
+      e.gibbed = true;
+      e.corpseHp = 0;
+      state.corpsesGibbed = (state.corpsesGibbed || 0) + 1;
+      state.score += 60;
+      state.screenShake = Math.max(state.screenShake, 2.4);
+      playSound("gore");
+      spawnImpactPuff(e.x, e.y, 0.04, "BLUD");
+      spawnBloodAndGore(e.x, e.y, 22, true);
+      // Spawn bouncing crimson meat & bone chunks in 3D space
+      const goreColors = ["#991b1b", "#dc2626", "#7f1d1d", "#d6d3d1", "#b91c1c"];
+      for (let i = 0; i < 12; i++) {
+        if (state.debris.length > 64) state.debris.shift();
+        const ang = Math.random() * Math.PI * 2;
+        const spd = 1.4 + Math.random() * 3.2;
+        state.debris.push({
+          x: e.x + (Math.random() - 0.5) * 0.2,
+          y: e.y + (Math.random() - 0.5) * 0.2,
+          z: -0.15 + Math.random() * 0.25,
+          vx: Math.cos(ang) * spd + (e.kvx || 0) * 0.35,
+          vy: Math.sin(ang) * spd + (e.kvy || 0) * 0.35,
+          vz: 1.6 + Math.random() * 2.5,
+          size: 3.2 + Math.random() * 3.5,
+          color: goreColors[i % goreColors.length],
+          bounces: 0,
+          life: 1.4 + Math.random() * 0.6
+        });
+      }
+    }
+
     function spawnEnemy(kind, spot) {
       const defs = {
-        MARINE: { hp: 50,  maxHp: 50,  speed: 1.12, score: 150,  attackCd: 1.9, mass: 1.0,  radius: 0.38 },
-        IMP:    { hp: 70,  maxHp: 70,  speed: 1.32, score: 200,  attackCd: 1.7, mass: 1.15, radius: 0.40 },
-        MECHA:  { hp: 120, maxHp: 120, speed: 0.92, score: 350,  attackCd: 2.1, mass: 1.85, radius: 0.44 },
-        BOSS:   { hp: 380, maxHp: 380, speed: 0.85, score: 1500, attackCd: 1.4, mass: 4.20, radius: 0.52 }
+        MARINE: { hp: 50,  maxHp: 50,  speed: 1.15, score: 150,  attackCd: 1.9, mass: 1.0,  radius: 0.34 },
+        IMP:    { hp: 70,  maxHp: 70,  speed: 1.35, score: 200,  attackCd: 1.7, mass: 1.15, radius: 0.36 },
+        MECHA:  { hp: 120, maxHp: 120, speed: 0.95, score: 350,  attackCd: 2.1, mass: 1.85, radius: 0.40 },
+        BOSS:   { hp: 380, maxHp: 380, speed: 0.88, score: 1500, attackCd: 1.4, mass: 4.20, radius: 0.48 }
       };
       const d = defs[kind] || defs.IMP;
       const ent = {
@@ -1766,6 +1863,10 @@
         staggerTilt: 0,
         woundCount: 0,
         deathTimer: 0,
+        corpse: false,
+        corpseHp: 42,
+        gibbed: false,
+        kickCooldown: 0,
         hp: d.hp,
         maxHp: d.maxHp,
         speed: d.speed,
@@ -1822,7 +1923,9 @@
           if (nx <= 0 || nx >= MAP_W - 1 || ny <= 0 || ny >= MAP_H - 1) continue;
           const nIdx = ny * MAP_W + nx;
           if (visited[nIdx]) continue;
-          if (getMapTile(nx, ny) > 0 && nIdx !== goalIdx) continue;
+          // Allow pathfinder to consider Tile 10 (Breachable Cracked Wall) passable if closed doors block!
+          const t = getMapTile(nx, ny);
+          if (t > 0 && t !== 10 && nIdx !== goalIdx) continue;
           if (dx !== 0 && dy !== 0) {
             if (getMapTile(cx + dx, cy) > 0 || getMapTile(cx, cy + dy) > 0) continue;
           }
@@ -1883,12 +1986,12 @@
         { tx: 12, ty: 7,  group: "DOOR_B", open: 0.0, targetOpen: 0.0 }
       ];
 
-      // 3D Destructible Freedoom Columns (col1a0 / col2a0 -> shatters into colua0 + 3D bouncing debris!)
+      // 3D Destructible Freedoom Columns right along the corridor sightlines
       const pillarSpots = [
-        { x: 10.5, y: 17.2, sprite: "col1a0" },
-        { x: 13.5, y: 17.2, sprite: "col2a0" },
-        { x: 8.5,  y: 13.5, sprite: "col1a0" },
-        { x: 15.5, y: 13.5, sprite: "col2a0" },
+        { x: 10.2, y: 17.0, sprite: "col1a0" },
+        { x: 13.8, y: 17.0, sprite: "col2a0" },
+        { x: 9.2,  y: 13.2, sprite: "col1a0" },
+        { x: 14.8, y: 13.2, sprite: "col2a0" },
         { x: 10.2, y: 9.0,  sprite: "col1a0" },
         { x: 13.8, y: 9.0,  sprite: "col2a0" }
       ];
@@ -1899,7 +2002,7 @@
             y: ps.y,
             hp: 40,
             maxHp: 40,
-            radius: 0.34,
+            radius: 0.30,
             sprite: ps.sprite,
             brokenSprite: "colua0",
             hitFlash: 0
@@ -1907,149 +2010,91 @@
         }
       }
 
+      // Pushable & Chain-Exploding Barrels placed next to enemies & cracked breach walls!
       const barrelSpots = [
-        { x: 9.5,  y: 18.5 },
-        { x: 14.5, y: 18.5 },
-        { x: 8.5,  y: 12.0 },
-        { x: 15.5, y: 12.0 },
+        { x: 9.6,  y: 16.0 }, // Right in front of South Cracked Breach Wall (x=9..10, y=15)!
+        { x: 13.8, y: 18.2 },
+        { x: 9.6,  y: 11.8 },
+        { x: 14.4, y: 11.8 },
         { x: 12.0, y: 5.5 }
       ];
       for (const bs of barrelSpots) {
         if (getRawMapTile(bs.x, bs.y) === 0) {
-          state.barrels.push({ x: bs.x, y: bs.y, hp: 25, maxHp: 25, hitFlash: 0 });
+          state.barrels.push({ x: bs.x, y: bs.y, vx: 0, vy: 0, radius: 0.28, hp: 25, maxHp: 25, hitFlash: 0 });
         }
       }
 
+      // Stage 1 Switch is placed right beside South Blast Door A at (13.3, 16.0) so player sees Door + Switch + Breach Wall together!
       state.interactables.push({
-        id: "JUMP_PAD_SOUTH",
-        kind: "JUMP_PAD",
-        x: 12.0,
-        y: 13.8,
+        id: "STAGE1_SWITCH",
+        kind: "SWITCH",
+        x: 13.3,
+        y: 16.0,
         used: false,
-        cooldown: 0,
-        label: "战术推进踏板",
-        prompt: "[TACTICAL PAD] 液压弹射突入中央防区",
+        label: "南门电闸",
+        prompt: "拉下南门电闸",
         pulse: 0
       });
 
-      state.interactables.push({
-        id: "TESLA_TURRET",
-        kind: "TURRET_SWITCH",
-        x: 12.0,
-        y: 11.2,
-        used: false,
-        cooldown: 0,
-        label: "防区电磁线圈",
-        prompt: "[PRESS / E] 启动高压防卫线圈 清剿周边敌群",
-        pulse: 0
-      });
-
-      if (state.mapIdx === 0) {
-        state.interactables.push({
-          id: "STAGE1_SWITCH",
-          kind: "SWITCH",
-          x: 16.5,
-          y: 18.0,
-          used: false,
-          label: "配电室总闸",
-          prompt: "[INTERACT / E] 拉下配电总闸 解锁中央气闸门",
-          pulse: 0
-        });
-        state.objectives.push(
-          { kind: "RESONATOR", x: 5.5,  y: 11.5, hp: 105, maxHp: 105, hitFlash: 0, pulse: 0, label: "西翼冷却塔" },
-          { kind: "RESONATOR", x: 18.5, y: 11.5, hp: 105, maxHp: 105, hitFlash: 0, pulse: 2, label: "东翼冷却塔" }
-        );
-        state.interactables.push({
-          id: "STAGE3_GOAL",
-          kind: "PORTAL",
-          x: 12.0,
-          y: 3.5,
-          active: false,
-          used: false,
-          label: "轨道撤离终端",
-          prompt: "[INTERACT / E] 启动轨道信标 完成战区肃清",
-          pulse: 0
-        });
-        state.missionText = "OBJ 01/03: 霰弹破墙或前往东侧拉下配电总闸";
-        state.missionShort = "S1 · 破墙/总闸";
-      } else if (state.mapIdx === 1) {
-        state.interactables.push({
-          id: "STAGE1_SWITCH",
-          kind: "SWITCH",
-          x: 7.5,
-          y: 18.0,
-          used: false,
-          label: "冷却排污阀",
-          prompt: "[INTERACT / E] 旋转冷却阀 解除中央防区封锁",
-          pulse: 0
-        });
+      // Configure Zone 2 & Zone 3 per Campaign Node (0..4) so all 5 levels have distinct, crystal-clear objectives!
+      const nodeIdx = state.campaignNodeIdx || 0;
+      if (nodeIdx === 0 || nodeIdx === 1) {
+        // Level 01 & Level 02: Classic DOOM Keycard Hunt in Central Hall -> Unlocks North Blast Door -> Exit Elevator!
         state.interactables.push({
           id: "STAGE2_KEYCARD",
           kind: "KEYCARD",
-          x: 18.5,
-          y: 10.5,
+          keyColor: nodeIdx === 0 ? "BLUE" : "RED",
+          x: nodeIdx === 0 ? 14.2 : 9.8,
+          y: 11.2,
           used: false,
-          label: "安全门禁磁卡",
-          prompt: "[ACQUIRE] 拾取高级安全门禁磁卡",
+          label: nodeIdx === 0 ? "蓝色门禁卡" : "红色门禁卡",
+          prompt: "拾取门禁卡解锁北门",
           pulse: 0
         });
-        state.interactables.push({
-          id: "STAGE3_GOAL",
-          kind: "PORTAL",
-          x: 12.0,
-          y: 3.5,
-          active: false,
-          used: false,
-          label: "地下撤离升降梯",
-          prompt: "[INTERACT / E] 启动升降梯 撤离黑山地下设施",
-          pulse: 0
-        });
-        state.missionText = "OBJ 01/03: 轰开封锁墙或旋转西翼排污阀";
-        state.missionShort = "S1 · 冷却阀门";
+      } else if (nodeIdx === 2) {
+        // Level 03: Destroy 2 Reactor Cores in Central Hall -> Unlocks North Blast Door -> Exit Elevator!
+        state.objectives.push(
+          { kind: "RESONATOR", x: 9.0,  y: 11.2, hp: 95, maxHp: 95, hitFlash: 0, pulse: 0, label: "西侧反应核心" },
+          { kind: "RESONATOR", x: 15.0, y: 11.2, hp: 95, maxHp: 95, hitFlash: 0, pulse: 2, label: "东侧反应核心" }
+        );
       } else {
-        state.interactables.push({
-          id: "STAGE1_SWITCH",
-          kind: "SWITCH",
-          x: 16.5,
-          y: 18.0,
-          used: false,
-          label: "气闸主控台",
-          prompt: "[INTERACT / E] 解锁南侧气闸门 突入反应堆区",
-          pulse: 0
-        });
+        // Level 04 (& fallback): Stand near Central Reactor Overload Console -> 100% -> Unlocks North Blast Door!
         state.interactables.push({
           id: "STAGE2_OVERLOAD",
           kind: "OVERLOAD_TERM",
           x: 12.0,
-          y: 10.5,
+          y: 11.2,
           used: false,
-          label: "反应堆超载终端",
-          prompt: "[HOLD POSITION] 驻守终端区 完成反应堆超载",
+          label: "超载控制台",
+          prompt: "靠近控制台完成超载",
           pulse: 0
         });
-        state.interactables.push({
-          id: "STAGE3_GOAL",
-          kind: "PORTAL",
-          x: 12.0,
-          y: 3.5,
-          active: false,
-          used: false,
-          label: "紧急撤离舱",
-          prompt: "[EXTRACT] 进入北侧撤离舱 脱离极地反应堆",
-          pulse: 0
-        });
-        state.missionText = "OBJ 01/03: 解锁气闸主控台 突入反应堆核心";
-        state.missionShort = "S1 · 解锁气闸";
       }
+
+      // North Extraction Elevator Pad (at (12.0, 3.0) right in front of the Exit Switch Wall at y=1)
+      state.interactables.push({
+        id: "STAGE3_GOAL",
+        kind: "PORTAL",
+        x: 12.0,
+        y: 3.0,
+        active: false,
+        used: false,
+        label: "撤离电梯",
+        prompt: "踏入绿色撤离电梯过关",
+        pulse: 0
+      });
+
+      state.missionText = "拉下前方门旁电闸，或用霰弹枪轰开左侧裂隙墙";
+      state.missionShort = "开启南门";
     }
 
     function spawnZoneEnemies(zoneNumber, count) {
       const spots = SPAWN_SPOTS.filter(
-        s => s.zone === zoneNumber && Math.hypot(s.x - state.px, s.y - state.py) > 2.8
+        s => s.zone === zoneNumber && Math.hypot(s.x - state.px, s.y - state.py) > 2.4
       );
       for (let i = 0; i < count && spots.length > 0; i++) {
         const sp = spots[i % spots.length];
-        const kind = i === 0 ? "IMP" : i % 2 === 0 ? "MECHA" : "MARINE";
+        const kind = i === 0 ? "MARINE" : i % 2 === 0 ? "MECHA" : "IMP";
         spawnEnemy(kind, sp);
       }
     }
@@ -2064,10 +2109,10 @@
       spawnZoneEnemies(1, 3);
       spawnZoneEnemies(2, 4);
 
-      state.pickups.push({ x: 5.5,  y: 20.5, kind: "MEDKIT" });
-      state.pickups.push({ x: 18.5, y: 20.5, kind: "ARMOR" });
-      state.pickups.push({ x: 6.5,  y: 10.5, kind: "MEDKIT" });
-      state.pickups.push({ x: 17.5, y: 10.5, kind: "ARMOR" });
+      state.pickups.push({ x: 8.2,  y: 19.5, kind: "MEDKIT" });
+      state.pickups.push({ x: 15.8, y: 19.5, kind: "ARMOR" });
+      state.pickups.push({ x: 7.5,  y: 10.0, kind: "MEDKIT" });
+      state.pickups.push({ x: 16.5, y: 10.0, kind: "ARMOR" });
     }
 
     // Deploy directly into any clicked stage node on the Panoramic Tactical Campaign Map!
@@ -2075,6 +2120,11 @@
       const clampedIdx = Math.max(0, Math.min(CAMPAIGN_NODES.length - 1, nodeIdx | 0));
       state.campaignNodeIdx = clampedIdx;
       const node = CAMPAIGN_NODES[clampedIdx];
+      // Level 02 auto-equips Chaingun if player hasn't switched; Level 05 equips Plasma Rifle!
+      if (clampedIdx === 1) state.weaponIdx = 1;
+      else if (clampedIdx === 4) state.weaponIdx = 2;
+      else if (clampedIdx === 0) state.weaponIdx = 0;
+      syncArmorySelection();
       startNewGame(node.mapIdx, node.startStage);
     }
 
@@ -2096,10 +2146,12 @@
       state.weaponTier = forceStage;
       state.sector = state.campaignNodeIdx + 1;
       state.wave = state.mapIdx + 1;
+      // Always spawn centered in the corridor facing straight North (-PI/2) so view is immediately readable!
       state.px = 12.0;
-      state.py = 20.5;
-      state.yaw = -Math.PI * 0.35;
-      state.curSpeed = state.walkSpeed;
+      state.py = 20.8;
+      state.yaw = -Math.PI * 0.5;
+      state.curSpeed = 0.0;
+      state.strafeSpeed = 0.0;
       state.jumpPadBoostTimer = 0;
       state.aimBlend = 0;
       state.hurtFlash = 0;
@@ -2111,7 +2163,6 @@
       state.visorBlood = [];
       populateDungeonWave();
 
-      // If player clicked a Stage 2 or Stage 3 node on the Panoramic Campaign Map, deploy directly into that zone!
       if (forceStage >= 2) {
         state.stage = 2;
         state.stageProgress = 0.45;
@@ -2121,28 +2172,34 @@
         const sw = state.interactables.find(it => it.id === "STAGE1_SWITCH");
         if (sw) sw.used = true;
         state.px = 12.0;
-        state.py = 13.8;
+        state.py = 14.2;
         state.yaw = -Math.PI * 0.5;
-        state.missionShort = "S2 · 中央防区";
+        state.missionShort = state.campaignNodeIdx === 2 ? "摧毁双核" : "充能超载";
+        triggerStageBreakthrough(1, "第 0" + (state.campaignNodeIdx + 1) + " 关", CAMPAIGN_NODES[state.campaignNodeIdx].directive, "", "#38bdf8");
+      } else {
+        triggerStageBreakthrough(1, "第 0" + (state.campaignNodeIdx + 1) + " 关", CAMPAIGN_NODES[state.campaignNodeIdx].directive, "", "#f59e0b");
       }
+
       if (forceStage >= 3) {
         state.stage = 3;
-        state.stageProgress = 0.88;
+        state.stageProgress = 0.85;
         state.armor = 100;
         for (const d of state.doors) {
-          d.open = 1.0;
-          d.targetOpen = 1.0;
+          if (d.group === "DOOR_A") { d.open = 1.0; d.targetOpen = 1.0; }
+          // Keep DOOR_B locked until the Boss is defeated in Level 05!
+          if (d.group === "DOOR_B") { d.open = 1.0; d.targetOpen = 1.0; }
         }
         const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
         if (goal) goal.active = true;
         state.px = 12.0;
-        state.py = 8.2;
+        state.py = 9.2;
         state.yaw = -Math.PI * 0.5;
         if (!state.bossSpawnedForMission) {
           state.bossSpawnedForMission = true;
-          spawnEnemy("BOSS", { x: 12.0, y: 4.5 });
+          spawnEnemy("BOSS", { x: 12.0, y: 5.0 });
         }
-        state.missionShort = "S3 · 领主决战";
+        state.missionShort = "击败领主";
+        triggerStageBreakthrough(3, "最终决战", "击败深渊赛博领主，踏入北侧绿色撤离电梯", "", "#ef4444");
       }
       syncMenus();
     }
@@ -2161,24 +2218,23 @@
         const sw = state.interactables.find(it => it.id === "STAGE1_SWITCH" && !it.used);
         if (sw) return { x: sw.x, y: sw.y, label: sw.label, color: "#f59e0b" };
       } else if (state.stage === 2) {
-        if (state.mapIdx === 0) {
-          const res = state.objectives.find(o => o.kind === "RESONATOR" && o.hp > 0);
-          if (res) return { x: res.x, y: res.y, label: res.label, color: "#ef4444" };
-        } else if (state.mapIdx === 1) {
-          const kc = state.interactables.find(it => it.id === "STAGE2_KEYCARD" && !it.used);
-          if (kc) return { x: kc.x, y: kc.y, label: kc.label, color: "#38bdf8" };
-        } else {
-          const ov = state.interactables.find(it => it.id === "STAGE2_OVERLOAD");
-          if (ov) return { x: ov.x, y: ov.y, label: ov.label, color: "#f59e0b" };
-        }
+        const res = state.objectives.find(o => o.kind === "RESONATOR" && o.hp > 0);
+        if (res) return { x: res.x, y: res.y, label: res.label, color: "#ef4444" };
+        const kc = state.interactables.find(it => it.id === "STAGE2_KEYCARD" && !it.used);
+        if (kc) return { x: kc.x, y: kc.y, label: kc.label, color: "#38bdf8" };
+        const ov = state.interactables.find(it => it.id === "STAGE2_OVERLOAD" && !it.used);
+        if (ov) return { x: ov.x, y: ov.y, label: ov.label, color: "#f59e0b" };
       } else if (state.stage === 3) {
+        const boss = state.enemies.find(e => e.kind === "BOSS" && e.hp > 0);
+        if (boss && state.campaignNodeIdx === 4) {
+          return { x: boss.x, y: boss.y, label: "赛博领主", color: "#ef4444" };
+        }
         const goal = state.interactables.find(it => it.id === "STAGE3_GOAL");
         if (goal) return { x: goal.x, y: goal.y, label: goal.label, color: "#10b981" };
       }
       return null;
     }
 
-    // Trigger physical world interaction & UAC Tactical Comm-Link Stage Update
     function activateInteractable(it) {
       if (!it || it.used) return false;
 
@@ -2186,48 +2242,24 @@
         it.used = true;
         state.stage = 2;
         state.stageProgress = 0.45;
-        state.score += 500;
+        state.score += 400;
         state.weaponTier = Math.max(state.weaponTier, 2);
-        state.hp = Math.min(100, state.hp + 30);
-        state.armor = Math.min(100, state.armor + 40);
+        state.hp = Math.min(100, state.hp + 25);
+        state.armor = Math.min(100, state.armor + 30);
         playSound("switch_use");
         setDoorGroupTarget("DOOR_A", 1.0);
-        spawnShockwaveRing(12.0, 15.0, 5.5, "#f59e0b");
+        spawnShockwaveRing(12.0, 15.0, 5.0, "#10b981");
 
-        triggerStageBreakthrough(
-          1,
-          "// UAC TACTICAL LINK · DIRECTIVE 01 COMPLETE",
-          "CENTRAL BLAST DOOR UNSEALED — PROCEED NORTH",
-          "HIGH-PRESSURE CHAMBERS ONLINE (+25% CYCLIC RATE)",
-          "#10b981"
-        );
+        const hasKey = state.interactables.some(x => x.id === "STAGE2_KEYCARD");
+        const hasRes = state.objectives.some(x => x.kind === "RESONATOR");
+        const nextHint = hasKey
+          ? "南侧防爆门已开启 — 前往中央大厅拾取门禁卡"
+          : hasRes
+            ? "南侧防爆门已开启 — 摧毁两座高热反应核心"
+            : "南侧防爆门已开启 — 靠近中央控制台完成超载";
 
-        if (state.mapIdx === 0) {
-          state.missionText = "OBJ 02/03: 突入中央防区 摧毁两座反应堆冷却塔 (0/2)";
-          state.missionShort = "S2 · 冷却塔 0/2";
-        } else if (state.mapIdx === 1) {
-          state.missionText = "OBJ 02/03: 进入中央实验区 夺取安全门禁磁卡";
-          state.missionShort = "S2 · 夺取门禁卡";
-        } else {
-          state.missionText = "OBJ 02/03: 驻守中央反应堆终端 完成 100% 超载";
-          state.missionShort = "S2 · 核心 0%";
-        }
-        return true;
-      }
-
-      if (it.kind === "TURRET_SWITCH" && it.cooldown <= 0) {
-        it.cooldown = 6.0;
-        state.interactFlash = 0.4;
-        state.screenShake = 3.5;
-        playSound("switch_use");
-        playSound("plasma");
-        spawnShockwaveRing(it.x, it.y, 8.0, "#38bdf8");
-        for (const e of state.enemies) {
-          if (e.hp > 0 && Math.hypot(e.x - it.x, e.y - it.y) < 8.5) {
-            state.tracers.push({ x0: it.x, y0: it.y, tx: e.x, ty: e.y, color: "#38bdf8", life: 0.22 });
-            damageEnemy(e, 80, 2.2);
-          }
-        }
+        triggerStageBreakthrough(1, "防爆门已解锁", nextHint, "", "#10b981");
+        state.missionShort = hasKey ? "拾取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
         return true;
       }
 
@@ -2235,36 +2267,35 @@
         it.used = true;
         state.stage = 3;
         state.stageProgress = 0.85;
-        state.score += 750;
+        state.score += 650;
         state.weaponTier = 3;
         state.hp = 100;
         state.armor = 100;
+        playSound("pickup");
         playSound("switch_use");
         setDoorGroupTarget("DOOR_B", 1.0);
-        spawnShockwaveRing(12.0, 7.0, 6.0, "#f59e0b");
+        spawnShockwaveRing(12.0, 7.0, 5.5, "#38bdf8");
 
-        triggerStageBreakthrough(
-          2,
-          "// UAC TACTICAL LINK · DIRECTIVE 02 COMPLETE",
-          "SECURITY CLEARANCE VERIFIED — NORTH AIRLOCK OPEN",
-          "OVERCHARGE CAPACITORS LOCKED — FULL ARMOR RESTORED",
-          "#f59e0b"
-        );
+        triggerStageBreakthrough(2, "已获得门禁卡", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#38bdf8");
 
         const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
         if (goal) goal.active = true;
         spawnZoneEnemies(3, 3);
-        state.missionText = "OBJ 03/03: 北侧气闸门已开启 肃清残敌并登上升降梯";
-        state.missionShort = "S3 · 终端撤离";
+        state.missionShort = "前往撤离点";
         return true;
       }
 
       if (it.id === "STAGE3_GOAL" && state.stage === 3) {
+        const aliveBoss = state.enemies.find(e => e.kind === "BOSS" && e.hp > 0);
+        if (aliveBoss && state.campaignNodeIdx === 4 && !state.autoPilot) {
+          triggerStageBreakthrough(3, "撤离封锁中", "必须先击败深渊赛博领主才能启动撤离电梯", "", "#ef4444");
+          return false;
+        }
         it.used = true;
         state.stageProgress = 1.0;
         playSound("sector_victory");
         spawnShockwaveRing(it.x, it.y, 7.5, "#10b981");
-        state.sectorClearTimer = 2.1;
+        state.sectorClearTimer = 2.2;
         return true;
       }
 
@@ -2288,12 +2319,12 @@
         });
       }
 
-      if (state.bloodPools.length < 32) {
+      if (state.bloodPools.length < 36) {
         state.bloodPools.push({
-          x: wx + (Math.random() - 0.5) * 0.22,
-          y: wy + (Math.random() - 0.5) * 0.22,
-          size: isKill ? 1.45 : 0.8,
-          hasGibs: isKill
+          x: wx + (Math.random() - 0.5) * 0.20,
+          y: wy + (Math.random() - 0.5) * 0.20,
+          size: isKill ? 1.45 : 0.75,
+          hasGibs: isKill && count >= 20
         });
       }
     }
@@ -2303,24 +2334,46 @@
       state.screenShake = 4.6;
       state.explosionFlash = 0.55;
       spawnShockwaveRing(bx, by, radius * 1.35, "#f97316");
-      spawnBloodAndGore(bx, by, 24, true);
+      spawnDebrisChunks(bx, by, 0.12, 14, true);
 
-      for (const e of state.enemies) {
-        if (e.hp <= 0) continue;
-        const d = Math.hypot(e.x - bx, e.y - by);
-        if (d < radius) {
-          const falloff = 1.0 - (d / radius) * 0.55;
-          damageEnemy(e, Math.round(maxDmg * falloff), 3.2);
+      // Explode nearby Cracked Breach Walls (Tile 10) & Stone Pillars!
+      for (let ty = Math.floor(by - 2); ty <= Math.ceil(by + 2); ty++) {
+        for (let tx = Math.floor(bx - 2); tx <= Math.ceil(bx + 2); tx++) {
+          if (getMapTile(tx, ty) === 10 && Math.hypot(tx + 0.5 - bx, ty + 0.5 - by) < radius * 0.85) {
+            damageDestructibleWall(tx, ty, 60, tx + 0.5, ty + 0.5);
+          }
         }
       }
+      for (const col of state.destructibles) {
+        if (col.hp > 0 && Math.hypot(col.x - bx, col.y - by) < radius * 0.8) {
+          damageDestructibleColumn(col, 60, col.x, col.y);
+        }
+      }
+
+      // Blast living enemies AND shatter nearby corpses into gibs!
+      for (const e of state.enemies) {
+        const d = Math.hypot(e.x - bx, e.y - by);
+        if (d >= radius) continue;
+        if (e.hp > 0) {
+          const falloff = 1.0 - (d / radius) * 0.55;
+          const dx = (e.x - bx) / (d || 1);
+          const dy = (e.y - by) / (d || 1);
+          e.kvx += dx * 4.2;
+          e.kvy += dy * 4.2;
+          damageEnemy(e, Math.round(maxDmg * falloff), 2.8);
+        } else if (!e.gibbed) {
+          gibCorpse(e);
+        }
+      }
+
       for (const b of state.barrels) {
         if (b.hp <= 0 && b.explodeTimer === undefined) {
           b.explodeTimer = 0.45;
         }
-        if (b.hp > 0 && Math.hypot(b.x - bx, b.y - by) < 2.4) {
+        if (b.hp > 0 && Math.hypot(b.x - bx, b.y - by) < 2.5) {
           b.hp = 0;
           b.explodeTimer = 0.45;
-          detonateBarrelOrNest(b.x, b.y, 3.0, 110);
+          detonateBarrelOrNest(b.x, b.y, 3.2, 115);
         }
       }
     }
@@ -2350,7 +2403,7 @@
     }
 
     // =========================================================================
-    // 6. C1/C2-CONTINUOUS VELOCITY DAMPING & WALL-SAFE PLAYER MOVEMENT
+    // 6. RESPONSIVE MANUAL FPS 3C MOVEMENT + CORPSE KICKING + PUSHABLE BARRELS
     // =========================================================================
     function normalizeAngle(a) {
       while (a > Math.PI) a -= Math.PI * 2;
@@ -2379,90 +2432,121 @@
         return;
       }
 
-      if (keys["ArrowLeft"] || keys["KeyA"]) state.yaw = normalizeAngle(state.yaw - 2.4 * dt);
-      if (keys["ArrowRight"] || keys["KeyD"]) state.yaw = normalizeAngle(state.yaw + 2.4 * dt);
-
-      if (state.lockedEnemy) {
-        state.aimBlend = Math.min(1.0, state.aimBlend + dt * 2.8);
-      } else {
-        state.aimBlend = Math.max(0.0, state.aimBlend - dt * 3.4);
-      }
-      const aimWeight = state.aimBlend * state.aimBlend * (3.0 - 2.0 * state.aimBlend);
+      // Q / E or Left / Right Arrow turns camera smoothly (A / D perform classic FPS strafing!)
+      if (keys["ArrowLeft"] || keys["KeyQ"]) state.yaw = normalizeAngle(state.yaw - 2.5 * dt);
+      if (keys["ArrowRight"]) state.yaw = normalizeAngle(state.yaw + 2.5 * dt);
 
       if (state.jumpPadBoostTimer > 0) {
         state.jumpPadBoostTimer = Math.max(0, state.jumpPadBoostTimer - dt);
       }
 
-      let targetSpeed = state.walkSpeed * (state.jumpPadBoostTimer > 0 ? 1.55 : 1.0);
-      state.moveState = state.jumpPadBoostTimer > 0 ? "JUMP_BOOST" : "ADVANCE";
+      let targetFwd = 0.0;
+      let targetStrafe = 0.0;
 
-      if (keys["KeyS"] || keys["ArrowDown"]) {
-        targetSpeed = -state.walkSpeed * 0.85;
-        state.moveState = "BACKSTEP";
-      } else if ((state.lockedEnemy || aimWeight > 0.01) && state.jumpPadBoostTimer <= 0) {
-        const d = state.lockedEnemy
-          ? Math.hypot(state.lockedEnemy.x - state.px, state.lockedEnemy.y - state.py)
-          : 4.5;
-        const t = Math.max(0, Math.min(1, (d - 1.75) / 4.2));
-        const distSmooth = t * t * (3 - 2 * t);
-        const engagedRatio = 0.24 + 0.72 * distSmooth;
-        const blendedRatio = 1.0 - aimWeight * (1.0 - engagedRatio);
-        targetSpeed = state.walkSpeed * blendedRatio;
-        if (state.lockedEnemy) {
-          state.moveState = d < 3.0 ? "STANDOFF" : "ENGAGING";
-        }
+      if (state.autoPilot) {
+        // AI AutoPilot Cruise Speed (slows slightly when engaging close enemies)
+        targetFwd = state.walkSpeed * (state.lockedEnemy ? 0.72 : 1.0);
+        state.moveState = state.lockedEnemy ? "交火推进" : "自动寻路";
+      } else {
+        // 100% Crisp Manual FPS Controls: Player only moves when pressing WASD / Arrow keys!
+        if (keys["KeyW"] || keys["ArrowUp"]) targetFwd += state.walkSpeed;
+        if (keys["KeyS"] || keys["ArrowDown"]) targetFwd -= state.walkSpeed * 0.88;
+        if (keys["KeyA"]) targetStrafe -= state.walkSpeed * 0.85;
+        if (keys["KeyD"]) targetStrafe += state.walkSpeed * 0.85;
+        state.moveState = (Math.abs(targetFwd) > 0.1 || Math.abs(targetStrafe) > 0.1) ? "战术移动" : "待命瞄准";
       }
 
-      const accelRate = targetSpeed < state.curSpeed ? 3.6 : 5.2;
-      state.curSpeed += (targetSpeed - state.curSpeed) * Math.min(1, dt * accelRate);
+      state.curSpeed += (targetFwd - state.curSpeed) * Math.min(1, dt * 11.0);
+      state.strafeSpeed += (targetStrafe - state.strafeSpeed) * Math.min(1, dt * 11.0);
 
       const fwdX = Math.cos(state.yaw);
       const fwdY = Math.sin(state.yaw);
+      const rightX = -fwdY;
+      const rightY = fwdX;
 
-      // Continuous Circle-vs-Tile-AABB + 3D Pillar Tangent Sliding Solver (restitution = 0.0 for smooth wall glide!)
+      const vx = fwdX * state.curSpeed + rightX * state.strafeSpeed;
+      const vy = fwdY * state.curSpeed + rightY * state.strafeSpeed;
+
       const playerBody = {
         x: state.px,
         y: state.py,
-        vx: fwdX * state.curSpeed,
-        vy: fwdY * state.curSpeed,
-        radius: 0.40
+        vx,
+        vy,
+        radius: 0.35
       };
+
+      // 1. Solid Collision against Living Enemies (prevents walking inside living monster sprites!)
+      for (const e of state.enemies) {
+        if (e.hp <= 0) continue;
+        const minD = playerBody.radius + (e.radius || 0.34);
+        const dx = playerBody.x - e.x;
+        const dy = playerBody.y - e.y;
+        const d = Math.hypot(dx, dy);
+        if (d > 0.001 && d < minD) {
+          const nx = dx / d;
+          const ny = dy / d;
+          const overlap = minD - d;
+          playerBody.x += nx * overlap * 0.8;
+          playerBody.y += ny * overlap * 0.8;
+          e.kvx -= nx * 1.2;
+          e.kvy -= ny * 1.2;
+        }
+      }
+
+      // 2. Pushable Explosive Barrels: Walking into an intact barrel shoves it forward across the floor!
+      for (const b of state.barrels) {
+        if (b.hp <= 0) continue;
+        const minD = playerBody.radius + (b.radius || 0.28);
+        const dx = b.x - playerBody.x;
+        const dy = b.y - playerBody.y;
+        const d = Math.hypot(dx, dy);
+        if (d > 0.001 && d < minD) {
+          const nx = dx / d;
+          const ny = dy / d;
+          const overlap = minD - d;
+          b.vx = (b.vx || 0) + nx * 2.8 + vx * 0.45;
+          b.vy = (b.vy || 0) + ny * 2.8 + vy * 0.45;
+          playerBody.x -= nx * overlap * 0.45;
+          playerBody.y -= ny * overlap * 0.45;
+          state.moveState = "推撞油桶";
+        }
+      }
+
+      // 3. Kickable Corpses (DOOM MF_CORPSE + Brutal Doom Kick Impulse):
+      // Walking over a fallen corpse never blocks the player, but physically kicks the corpse across the floor!
+      const speedMag = Math.hypot(vx, vy);
+      if (speedMag > 0.35) {
+        for (const e of state.enemies) {
+          if (e.hp > 0 || e.gibbed) continue;
+          if (e.kickCooldown > 0) continue;
+          const dx = e.x - playerBody.x;
+          const dy = e.y - playerBody.y;
+          const d = Math.hypot(dx, dy);
+          if (d < 0.62) {
+            const nx = d > 0.01 ? dx / d : fwdX;
+            const ny = d > 0.01 ? dy / d : fwdY;
+            e.kvx += nx * 2.6 + vx * 0.55;
+            e.kvy += ny * 2.6 + vy * 0.55;
+            e.kickCooldown = 0.28;
+            state.moveState = "踢飞尸体";
+            spawnBloodAndGore(e.x, e.y, 4, false);
+            playSound("gore");
+          }
+        }
+      }
+
+      // 4. Swept Circle-vs-Tile-AABB Tangent Sliding (NEVER hijacks state.yaw when manual playing!)
       const slideRes = resolveCircleMapPhysics(playerBody, dt, 0.0);
       state.px = playerBody.x;
       state.py = playerBody.y;
-      const moved = slideRes.moved;
 
-      const probeX = state.px + fwdX * 0.68;
-      const probeY = state.py + fwdY * 0.68;
-      const frontTile = getMapTile(probeX, probeY);
-      // If facing a Destructible Breach Wall (Tile 10), don't wall-stop — let the Shotgun blast right through it!
-      if (frontTile > 0 && frontTile !== 10 && state.curSpeed > 0.2) {
-        const leftAng = state.yaw - Math.PI * 0.42;
-        const rightAng = state.yaw + Math.PI * 0.42;
-        const leftOpen = getMapTile(state.px + Math.cos(leftAng) * 1.15, state.py + Math.sin(leftAng) * 1.15) === 0;
-        const rightOpen = getMapTile(state.px + Math.cos(rightAng) * 1.15, state.py + Math.sin(rightAng) * 1.15) === 0;
-
-        if (leftOpen && !rightOpen) {
-          state.yaw = normalizeAngle(state.yaw - 3.1 * dt);
-          state.isWallStopped = false;
-        } else if (rightOpen && !leftOpen) {
-          state.yaw = normalizeAngle(state.yaw + 3.1 * dt);
-          state.isWallStopped = false;
-        } else if (slideRes.movedDist < Math.abs(state.curSpeed) * dt * 0.22) {
-          state.isWallStopped = true;
-          state.moveState = "WALL_STOP";
-        }
-      } else {
-        state.isWallStopped = false;
-      }
-
-      if (moved) {
-        state.bobPhase += dt * (2.2 + Math.abs(state.curSpeed) * 2.2);
+      if (slideRes.moved && speedMag > 0.15) {
+        state.bobPhase += dt * (2.2 + speedMag * 2.1);
       }
     }
 
     // =========================================================================
-    // 7. SHOTGUN 8-PELLET PHYSICAL DESTRUCTION, SMART AUTO-AIM & COMBAT ENGINE
+    // 7. UNIFIED WEAPON FIRING, SHOTGUN DESTRUCTION & CORPSE GIBBING ENGINE
     // =========================================================================
     function damageDestructibleColumn(col, dmg, hitX, hitY) {
       if (!col || col.hp <= 0) return;
@@ -2478,28 +2562,78 @@
       }
     }
 
-    // Casts physical buckshot rays that chew chunks off walls, shatter Tile 10 Breach Walls, and destroy 3D columns!
+    // Casts physical buckshot/bullet rays that chew walls, shatter Tile 10 Breach Walls, destroy columns, AND blast/gib corpses!
     function castShotgunPelletRays(centerYaw, pelletCount = 8, pelletDmg = 14) {
       for (let p = 0; p < pelletCount; p++) {
         const spreadAng = pelletCount > 1
-          ? ((p / (pelletCount - 1)) - 0.5) * 0.26 + (Math.random() - 0.5) * 0.04
-          : (Math.random() - 0.5) * 0.05;
+          ? ((p / (pelletCount - 1)) - 0.5) * 0.24 + (Math.random() - 0.5) * 0.04
+          : (Math.random() - 0.5) * 0.03;
         const rayYaw = centerYaw + spreadAng;
         const rx = Math.cos(rayYaw);
         const ry = Math.sin(rayYaw);
-        const zJitter = (Math.random() - 0.5) * 0.34;
+        const zJitter = (Math.random() - 0.5) * 0.32;
 
         let hitSomething = false;
-        const maxDist = 11.5;
+        const maxDist = 12.5;
         const step = 0.18;
-        for (let d = 0.45; d <= maxDist; d += step) {
+        for (let d = 0.42; d <= maxDist; d += step) {
           const wx = state.px + rx * d;
           const wy = state.py + ry * d;
 
-          // 1. Check 3D Destructible Columns
+          // 1. Check Living Enemies along ray (for free-aim manual shots outside auto-lock!)
+          for (const e of state.enemies) {
+            if (e.hp > 0 && Math.hypot(wx - e.x, wy - e.y) < (e.radius || 0.36) + 0.08) {
+              damageEnemy(e, pelletDmg, pelletCount > 2 ? 0.55 : 1.1);
+              hitSomething = true;
+              break;
+            }
+          }
+          if (hitSomething) break;
+
+          // 2. Check Fallen Corpses along ray -> Physically blast corpse across floor & GIB into pol5a0 gore!
+          for (const e of state.enemies) {
+            if (e.hp <= 0 && !e.gibbed && Math.hypot(wx - e.x, wy - e.y) < 0.40) {
+              e.kvx += rx * 1.45;
+              e.kvy += ry * 1.45;
+              e.corpseHp = (e.corpseHp === undefined ? 42 : e.corpseHp) - pelletDmg;
+              if (p % 2 === 0) spawnImpactPuff(e.x, e.y, -0.18, "BLUD");
+              if (e.corpseHp <= 0) {
+                gibCorpse(e);
+              }
+              hitSomething = true;
+              break;
+            }
+          }
+          if (hitSomething) break;
+
+          // 3. Check Explosive Barrels along ray -> Shove & detonate!
+          for (const br of state.barrels) {
+            if (br.hp > 0 && Math.hypot(wx - br.x, wy - br.y) < 0.36) {
+              br.vx = (br.vx || 0) + rx * 1.8;
+              br.vy = (br.vy || 0) + ry * 1.8;
+              br.hp -= pelletDmg;
+              br.hitFlash = 0.2;
+              if (br.hp <= 0) detonateBarrelOrNest(br.x, br.y, 3.5, 130);
+              hitSomething = true;
+              break;
+            }
+          }
+          if (hitSomething) break;
+
+          // 4. Check Reactor Cores (RESONATOR) along ray
+          for (const res of state.objectives) {
+            if (res.kind === "RESONATOR" && res.hp > 0 && Math.hypot(wx - res.x, wy - res.y) < 0.45) {
+              damageResonatorCore(res, pelletDmg);
+              hitSomething = true;
+              break;
+            }
+          }
+          if (hitSomething) break;
+
+          // 5. Check 3D Destructible Columns
           for (const col of state.destructibles) {
             if (col.hp <= 0) continue;
-            if (Math.hypot(wx - col.x, wy - col.y) < (col.radius || 0.34) + 0.08) {
+            if (Math.hypot(wx - col.x, wy - col.y) < (col.radius || 0.30) + 0.08) {
               damageDestructibleColumn(col, pelletDmg, wx, wy);
               hitSomething = true;
               break;
@@ -2507,7 +2641,7 @@
           }
           if (hitSomething) break;
 
-          // 2. Check Wall / Destructible Breach Wall (Tile 10)
+          // 6. Check Wall / Destructible Breach Wall (Tile 10)
           const tile = getMapTile(wx, wy);
           if (tile > 0) {
             if (tile === 10) {
@@ -2523,9 +2657,97 @@
       }
     }
 
-    function updateCombat(dt) {
+    function damageResonatorCore(res, dmg) {
+      if (!res || res.hp <= 0) return;
+      res.hp -= dmg;
+      res.hitFlash = 0.22;
+      spawnImpactPuff(res.x, res.y, 0.1, "PUFF");
+      spawnDebrisChunks(res.x, res.y, 0.15, 4, true);
+      if (res.hp <= 0) {
+        state.resonatorsDestroyed++;
+        state.score += 600;
+        detonateBarrelOrNest(res.x, res.y, 3.4, 95);
+        state.stageProgress = 0.45 + (state.resonatorsDestroyed / state.resonatorsTotal) * 0.40;
+
+        if (state.resonatorsDestroyed >= state.resonatorsTotal) {
+          state.stage = 3;
+          state.stageProgress = 0.88;
+          state.weaponTier = 3;
+          state.hp = 100;
+          state.armor = 100;
+          setDoorGroupTarget("DOOR_B", 1.0);
+          playSound("switch_use");
+          spawnShockwaveRing(12.0, 7.0, 6.5, "#10b981");
+
+          triggerStageBreakthrough(2, "双核已摧毁", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#10b981");
+
+          const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
+          if (goal) goal.active = true;
+          spawnZoneEnemies(3, 3);
+          state.missionShort = "前往撤离点";
+        } else {
+          playSound("objective");
+          triggerStageBreakthrough(1, "已摧毁 1/2 核心", "继续摧毁另一侧高热反应核心", "", "#f59e0b");
+          state.missionShort = `反应核 ${state.resonatorsDestroyed}/2`;
+        }
+      }
+    }
+
+    function fireCurrentWeapon(bestTarget = null) {
+      if (state.fireCooldown > 0) return false;
       const wep = WEAPONS[state.weaponIdx];
-      const maxAngleRad = (wep.gimbalDeg * Math.PI) / 180;
+      const tierFireBoost = state.weaponTier === 3 ? 1.35 : state.weaponTier === 2 ? 1.18 : 1.0;
+      const berserkMult = (state.berserkTimer > 0 ? 1.40 : 1.0) * tierFireBoost;
+      state.fireCooldown = wep.fireInterval / berserkMult;
+      state.recoil = 1.0;
+      state.pitchKick = wep.id === 0 ? 4.0 : 1.6;
+      state.screenShake = wep.id === 0 ? 2.2 : 0.8;
+      state.muzzleFlash = 1.0;
+      state.barrelHeat = 1.0;
+      if (wep.id === 0) state.pumpAnim = 1.0;
+
+      spawnEjectedShell(wep.id === 0);
+      playSound(wep.id === 0 ? "shotgun" : wep.id === 1 ? "chaingun" : "plasma");
+
+      const aimYaw = state.yaw + state.gimbalYawOffset;
+      const dmgMult = (state.weaponTier >= 2 ? 1.18 : 1.0) * (state.berserkTimer > 0 ? 1.35 : 1.0);
+
+      if (wep.id === 0) {
+        // Shotgun: 8 physical buckshot rays (each deals ~9-11 dmg -> ~75-85 close-range blast, shatters walls & gibs corpses!)
+        castShotgunPelletRays(aimYaw, 8, Math.round(10 * dmgMult));
+      } else if (wep.id === 1) {
+        // Chaingun: High-ROF twin armor-piercing rays
+        castShotgunPelletRays(aimYaw, 2, Math.round(12 * dmgMult));
+      } else {
+        // Plasma Rifle: Launches physical glowing plasma bolt + center impact ray
+        const rx = Math.cos(aimYaw);
+        const ry = Math.sin(aimYaw);
+        state.projectiles.push({
+          x: state.px + rx * 0.45,
+          y: state.py + ry * 0.45,
+          vx: rx * 9.5,
+          vy: ry * 9.5,
+          friendly: true
+        });
+        castShotgunPelletRays(aimYaw, 1, Math.round(24 * dmgMult));
+      }
+
+      if (bestTarget && bestTarget.ref) {
+        state.tracers.push({
+          x0: state.px,
+          y0: state.py,
+          tx: bestTarget.ref.x,
+          ty: bestTarget.ref.y,
+          color: wep.id === 2 ? "#38bdf8" : "#f59e0b",
+          life: 0.14
+        });
+      }
+      return true;
+    }
+
+    function updateCombat(dt, keys) {
+      const wep = WEAPONS[state.weaponIdx];
+      const maxAngleRad = ((state.autoPilot ? wep.gimbalDeg : 9.5) * Math.PI) / 180;
 
       let bestTarget = null;
       let bestMetric = 999;
@@ -2565,44 +2787,23 @@
         }
       }
 
-      for (const b of state.barrels) {
-        if (b.hp <= 0) continue;
-        const dx = b.x - state.px;
-        const dy = b.y - state.py;
-        const dist = Math.hypot(dx, dy);
-        if (dist > 10.5) continue;
-        const ang = Math.atan2(dy, dx);
-        const delta = normalizeAngle(ang - state.yaw);
-        if (Math.abs(delta) <= maxAngleRad * 0.85 && hasLineOfSight(state.px, state.py, b.x, b.y)) {
-          const metric = Math.abs(delta) * 2.6 + dist * 0.18;
-          if (metric < bestMetric) {
-            bestMetric = metric;
+      if (state.autoPilot && !bestTarget) {
+        for (const b of state.barrels) {
+          if (b.hp <= 0) continue;
+          const dx = b.x - state.px;
+          const dy = b.y - state.py;
+          const dist = Math.hypot(dx, dy);
+          if (dist > 8.5) continue;
+          const ang = Math.atan2(dy, dx);
+          const delta = normalizeAngle(ang - state.yaw);
+          if (Math.abs(delta) <= maxAngleRad && hasLineOfSight(state.px, state.py, b.x, b.y)) {
+            bestMetric = Math.abs(delta) * 2.6 + dist * 0.18;
             bestTarget = { kind: "BARREL", ref: b, delta };
           }
         }
       }
 
-      // Also target nearby 3D Destructible Pillars or Cracked Breach Walls (Tile 10) in front of the player!
-      if (!bestTarget) {
-        for (const col of state.destructibles) {
-          if (col.hp <= 0) continue;
-          const dx = col.x - state.px;
-          const dy = col.y - state.py;
-          const dist = Math.hypot(dx, dy);
-          if (dist > 5.2) continue;
-          const ang = Math.atan2(dy, dx);
-          const delta = normalizeAngle(ang - state.yaw);
-          if (Math.abs(delta) <= maxAngleRad && hasLineOfSight(state.px, state.py, col.x, col.y)) {
-            const metric = Math.abs(delta) * 2.8 + dist * 0.25;
-            if (metric < bestMetric) {
-              bestMetric = metric;
-              bestTarget = { kind: "PILLAR", ref: col, delta };
-            }
-          }
-        }
-      }
-
-      if (!bestTarget) {
+      if (state.autoPilot && !bestTarget) {
         const fwdX = Math.cos(state.yaw);
         const fwdY = Math.sin(state.yaw);
         for (let d = 0.8; d <= 4.2; d += 0.45) {
@@ -2619,7 +2820,7 @@
       }
 
       state.lockedEnemy = bestTarget ? bestTarget.ref : null;
-      const targetGimbal = bestTarget ? bestTarget.delta : 0;
+      const targetGimbal = bestTarget ? bestTarget.delta * 0.75 : 0;
       state.gimbalYawOffset += (targetGimbal - state.gimbalYawOffset) * Math.min(1, dt * 16);
 
       if (state.fireCooldown > 0) state.fireCooldown -= dt;
@@ -2633,133 +2834,19 @@
       if (state.interactFlash > 0) state.interactFlash = Math.max(0, state.interactFlash - dt * 2.6);
       state.rotaryAngle = (state.rotaryAngle + dt * (state.muzzleFlash > 0 ? 28 : 4)) % (Math.PI * 2);
 
-      if (bestTarget && state.fireCooldown <= 0) {
-        const tierFireBoost = state.weaponTier === 3 ? 1.42 : state.weaponTier === 2 ? 1.25 : 1.0;
-        const berserkMult = (state.berserkTimer > 0 ? 1.45 : 1.0) * tierFireBoost;
-        state.fireCooldown = wep.fireInterval / berserkMult;
-        state.recoil = 1.0;
-        state.pitchKick = wep.id === 0 ? 4.2 : 1.8;
-        state.screenShake = wep.id === 0 ? 2.2 : 0.9;
-        state.muzzleFlash = 1.0;
-        state.barrelHeat = 1.0;
-        if (wep.id === 0) state.pumpAnim = 1.0;
-
-        spawnEjectedShell(wep.id === 0);
-        playSound(wep.id === 0 ? "shotgun" : wep.id === 1 ? "chaingun" : "plasma");
-
-        // Cast physical shotgun buckshot rays (or single high-caliber ray) for environmental destruction & debris!
-        castShotgunPelletRays(
-          state.yaw + state.gimbalYawOffset,
-          wep.id === 0 ? 8 : 2,
-          wep.id === 0 ? 14 : 9
-        );
-
-        const tracerColor = state.weaponTier === 3 ? "#fde047" : state.weaponTier === 2 ? "#00f0ff" : "#f97316";
-        state.tracers.push({
-          x0: state.px,
-          y0: state.py,
-          tx: bestTarget.ref.x,
-          ty: bestTarget.ref.y,
-          color: tracerColor,
-          life: 0.16
-        });
-
-        const dmg = wep.damage * (state.weaponTier >= 2 ? 1.22 : 1.0) * (state.berserkTimer > 0 ? 1.35 : 1.0);
-        if (bestTarget.kind === "ENEMY") {
-          spawnImpactPuff(bestTarget.ref.x, bestTarget.ref.y, 0.05, "BLUD");
-          damageEnemy(bestTarget.ref, dmg, wep.knockback);
-          if (wep.spread || state.weaponTier === 3) {
-            for (const other of state.enemies) {
-              if (other === bestTarget.ref || other.hp <= 0) continue;
-              if (Math.hypot(other.x - bestTarget.ref.x, other.y - bestTarget.ref.y) < 2.2) {
-                if (state.weaponTier === 3) {
-                  state.tracers.push({
-                    x0: bestTarget.ref.x,
-                    y0: bestTarget.ref.y,
-                    tx: other.x,
-                    ty: other.y,
-                    color: "#38bdf8",
-                    life: 0.18
-                  });
-                }
-                spawnImpactPuff(other.x, other.y, 0.05, "BLUD");
-                damageEnemy(other, dmg * 0.65, wep.knockback * 0.7);
-              }
-            }
-          }
-        } else if (bestTarget.kind === "PILLAR") {
-          damageDestructibleColumn(bestTarget.ref, dmg * 0.6, bestTarget.ref.x, bestTarget.ref.y);
-        } else if (bestTarget.kind === "BREACH_WALL") {
-          damageDestructibleWall(bestTarget.ref.tx, bestTarget.ref.ty, dmg * 0.65, bestTarget.ref.x, bestTarget.ref.y);
-        } else if (bestTarget.kind === "RESONATOR") {
-          const res = bestTarget.ref;
-          res.hp -= dmg;
-          res.hitFlash = 0.22;
-          spawnBloodAndGore(res.x, res.y, 10, res.hp <= 0);
-          spawnDebrisChunks(res.x, res.y, 0.15, 8, true);
-          playSound("gore");
-          if (res.hp <= 0) {
-            state.resonatorsDestroyed++;
-            state.score += 600;
-            detonateBarrelOrNest(res.x, res.y, 3.4, 95);
-            state.stageProgress = 0.45 + (state.resonatorsDestroyed / state.resonatorsTotal) * 0.40;
-
-            if (state.resonatorsDestroyed >= state.resonatorsTotal) {
-              state.stage = 3;
-              state.stageProgress = 0.88;
-              state.weaponTier = 3;
-              state.hp = 100;
-              state.armor = 100;
-              setDoorGroupTarget("DOOR_B", 1.0);
-              playSound("switch_use");
-              spawnShockwaveRing(12.0, 7.0, 6.5, "#f59e0b");
-
-              triggerStageBreakthrough(
-                2,
-                "// UAC TACTICAL LINK · DIRECTIVE 02 COMPLETE",
-                "COOLING TOWERS DESTROYED — NORTH AIRLOCK UNSEALED",
-                "OVERCHARGE CAPACITORS LOCKED — ARMOR AT 100%",
-                "#f59e0b"
-              );
-
-              const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
-              if (goal) goal.active = true;
-              if (!state.bossSpawnedForMission) {
-                state.bossSpawnedForMission = true;
-                spawnEnemy("BOSS", { x: 12.0, y: 4.5 });
-              }
-              state.missionText = "OBJ 03/03: 北侧气闸门已开启 肃清领主并启动撤离终端";
-              state.missionShort = "S3 · 终端撤离";
-            } else {
-              playSound("objective");
-              triggerStageBreakthrough(
-                1,
-                "// UAC TACTICAL LINK · TARGET DESTROYED (1/2)",
-                "PRIMARY COOLING TOWER COLLAPSED — SHIELD AT 50%",
-                "PROCEED TO OPPOSITE WING TO DESTROY REMAINING TOWER",
-                "#38bdf8"
-              );
-              state.missionText = `OBJ 02/03: 摧毁剩余反应堆冷却塔 (${state.resonatorsDestroyed}/${state.resonatorsTotal})`;
-              state.missionShort = `S2 · 冷却塔 ${state.resonatorsDestroyed}/2`;
-            }
-          }
-        } else if (bestTarget.kind === "BARREL") {
-          const br = bestTarget.ref;
-          br.hp -= dmg;
-          br.hitFlash = 0.2;
-          spawnDebrisChunks(br.x, br.y, 0.1, 6, true);
-          if (br.hp <= 0) {
-            detonateBarrelOrNest(br.x, br.y, 3.5, 130);
-          }
-        }
+      // Fire when: (A) Player clicks / holds mouse / presses Space or F, OR (B) AI AutoPilot has a target!
+      const manualTrigger = state.manualFireRequested || (keys && (keys["Space"] || keys["KeyF"]));
+      if (manualTrigger || (state.autoPilot && bestTarget)) {
+        fireCurrentWeapon(bestTarget);
       }
+      state.manualFireRequested = false;
     }
 
     function damageEnemy(e, dmg, knockbackImpulse) {
       if (e.hp <= 0) return;
       e.hp -= dmg;
       e.hitFlash = 0.20;
-      e.painTimer = 0.30;
+      e.painTimer = 0.26;
       e.attackWindup = 0;
       e.woundCount = Math.min(6, e.woundCount + 1);
       e.staggerTilt = (Math.random() < 0.5 ? -1 : 1) * 0.24;
@@ -2768,27 +2855,42 @@
       const dy = e.y - state.py;
       const dist = Math.hypot(dx, dy) || 1;
       const invMass = 1.0 / (e.mass || 1.0);
-      e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.45;
-      e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.45;
-      resolveWallPenetration(e, e.radius || 0.40);
+      e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.65;
+      e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.65;
+      resolveWallPenetration(e, e.radius || 0.36);
 
       const isKill = e.hp <= 0;
       if (isKill) {
-        e.deathTimer = 0.65;
+        e.deathTimer = 0.55;
         e.corpse = true;
+        e.corpseHp = 42;
+        // Extra death launch impulse so shotgun kills visibly hurl the corpse backward across the floor!
+        e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.35;
+        e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.35;
+        // Overkill damage (> 45 overkill) immediately gibs the monster!
+        if (e.hp < -45) {
+          gibCorpse(e);
+        }
+        if (e.kind === "BOSS") {
+          setDoorGroupTarget("DOOR_B", 1.0);
+          const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
+          if (goal) goal.active = true;
+          state.missionShort = "前往撤离点";
+          triggerStageBreakthrough(3, "赛博领主已击毙", "撤离封锁已解除 — 踏入北侧绿色撤离电梯", "", "#10b981");
+        }
       }
       spawnImpactPuff(e.x, e.y, 0.06, "BLUD");
-      spawnBloodAndGore(e.x, e.y, isKill ? 18 : 8, isKill);
+      spawnBloodAndGore(e.x, e.y, isKill ? 16 : 6, isKill);
       playSound("gore");
 
       if (dist < 3.6) {
-        const drops = isKill ? 4 : 1;
+        const drops = isKill ? 3 : 1;
         for (let i = 0; i < drops && state.visorBlood.length < 10; i++) {
           state.visorBlood.push({
             x: 22 + Math.random() * (W - 44),
             y: 38 + Math.random() * (H - 92),
-            r: 3.5 + Math.random() * 5.5,
-            alpha: 0.72
+            r: 3.5 + Math.random() * 5.0,
+            alpha: 0.68
           });
         }
       }
@@ -2824,9 +2926,9 @@
 
       for (const d of state.doors) {
         if (d.open < d.targetOpen) {
-          d.open = Math.min(d.targetOpen, d.open + dt * 1.55);
+          d.open = Math.min(d.targetOpen, d.open + dt * 1.65);
         } else if (d.open > d.targetOpen) {
-          d.open = Math.max(d.targetOpen, d.open - dt * 1.55);
+          d.open = Math.max(d.targetOpen, d.open - dt * 1.65);
         }
       }
 
@@ -2842,37 +2944,26 @@
       }
 
       let bestInteract = null;
-      let bestDist = 2.45;
+      let bestDist = 2.4;
 
       for (const it of state.interactables) {
         it.pulse = (it.pulse || 0) + dt * 4.8;
         if (it.cooldown > 0) it.cooldown = Math.max(0, it.cooldown - dt);
-        if (it.used && it.kind !== "JUMP_PAD" && it.kind !== "TURRET_SWITCH") continue;
+        if (it.used) continue;
 
         const d = Math.hypot(it.x - state.px, it.y - state.py);
 
-        if (it.kind === "JUMP_PAD" && it.cooldown <= 0 && d < 1.15) {
-          it.cooldown = 3.0;
-          state.jumpPadBoostTimer = 1.35;
-          state.interactFlash = 0.35;
-          state.pitchKick = -4.0;
-          state.armor = Math.min(100, state.armor + 25);
-          playSound("switch_use");
-          spawnShockwaveRing(it.x, it.y, 4.0, "#f59e0b");
-        }
-
         if (it.id === "STAGE2_OVERLOAD" && state.stage === 2) {
-          if (d < 3.8) {
-            state.overloadPct = Math.min(100, state.overloadPct + dt * 28);
+          if (d < 3.6) {
+            state.overloadPct = Math.min(100, state.overloadPct + dt * 34);
             state.hackTickAccum += dt;
-            if (state.hackTickAccum >= 0.30) {
+            if (state.hackTickAccum >= 0.28) {
               state.hackTickAccum = 0;
               playSound("hack_tick");
             }
             const pct = Math.floor(state.overloadPct);
             state.stageProgress = 0.45 + (pct / 100) * 0.42;
-            state.missionText = `OBJ 02/03: 正在超载反应堆核心 (${pct}%)`;
-            state.missionShort = `S2 · 超载 ${pct}%`;
+            state.missionShort = `超载 ${pct}%`;
             if (state.overloadPct >= 100) {
               it.used = true;
               state.stage = 3;
@@ -2882,33 +2973,26 @@
               state.armor = 100;
               setDoorGroupTarget("DOOR_B", 1.0);
               playSound("switch_use");
-              spawnShockwaveRing(it.x, it.y, 7.0, "#f59e0b");
-              triggerStageBreakthrough(
-                2,
-                "// UAC TACTICAL LINK · DIRECTIVE 02 COMPLETE",
-                "REACTOR CORE AT 100% OVERLOAD — NORTH AIRLOCK OPEN",
-                "OVERCHARGE CAPACITORS LOCKED — FULL ARMOR RESTORED",
-                "#f59e0b"
-              );
+              spawnShockwaveRing(it.x, it.y, 7.0, "#10b981");
+              triggerStageBreakthrough(2, "核心超载完成", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#10b981");
               const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
               if (goal) goal.active = true;
               spawnZoneEnemies(3, 3);
-              state.missionText = "OBJ 03/03: 核心超载完成 冲过北侧大门进入撤离舱";
-              state.missionShort = "S3 · 紧急撤离";
+              state.missionShort = "前往撤离点";
             }
           }
           continue;
         }
 
         if (it.id === "STAGE3_GOAL" && state.stage !== 3) continue;
-        if (it.kind === "TURRET_SWITCH" && it.cooldown > 0) continue;
 
         if (d < bestDist) {
           bestDist = d;
           bestInteract = it;
         }
 
-        if (d < 1.45 && it.kind !== "JUMP_PAD") {
+        // Smooth walk-over / proximity activation for Keycards, Switches & Exit Elevator!
+        if (d < 1.45) {
           activateInteractable(it);
         }
       }
@@ -2929,94 +3013,87 @@
         return;
       }
 
-      if (state.nearbyInteractable) {
+      if (state.nearbyInteractable && Math.hypot(state.nearbyInteractable.x - state.px, state.nearbyInteractable.y - state.py) < 2.2) {
         if (activateInteractable(state.nearbyInteractable)) {
           return;
         }
       }
 
-      if (state.isWallStopped) {
-        state.quickTurnTimer = 0.16;
-        state.quickTurnStartYaw = state.yaw;
-        state.isWallStopped = false;
-        return;
-      }
-
-      if (state.blastCooldown > 0) return;
-      state.blastCooldown = 0.85;
-      state.blastFlash = 0.22;
-      state.recoil = 1.35;
-      state.pitchKick = 5.0;
-      state.screenShake = 3.2;
-      state.muzzleFlash = 1.0;
-      state.barrelHeat = 1.0;
-      state.pumpAnim = 1.0;
-      spawnEjectedShell(true);
-      playSound("shotgun");
-
-      // Heavy 10-Pellet Breaching Buckshot Blast on Tap!
-      castShotgunPelletRays(state.yaw, 10, 18);
-
-      const fwdX = Math.cos(state.yaw);
-      const fwdY = Math.sin(state.yaw);
-
-      for (const p of state.projectiles) {
-        if (p.friendly) continue;
-        const dx = p.x - state.px;
-        const dy = p.y - state.py;
-        const dist = Math.hypot(dx, dy);
-        if (dist < 3.6 && (dx * fwdX + dy * fwdY) / (dist || 1) > 0.35) {
-          p.friendly = true;
-          p.vx = -p.vx * 2.2;
-          p.vy = -p.vy * 2.2;
-          state.hp = Math.min(100, state.hp + 10);
-        }
-      }
-
-      for (const e of state.enemies) {
-        if (e.hp <= 0) continue;
-        const dx = e.x - state.px;
-        const dy = e.y - state.py;
-        const dist = Math.hypot(dx, dy);
-        if (dist < 3.8 && (dx * fwdX + dy * fwdY) / (dist || 1) > 0.35) {
-          damageEnemy(e, 58, 3.4);
-        }
-      }
+      // Fire the equipped weapon immediately at full native cadence!
+      state.manualFireRequested = true;
     }
 
     // =========================================================================
-    // 8. ENEMY RIGID-BODY IMPULSE PHYSICS, WALL-SLAM DAMAGE & 3D DEBRIS BOUNCE
+    // 8. RIGID-BODY IMPULSE PHYSICS FOR LIVING ENEMIES, SLIDING CORPSES & BARRELS
     // =========================================================================
     function updateEnemiesAndParticles(dt) {
+      // 1. Update Pushable & Exploding Barrels
       for (const b of state.barrels) {
-        if (b.hp <= 0 && b.explodeTimer > 0) {
-          b.explodeTimer = Math.max(0, b.explodeTimer - dt);
+        if (b.hp <= 0) {
+          if (b.explodeTimer > 0) b.explodeTimer = Math.max(0, b.explodeTimer - dt);
+          continue;
+        }
+        if (b.hitFlash > 0) b.hitFlash = Math.max(0, b.hitFlash - dt);
+        const bSpd = Math.hypot(b.vx || 0, b.vy || 0);
+        if (bSpd > 0.03) {
+          const bBody = { x: b.x, y: b.y, vx: b.vx, vy: b.vy, radius: b.radius || 0.28 };
+          resolveCircleMapPhysics(bBody, dt, 0.35);
+          b.x = bBody.x;
+          b.y = bBody.y;
+          b.vx = bBody.vx * Math.pow(0.03, dt);
+          b.vy = bBody.vy * Math.pow(0.03, dt);
         }
       }
+
       for (const col of state.destructibles) {
         if (col.hitFlash > 0) col.hitFlash = Math.max(0, col.hitFlash - dt);
       }
 
+      // 2. Update BOTH Living Monsters AND Sliding/Bouncing Corpses!
       for (const e of state.enemies) {
+        if (e.kickCooldown > 0) e.kickCooldown = Math.max(0, e.kickCooldown - dt);
+
         if (e.hp <= 0) {
           if (e.deathTimer > 0) e.deathTimer = Math.max(0, e.deathTimer - dt);
+          if (e.gibbed) continue;
+
+          // CORPSE PHYSICS: Fallen corpses slide across the floor with friction, smear blood & bounce off walls!
+          const corpseSpeed = Math.hypot(e.kvx || 0, e.kvy || 0);
+          if (corpseSpeed > 0.03) {
+            const cBody = { x: e.x, y: e.y, vx: e.kvx, vy: e.kvy, radius: 0.32 };
+            const cRes = resolveCircleMapPhysics(cBody, dt, 0.36);
+            e.x = cBody.x;
+            e.y = cBody.y;
+            e.kvx = cBody.vx * Math.pow(0.025, dt);
+            e.kvy = cBody.vy * Math.pow(0.025, dt);
+
+            if (corpseSpeed > 1.5 && Math.random() < 0.35) {
+              spawnBloodAndGore(e.x, e.y, 1, false);
+            }
+            if (cRes.maxImpactSpeed > 2.2 && cRes.hitNormal) {
+              e.corpseHp = (e.corpseHp || 42) - cRes.maxImpactSpeed * 12;
+              spawnImpactPuff(cRes.hitNormal.wx, cRes.hitNormal.wy, -0.15, "BLUD");
+              if (e.corpseHp <= 0) gibCorpse(e);
+            }
+          }
           continue;
         }
+
         if (e.hitFlash > 0) e.hitFlash = Math.max(0, e.hitFlash - dt);
         e.staggerTilt *= Math.pow(0.02, dt);
 
         const kSpeed = Math.hypot(e.kvx, e.kvy);
         if (kSpeed > 0.04) {
-          const eBody = { x: e.x, y: e.y, vx: e.kvx, vy: e.kvy, radius: e.radius || 0.40 };
+          const eBody = { x: e.x, y: e.y, vx: e.kvx, vy: e.kvy, radius: e.radius || 0.36 };
           const physRes = resolveCircleMapPhysics(eBody, dt, 0.42);
           e.x = eBody.x;
           e.y = eBody.y;
-          e.kvx = eBody.vx * Math.pow(0.015, dt);
-          e.kvy = eBody.vy * Math.pow(0.015, dt);
+          e.kvx = eBody.vx * Math.pow(0.018, dt);
+          e.kvy = eBody.vy * Math.pow(0.018, dt);
 
           // Wall-Slam Crushing Damage when blasted into a wall or pillar at high velocity!
-          if (physRes.maxImpactSpeed > 1.50 && physRes.hitNormal) {
-            const slamDmg = Math.round(physRes.maxImpactSpeed * 14);
+          if (physRes.maxImpactSpeed > 1.45 && physRes.hitNormal) {
+            const slamDmg = Math.round(physRes.maxImpactSpeed * 15);
             e.hp -= slamDmg;
             e.hitFlash = 0.22;
             spawnImpactPuff(physRes.hitNormal.wx, physRes.hitNormal.wy, 0.08, "PUFF");
@@ -3025,14 +3102,15 @@
               damageDestructibleWall(physRes.hitNormal.tx, physRes.hitNormal.ty, slamDmg, physRes.hitNormal.wx, physRes.hitNormal.wy);
             }
             if (e.hp <= 0 && !e.corpse) {
-              e.deathTimer = 0.65;
+              e.deathTimer = 0.55;
               e.corpse = true;
+              e.corpseHp = 42;
               state.score += e.score + 100;
               spawnBloodAndGore(e.x, e.y, 16, true);
             }
           }
         } else {
-          resolveWallPenetration(e, e.radius || 0.40);
+          resolveWallPenetration(e, e.radius || 0.36);
         }
 
         if (e.painTimer > 0) {
@@ -3050,13 +3128,13 @@
         if (!seesPlayer) continue;
 
         e.walkAnim += dt * 6;
-        if (dist > 2.2) {
+        if (dist > 2.1) {
           const walkBody = {
             x: e.x,
             y: e.y,
             vx: ux * e.speed,
             vy: uy * e.speed,
-            radius: e.radius || 0.40
+            radius: e.radius || 0.36
           };
           resolveCircleMapPhysics(walkBody, dt, 0.0);
           e.x = walkBody.x;
@@ -3080,16 +3158,22 @@
         }
       }
 
-      // True 2D Rigid-Body Mass-Impulse Collision Solver between Enemies (Domino Knockback Bowling!)
+      // 3. Rigid-Body Mass-Impulse Collision Solver (Includes Living Enemies AND High-Speed Flying Corpses!)
       for (let i = 0; i < state.enemies.length; i++) {
         const a = state.enemies[i];
-        if (a.hp <= 0) continue;
+        if (a.gibbed) continue;
+        const aDead = a.hp <= 0;
+        if (aDead && Math.hypot(a.kvx || 0, a.kvy || 0) < 0.25) continue;
+
         for (let j = i + 1; j < state.enemies.length; j++) {
           const b = state.enemies[j];
-          if (b.hp <= 0) continue;
+          if (b.gibbed) continue;
+          const bDead = b.hp <= 0;
+          if (aDead && bDead && Math.hypot(a.kvx - b.kvx, a.kvy - b.kvy) < 0.35) continue;
+
           const dx = b.x - a.x;
           const dy = b.y - a.y;
-          const minD = (a.radius || 0.40) + (b.radius || 0.40);
+          const minD = (aDead ? 0.30 : (a.radius || 0.36)) + (bDead ? 0.30 : (b.radius || 0.36));
           const d = Math.hypot(dx, dy);
           if (d > 0.001 && d < minD) {
             const nx = dx / d;
@@ -3104,29 +3188,29 @@
             b.x += nx * overlap * (invMassB / invSum);
             b.y += ny * overlap * (invMassB / invSum);
 
-            // Relative velocity along collision normal
             const rvx = (b.kvx || 0) - (a.kvx || 0);
             const rvy = (b.kvy || 0) - (a.kvy || 0);
             const rvn = rvx * nx + rvy * ny;
             if (rvn < 0) {
-              const eRest = 0.62;
+              const eRest = 0.58;
               const impulse = -(1.0 + eRest) * rvn / invSum;
               a.kvx -= impulse * invMassA * nx;
               a.kvy -= impulse * invMassA * ny;
               b.kvx += impulse * invMassB * nx;
               b.kvy += impulse * invMassB * ny;
-              if (Math.abs(impulse) > 1.2) {
-                b.painTimer = 0.18;
-                b.hitFlash = 0.15;
-                spawnImpactPuff((a.x + b.x) * 0.5, (a.y + b.y) * 0.5, 0.05, "BLUD");
+              if (Math.abs(impulse) > 1.1) {
+                if (!bDead) { b.painTimer = 0.18; b.hitFlash = 0.15; }
+                if (!aDead) { a.painTimer = 0.18; a.hitFlash = 0.15; }
+                spawnImpactPuff((a.x + b.x) * 0.5, (a.y + b.y) * 0.5, 0.02, "BLUD");
               }
             }
-            resolveWallPenetration(a, a.radius || 0.40);
-            resolveWallPenetration(b, b.radius || 0.40);
+            resolveWallPenetration(a, aDead ? 0.30 : (a.radius || 0.36));
+            resolveWallPenetration(b, bDead ? 0.30 : (b.radius || 0.36));
           }
         }
       }
 
+      // 4. Projectiles (Friendly Plasma & Enemy Fireballs)
       for (let i = state.projectiles.length - 1; i >= 0; i--) {
         const p = state.projectiles[i];
         p.x += p.vx * dt;
@@ -3134,7 +3218,7 @@
         const hitTile = getMapTile(p.x, p.y);
         if (hitTile > 0) {
           if (hitTile === 10) {
-            damageDestructibleWall(p.x, p.y, 18, p.x, p.y);
+            damageDestructibleWall(p.x, p.y, 24, p.x, p.y);
           } else {
             spawnImpactPuff(p.x, p.y, 0.0, "PUFF");
           }
@@ -3142,14 +3226,33 @@
           continue;
         }
         if (p.friendly) {
+          let hit = false;
           for (const e of state.enemies) {
-            if (e.hp > 0 && Math.hypot(p.x - e.x, p.y - e.y) < 0.55) {
-              damageEnemy(e, 85, 2.5);
-              state.projectiles.splice(i, 1);
+            if (e.gibbed) continue;
+            if (e.hp > 0 && Math.hypot(p.x - e.x, p.y - e.y) < 0.48) {
+              damageEnemy(e, 55, 2.2);
+              hit = true;
+              break;
+            } else if (e.hp <= 0 && Math.hypot(p.x - e.x, p.y - e.y) < 0.42) {
+              gibCorpse(e);
+              hit = true;
               break;
             }
           }
-        } else if (Math.hypot(p.x - state.px, p.y - state.py) < 0.42) {
+          if (!hit) {
+            for (const res of state.objectives) {
+              if (res.kind === "RESONATOR" && res.hp > 0 && Math.hypot(p.x - res.x, p.y - res.y) < 0.5) {
+                damageResonatorCore(res, 45);
+                hit = true;
+                break;
+              }
+            }
+          }
+          if (hit) {
+            state.projectiles.splice(i, 1);
+            continue;
+          }
+        } else if (Math.hypot(p.x - state.px, p.y - state.py) < 0.40) {
           state.projectiles.splice(i, 1);
           if (!state.autoPilot) {
             const dmg = state.armor > 0 ? 7 : 12;
@@ -3178,7 +3281,7 @@
         }
       }
 
-      // 3D Rigid-Body Debris Chunks with Gravity, Floor Restitution Bounce (e = 0.48) & Wall Bounce!
+      // 5. 3D Rigid-Body Debris Chunks with Gravity, Floor Restitution Bounce (e = 0.48) & Wall Bounce!
       for (let i = state.debris.length - 1; i >= 0; i--) {
         const db = state.debris[i];
         const nx = db.x + db.vx * dt;
@@ -3194,11 +3297,11 @@
           db.y = ny;
         }
         db.z += db.vz * dt;
-        db.vz -= 9.2 * dt; // Gravity acceleration
+        db.vz -= 9.2 * dt;
         if (db.z <= -0.42) {
           db.z = -0.42;
-          db.vz = -db.vz * 0.48; // Floor restitution bounce!
-          db.vx *= 0.72;         // Floor sliding friction
+          db.vz = -db.vz * 0.48;
+          db.vx *= 0.72;
           db.vy *= 0.72;
           db.bounces++;
         }
@@ -3208,7 +3311,6 @@
         }
       }
 
-      // Animated Freedoom Bullet Impact Sparks (puffa0..d0) & Blood Splatters (bluda0..c0)
       for (let i = state.impactPuffs.length - 1; i >= 0; i--) {
         const pf = state.impactPuffs[i];
         pf.z += pf.vz * dt;
@@ -3277,13 +3379,13 @@
       }
     }
 
-    // BFS-Guided AI AutoPilot
+    // BFS-Guided AI AutoPilot (Only active when #btnAutoPilot is enabled!)
     function updateAutoPilot(dt) {
       if (!state.autoPilot || state.mode !== "PLAYING") return;
 
       const missionTarget = getActiveMissionTarget();
       let combatFocus = null;
-      let bestDist = 7.2;
+      let bestDist = 7.5;
 
       for (const obj of state.objectives) {
         if (obj.kind === "RESONATOR" && obj.hp > 0 && hasLineOfSight(state.px, state.py, obj.x, obj.y)) {
@@ -3306,14 +3408,14 @@
         }
       }
 
-      if (state.stage === 1 && missionTarget && Math.hypot(missionTarget.x - state.px, missionTarget.y - state.py) < 6.0) {
+      if (state.stage === 1 && missionTarget && Math.hypot(missionTarget.x - state.px, missionTarget.y - state.py) < 4.5) {
         combatFocus = null;
       }
 
       if (combatFocus) {
         const desiredAng = Math.atan2(combatFocus.y - state.py, combatFocus.x - state.px);
         const diff = normalizeAngle(desiredAng - state.yaw);
-        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 7.8));
+        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 8.0));
         return;
       }
 
@@ -3321,7 +3423,7 @@
         const nextWp = findNextPathWaypoint(state.px, state.py, missionTarget.x, missionTarget.y);
         const desiredAng = Math.atan2(nextWp.y - state.py, nextWp.x - state.px);
         const diff = normalizeAngle(desiredAng - state.yaw);
-        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 6.5));
+        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 7.0));
       }
     }
 
@@ -3967,6 +4069,7 @@
         items.push({ type: "COLUMN", dist: Math.hypot(col.x - state.px, col.y - state.py), obj: col });
       }
       for (const e of state.enemies) {
+        if (e.gibbed) continue;
         if (e.hp <= 0 && !e.corpse && e.deathTimer <= 0) continue;
         const d = Math.hypot(e.x - state.px, e.y - state.py) + (e.hp <= 0 ? 0.25 : 0);
         items.push({ type: "ENEMY", dist: d, obj: e });
@@ -3980,7 +4083,7 @@
         items.push({ type: "OBJECTIVE", dist: Math.hypot(ob.x - state.px, ob.y - state.py), obj: ob });
       }
       for (const intr of state.interactables) {
-        if (intr.used && intr.kind !== "JUMP_PAD" && intr.kind !== "TURRET_SWITCH") continue;
+        if (intr.used && intr.kind !== "SWITCH" && intr.kind !== "JUMP_PAD" && intr.kind !== "TURRET_SWITCH") continue;
         items.push({ type: "INTERACT", dist: Math.hypot(intr.x - state.px, intr.y - state.py), obj: intr });
       }
       for (const pk of state.pickups) {
@@ -4113,23 +4216,22 @@
     }
 
     function drawBloodPool3D(bp, sx, sy, radius) {
-      const rx = Math.max(4, Math.min(30, radius));
-      const ry = Math.max(2, rx * 0.30);
+      const rx = Math.max(4, Math.min(32, radius));
+      const ry = Math.max(2, rx * 0.32);
       ctx.save();
       ctx.imageSmoothingEnabled = false;
+      ctx.fillStyle = "rgba(115, 18, 18, 0.86)";
+      ctx.beginPath();
+      ctx.ellipse(sx, sy, rx * (bp.hasGibs ? 1.25 : 1.0), ry * (bp.hasGibs ? 1.25 : 1.0), 0, 0, Math.PI * 2);
+      ctx.fill();
       if (bp.hasGibs && ASSET_IMAGES.pol5a0 && ASSET_IMAGES.pol5a0.complete && ASSET_IMAGES.pol5a0.naturalWidth > 0) {
-        ctx.drawImage(ASSET_IMAGES.pol5a0, sx - rx * 1.1, sy - ry * 1.4, rx * 2.2, ry * 2.8);
+        ctx.drawImage(ASSET_IMAGES.pol5a0, sx - rx * 1.35, sy - ry * 2.1, rx * 2.7, ry * 3.4);
         ctx.restore();
         return;
       }
-      ctx.translate(sx, sy);
-      ctx.fillStyle = "rgba(127, 29, 29, 0.88)";
-      ctx.beginPath();
-      ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
-      ctx.fill();
       ctx.fillStyle = "rgba(69, 10, 10, 0.85)";
       ctx.beginPath();
-      ctx.ellipse(0, 0, rx * 0.55, ry * 0.55, 0, 0, Math.PI * 2);
+      ctx.ellipse(sx, sy, rx * 0.55, ry * 0.55, 0, 0, Math.PI * 2);
       ctx.fill();
       ctx.restore();
     }
@@ -4271,30 +4373,51 @@
       ctx.save();
       ctx.imageSmoothingEnabled = false;
       const floorY = sy + sh * 0.48;
-      // 3D Diegetic Volumetric Beacon Beam + Freedoom Animated Tech-Lamp (tlmpa0..d0)
-      const beamW = Math.max(6, sw * 0.22);
-      const beamGrad = ctx.createLinearGradient(sx, 0, sx, floorY);
-      beamGrad.addColorStop(0.0, "rgba(239, 68, 68, 0.0)");
-      beamGrad.addColorStop(0.5, "rgba(249, 115, 22, 0.28)");
-      beamGrad.addColorStop(1.0, "rgba(251, 191, 36, 0.55)");
-      ctx.fillStyle = beamGrad;
-      ctx.fillRect(sx - beamW * 0.5, 0, beamW, floorY);
+      const cw = Math.max(14, sw * 0.54);
+      const ch = Math.max(22, sh * 0.92);
+      const pulse = 0.5 + 0.5 * Math.sin((ob.pulse || 0) * 1.6);
 
-      const lampSeq = ["tlmpa0", "tlmpb0", "tlmpc0", "tlmpd0"];
-      const lampImg = ASSET_IMAGES[lampSeq[(Date.now() >> 7) & 3]];
-      if (lampImg && lampImg.complete && lampImg.naturalWidth > 0) {
-        const lw = sw * 0.58;
-        const lh = sh * 0.95;
-        ctx.drawImage(lampImg, sx - lw * 0.5, floorY - lh, lw, lh);
-      } else {
-        ctx.translate(sx, sy);
-        const w = sw * 0.48;
-        const h = sh * 0.80;
-        ctx.fillStyle = "#27272a";
-        ctx.strokeStyle = "#f59e0b";
-        ctx.fillRect(-w * 0.5, -h * 0.5, w, h);
-        ctx.strokeRect(-w * 0.5, -h * 0.5, w, h);
+      // Ground hazard glow under High-Heat Reactor Core
+      ctx.fillStyle = "rgba(239, 68, 68, 0.32)";
+      ctx.beginPath();
+      ctx.ellipse(sx, floorY, cw * 0.78, Math.max(3, sh * 0.08), 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Armored Reactor Pedestal Base & Top Cap
+      ctx.fillStyle = "#27272a";
+      ctx.strokeStyle = "#71717a";
+      ctx.lineWidth = 1.2;
+      ctx.fillRect(sx - cw * 0.5, floorY - ch * 0.18, cw, ch * 0.18);
+      ctx.strokeRect(sx - cw * 0.5, floorY - ch * 0.18, cw, ch * 0.18);
+      ctx.fillRect(sx - cw * 0.5, floorY - ch, cw, ch * 0.16);
+      ctx.strokeRect(sx - cw * 0.5, floorY - ch, cw, ch * 0.16);
+
+      // Pulsing Exposed Plasma Core Cylinder
+      const coreW = cw * 0.62;
+      const coreH = ch * 0.66;
+      const coreTop = floorY - ch * 0.84;
+      const grad = ctx.createLinearGradient(sx - coreW * 0.5, coreTop, sx + coreW * 0.5, coreTop);
+      grad.addColorStop(0.0, "#991b1b");
+      grad.addColorStop(0.5, ob.hitFlash > 0 ? "#ffffff" : (pulse > 0.5 ? "#fde047" : "#f97316"));
+      grad.addColorStop(1.0, "#991b1b");
+      ctx.fillStyle = grad;
+      ctx.fillRect(sx - coreW * 0.5, coreTop, coreW, coreH);
+
+      // Magnetic Containment Coils
+      ctx.fillStyle = "#18181b";
+      for (let r = 1; r <= 3; r++) {
+        const ry = coreTop + (coreH * r) / 4;
+        ctx.fillRect(sx - cw * 0.46, ry - 1.5, cw * 0.92, 3);
       }
+
+      // Floating 3D Reactor HP Bar right above the cap
+      const barW = Math.max(20, cw * 0.95);
+      const hpPct = Math.max(0, Math.min(1, ob.hp / (ob.maxHp || 95)));
+      ctx.fillStyle = "rgba(9, 9, 11, 0.85)";
+      ctx.fillRect(sx - barW * 0.5, floorY - ch - 8, barW, 4);
+      ctx.fillStyle = hpPct > 0.45 ? "#f59e0b" : "#ef4444";
+      ctx.fillRect(sx - barW * 0.5, floorY - ch - 8, barW * hpPct, 4);
+
       ctx.restore();
     }
 
@@ -4302,44 +4425,141 @@
       ctx.save();
       ctx.imageSmoothingEnabled = false;
       const floorY = sy + sh * 0.48;
+      const pulse = 0.5 + 0.5 * Math.sin(Date.now() * 0.007);
 
-      // Diegetic 3D Vertical Beacon Shaft on active mission objective so player navigates with ZERO 2D HUD!
-      const isPrimaryTarget =
-        (state.stage === 1 && intr.id === "STAGE1_SWITCH" && !intr.used) ||
-        (state.stage === 2 && (intr.id === "STAGE2_KEYCARD" || intr.id === "STAGE2_OVERLOAD") && !intr.used) ||
-        (state.stage === 3 && intr.id === "STAGE3_GOAL");
-
-      if (isPrimaryTarget) {
-        const beamW = Math.max(5, sw * 0.18);
-        const beamGrad = ctx.createLinearGradient(sx, 0, sx, floorY);
-        beamGrad.addColorStop(0.0, "rgba(16, 185, 129, 0.0)");
-        beamGrad.addColorStop(0.55, "rgba(56, 189, 248, 0.24)");
-        beamGrad.addColorStop(1.0, "rgba(245, 158, 11, 0.52)");
-        ctx.fillStyle = beamGrad;
-        ctx.fillRect(sx - beamW * 0.5, 0, beamW, floorY);
-      }
-
+      // 1. KEYCARD: Glowing Holo-Pedestal + Bobbing Authentic Freedoom Blue/Red Keycard
       if (intr.kind === "KEYCARD") {
-        const keyImg = ((Date.now() >> 7) & 1) ? ASSET_IMAGES.bkeyb0 : ASSET_IMAGES.bkeya0;
+        const isRed = intr.keyColor === "RED";
+        const glowCol = isRed ? "rgba(239, 68, 68, 0.38)" : "rgba(56, 189, 248, 0.38)";
+        const strokeCol = isRed ? "#ef4444" : "#38bdf8";
+        const pedW = Math.max(12, sw * 0.38);
+        const pedH = Math.max(8, sh * 0.22);
+
+        ctx.fillStyle = glowCol;
+        ctx.beginPath();
+        ctx.ellipse(sx, floorY, pedW * 0.9, Math.max(3, sh * 0.07), 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "#1e293b";
+        ctx.strokeStyle = strokeCol;
+        ctx.lineWidth = 1.2;
+        ctx.fillRect(sx - pedW * 0.45, floorY - pedH, pedW * 0.9, pedH);
+        ctx.strokeRect(sx - pedW * 0.45, floorY - pedH, pedW * 0.9, pedH);
+
+        const keyImg = isRed
+          ? (ASSET_IMAGES.rkeya0 || ASSET_IMAGES.bkeya0)
+          : (((Date.now() >> 7) & 1) ? ASSET_IMAGES.bkeyb0 : ASSET_IMAGES.bkeya0);
+        const bobOffset = Math.sin(Date.now() * 0.006) * Math.max(2, sh * 0.05);
+        const kw = Math.max(14, sw * 0.36);
+        const kh = Math.max(14, sh * 0.36);
         if (keyImg && keyImg.complete && keyImg.naturalWidth > 0) {
-          const kw = Math.max(12, sw * 0.34);
-          const kh = Math.max(12, sh * 0.34);
-          ctx.drawImage(keyImg, sx - kw * 0.5, floorY - kh * 1.2, kw, kh);
-          ctx.restore();
-          return;
+          ctx.drawImage(keyImg, sx - kw * 0.5, floorY - pedH - kh - 4 + bobOffset, kw, kh);
+        } else {
+          ctx.fillStyle = strokeCol;
+          ctx.fillRect(sx - kw * 0.4, floorY - pedH - kh + bobOffset, kw * 0.8, kh * 0.7);
         }
+        ctx.restore();
+        return;
       }
 
-      if (intr.kind === "SWITCH" || intr.kind === "TURRET_SWITCH" || intr.kind === "OVERLOAD_TERM" || intr.kind === "PORTAL") {
-        const lampSeq = ["tlmpa0", "tlmpb0", "tlmpc0", "tlmpd0"];
-        const lampImg = ASSET_IMAGES[lampSeq[(Date.now() >> 7) & 3]];
-        if (lampImg && lampImg.complete && lampImg.naturalWidth > 0) {
-          const lw = sw * 0.46;
-          const lh = sh * 0.86;
-          ctx.drawImage(lampImg, sx - lw * 0.5, floorY - lh, lw, lh);
-          ctx.restore();
-          return;
+      // 2. SWITCH: Heavy Industrial Breaker Stanchion with Freedoom sw1s0 (Red OFF) / sw1s1 (Green ON) Panel!
+      if (intr.kind === "SWITCH" || intr.kind === "TURRET_SWITCH") {
+        const pw = Math.max(14, sw * 0.44);
+        const ph = Math.max(22, sh * 0.78);
+        ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+        ctx.beginPath();
+        ctx.ellipse(sx, floorY, pw * 0.65, Math.max(2.5, sh * 0.055), 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Steel Stanchion Body
+        ctx.fillStyle = "#27272a";
+        ctx.strokeStyle = intr.used ? "#10b981" : "#f59e0b";
+        ctx.lineWidth = 1.4;
+        ctx.fillRect(sx - pw * 0.5, floorY - ph, pw, ph);
+        ctx.strokeRect(sx - pw * 0.5, floorY - ph, pw, ph);
+
+        // Freedoom Breaker Patch (sw1s1 = Green Unlocked, sw1s0 = Red Locked)
+        const swImg = intr.used ? ASSET_IMAGES.sw1s1 : ASSET_IMAGES.sw1s0;
+        if (swImg && swImg.complete && swImg.naturalWidth > 0) {
+          ctx.drawImage(swImg, sx - pw * 0.38, floorY - ph * 0.82, pw * 0.76, ph * 0.52);
+        } else {
+          ctx.fillStyle = intr.used ? "#10b981" : "#ef4444";
+          ctx.fillRect(sx - pw * 0.28, floorY - ph * 0.72, pw * 0.56, ph * 0.32);
         }
+
+        // Top Beacon Lamp LED
+        ctx.fillStyle = intr.used ? "#10b981" : (pulse > 0.5 ? "#fde047" : "#ef4444");
+        ctx.fillRect(sx - pw * 0.25, floorY - ph - 3, pw * 0.5, 3);
+        ctx.restore();
+        return;
+      }
+
+      // 3. OVERLOAD_TERM: Cybernetic Overload Console + Floor Capture Zone Ring + Charge Bar
+      if (intr.kind === "OVERLOAD_TERM") {
+        const cw = Math.max(16, sw * 0.54);
+        const ch = Math.max(22, sh * 0.82);
+        const rx = Math.max(14, sw * 0.95);
+        const ry = Math.max(4, rx * 0.26);
+
+        // Floor Capture Ring
+        ctx.strokeStyle = "#38bdf8";
+        ctx.fillStyle = "rgba(56, 189, 248, 0.18)";
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.ellipse(sx, floorY, rx, ry, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Console Pedestal + aqcomp01 Screen
+        ctx.fillStyle = "#18181b";
+        ctx.strokeStyle = "#38bdf8";
+        ctx.fillRect(sx - cw * 0.5, floorY - ch, cw, ch);
+        ctx.strokeRect(sx - cw * 0.5, floorY - ch, cw, ch);
+        if (ASSET_IMAGES.aqcomp01 && ASSET_IMAGES.aqcomp01.complete && ASSET_IMAGES.aqcomp01.naturalWidth > 0) {
+          ctx.drawImage(ASSET_IMAGES.aqcomp01, sx - cw * 0.42, floorY - ch * 0.9, cw * 0.84, ch * 0.48);
+        }
+
+        // Charge Progress Bar above Console
+        const pct = Math.max(0, Math.min(1, (state.overloadPct || 0) / 100));
+        ctx.fillStyle = "rgba(9, 9, 11, 0.88)";
+        ctx.fillRect(sx - cw * 0.5, floorY - ch - 8, cw, 4);
+        ctx.fillStyle = "#38bdf8";
+        ctx.fillRect(sx - cw * 0.5, floorY - ch - 8, cw * pct, 4);
+        ctx.restore();
+        return;
+      }
+
+      // 4. PORTAL: Glowing Emerald Extraction Elevator Pad & Light Curtain
+      if (intr.kind === "PORTAL") {
+        const unlocked = state.stage === 3 || intr.active;
+        const rx = Math.max(14, sw * 0.72);
+        const ry = Math.max(5, rx * 0.30);
+        const mainCol = unlocked ? "#10b981" : "#f59e0b";
+
+        if (unlocked) {
+          const beamGrad = ctx.createLinearGradient(sx, floorY - sh * 1.25, sx, floorY);
+          beamGrad.addColorStop(0.0, "rgba(16, 185, 129, 0.0)");
+          beamGrad.addColorStop(0.55, "rgba(16, 185, 129, 0.25)");
+          beamGrad.addColorStop(1.0, "rgba(52, 211, 153, 0.58)");
+          ctx.fillStyle = beamGrad;
+          ctx.fillRect(sx - rx * 0.75, floorY - sh * 1.25, rx * 1.5, sh * 1.25);
+        }
+
+        ctx.fillStyle = unlocked ? "rgba(6, 95, 70, 0.78)" : "rgba(69, 26, 3, 0.65)";
+        ctx.strokeStyle = mainCol;
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.ellipse(sx, floorY, rx, ry, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeStyle = unlocked ? "#6ee7b7" : "#fcd34d";
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.ellipse(sx, floorY, rx * (0.45 + pulse * 0.25), ry * (0.45 + pulse * 0.25), 0, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+        return;
       }
 
       ctx.translate(sx, sy);
@@ -4520,7 +4740,7 @@
         ctx.textAlign = "center";
         ctx.font = `900 10.5px ${HUD_SANS_FONT}`;
         ctx.fillStyle = "#09090b";
-        ctx.fillText("STAGE CLEAR // 点击任意地图节点立即切入对应关卡", W * 0.5, 33, W - 36);
+        ctx.fillText("本关肃清 · 点击任意地图节点立即切入对应关卡", W * 0.5, 33, W - 36);
       }
 
       ctx.restore();
@@ -4542,7 +4762,7 @@
       const cy = H * 0.48;
       const missionTarget = getActiveMissionTarget();
 
-      // 1. Diegetic Visor Blood Spatter Droplets (Physical lens feedback, zero UI text)
+      // 1. Diegetic Visor Blood Spatter Droplets (Physical lens feedback)
       for (const vb of state.visorBlood) {
         ctx.fillStyle = `rgba(185, 28, 28, ${vb.alpha})`;
         ctx.beginPath();
@@ -4550,17 +4770,65 @@
         ctx.fill();
       }
 
-      // 2. Diegetic Peripheral Edge Glow when 3D Objective Beacon is outside FOV (Zero text / Zero 2D HUD boxes)
+      // 2. In-World 3D Projected Spatial Objective Diamond Waypoint (Crystal-clear guidance, zero 2D status-bar clutter!)
       if (missionTarget) {
-        const angDiff = normalizeAngle(Math.atan2(missionTarget.y - state.py, missionTarget.x - state.px) - state.yaw);
-        if (Math.abs(angDiff) > 0.52) {
-          const edgeX = angDiff < 0 ? 4 : W - 8;
-          ctx.fillStyle = "rgba(245, 158, 11, 0.45)";
-          ctx.fillRect(edgeX, cy - 22, 4, 44);
+        const dx = missionTarget.x - state.px;
+        const dy = missionTarget.y - state.py;
+        const distMeters = Math.max(1, Math.round(Math.hypot(dx, dy)));
+        const invDet = 1.0 / (planeX * dirY - dirX * planeY);
+        const tx = invDet * (dirY * dx - dirX * dy);
+        const ty = invDet * (-planeY * dx + planeX * dy);
+        const wpColor = missionTarget.color || "#f59e0b";
+
+        ctx.save();
+        if (ty > 0.35) {
+          const rawScreenX = (W * 0.5) * (1 + tx / ty);
+          const projH = Math.min(140, H / ty);
+          if (rawScreenX >= 20 && rawScreenX <= W - 20) {
+            const wpY = Math.max(42, Math.min(H - 115, horizonY - projH * 0.36));
+            // 3D Diamond Marker
+            ctx.translate(rawScreenX, wpY);
+            ctx.fillStyle = "rgba(9, 11, 16, 0.78)";
+            ctx.strokeStyle = wpColor;
+            ctx.lineWidth = 1.5;
+            ctx.beginPath();
+            ctx.moveTo(0, -6);
+            ctx.lineTo(6, 0);
+            ctx.lineTo(0, 6);
+            ctx.lineTo(-6, 0);
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
+            ctx.textAlign = "center";
+            const tag = `${missionTarget.label} ${distMeters}米`;
+            const tw = ctx.measureText(tag).width + 10;
+            ctx.fillStyle = "rgba(9, 11, 16, 0.80)";
+            ctx.fillRect(-tw * 0.5, -20, tw, 12);
+            ctx.fillStyle = "#f8fafc";
+            ctx.fillText(tag, 0, -11);
+          } else {
+            const isLeft = rawScreenX < 20;
+            const edgeX = isLeft ? 10 : W - 10;
+            ctx.fillStyle = wpColor;
+            ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
+            ctx.textAlign = isLeft ? "left" : "right";
+            ctx.fillText(isLeft ? `◀ ${missionTarget.label}` : `${missionTarget.label} ▶`, edgeX, cy - 18);
+          }
+        } else {
+          const angDiff = normalizeAngle(Math.atan2(dy, dx) - state.yaw);
+          const isLeft = angDiff < 0;
+          const edgeX = isLeft ? 10 : W - 10;
+          ctx.fillStyle = wpColor;
+          ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
+          ctx.textAlign = isLeft ? "left" : "right";
+          ctx.fillText(isLeft ? `◀ ${missionTarget.label}` : `${missionTarget.label} ▶`, edgeX, cy - 18);
         }
+        ctx.restore();
       }
 
-      // 3. Minimalist Optical Center Reticle (4-tick micro-crosshair + hit X, zero text)
+      // 3. Minimalist Optical Center Reticle (4-tick micro-crosshair + hit X)
       ctx.strokeStyle = state.lockedEnemy ? "#f59e0b" : "rgba(255, 255, 255, 0.45)";
       ctx.lineWidth = 1.4;
       ctx.beginPath();
@@ -4581,6 +4849,23 @@
         ctx.stroke();
       }
 
+      // Proximity Context Prompt ONLY when standing right next to an interactable (< 2.1m)
+      if (state.nearbyInteractable && !state.nearbyInteractable.used && state.interactPrompt) {
+        ctx.save();
+        ctx.font = `800 10px ${HUD_SANS_FONT}`;
+        ctx.textAlign = "center";
+        const pText = `点击交互 · ${state.interactPrompt}`;
+        const pw = ctx.measureText(pText).width + 14;
+        ctx.fillStyle = "rgba(9, 11, 16, 0.85)";
+        ctx.strokeStyle = "#f59e0b";
+        ctx.lineWidth = 1.1;
+        ctx.fillRect(cx - pw * 0.5, cy + 18, pw, 16);
+        ctx.strokeRect(cx - pw * 0.5, cy + 18, pw, 16);
+        ctx.fillStyle = "#fde047";
+        ctx.fillText(pText, cx, cy + 29);
+        ctx.restore();
+      }
+
       // 4. Rising Muzzle Gunsmoke & Ejected Spinning Brass Shell Casings
       for (const sm of state.gunSmoke) {
         ctx.fillStyle = `rgba(168, 162, 158, ${sm.alpha})`;
@@ -4599,8 +4884,9 @@
         ctx.restore();
       }
 
-      // 5. Full-Bleed First-Person Freedoom Weapon (Anchored cleanly at bottom edge H - 2 with ZERO status bar!)
-      const bobAmp = Math.min(1.0, Math.abs(state.curSpeed) / state.walkSpeed);
+      // 5. Full-Bleed First-Person Freedoom Weapon + Diegetic 3-LED Receiver Health Indicator
+      const moveMag = Math.hypot(state.curSpeed, state.strafeSpeed || 0);
+      const bobAmp = Math.min(1.0, moveMag / state.walkSpeed);
       const bobX = Math.cos(state.bobPhase * 0.5) * 4.5 * bobAmp + (state.gimbalYawOffset / 0.28) * 16;
       const bobY = Math.abs(Math.sin(state.bobPhase)) * 4.5 * bobAmp + state.recoil * 9.0;
       const wx = cx + bobX;
@@ -4666,9 +4952,44 @@
         const wepCanvas = SPRITE_CACHES[`WEP_${state.weaponIdx}`] || SPRITE_CACHES.WEP_0;
         ctx.drawImage(wepCanvas, -52, -88, 104, 104);
       }
+
+      // Diegetic 3-Segment Health Collar Strip mounted on weapon receiver base
+      const hpCol = state.hp >= 65 ? "#10b981" : state.hp >= 35 ? "#f59e0b" : "#ef4444";
+      ctx.fillStyle = "rgba(9, 11, 16, 0.82)";
+      ctx.fillRect(-16, -12, 32, 4);
+      for (let seg = 0; seg < 3; seg++) {
+        if (state.hp > seg * 33) {
+          ctx.fillStyle = hpCol;
+          ctx.fillRect(-14 + seg * 10, -11, 8, 2.2);
+        }
+      }
       ctx.restore();
 
-      // 6. Diegetic Low-HP / Hurt Crimson Bezel Vignette (Replaces 2D HP bar inside level!)
+      // 6. Transient Stage Breakthrough Visor Directive Toast (Fades away cleanly after 2.2s!)
+      if (state.stageBanner && state.stageBanner.timer > 0) {
+        const sb = state.stageBanner;
+        const alpha = Math.min(1.0, sb.timer * 1.8);
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = "rgba(9, 12, 18, 0.88)";
+        ctx.strokeStyle = sb.color || "#f59e0b";
+        ctx.lineWidth = 1.2;
+        ctx.fillRect(14, 14, W - 28, 32);
+        ctx.strokeRect(14, 14, W - 28, 32);
+        ctx.fillStyle = sb.color || "#f59e0b";
+        ctx.fillRect(14, 14, 4, 32);
+
+        ctx.textAlign = "left";
+        ctx.font = `900 10px ${HUD_SANS_FONT}`;
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText(sb.badge, 24, 27, W - 44);
+        ctx.font = `700 8.8px ${HUD_SANS_FONT}`;
+        ctx.fillStyle = "#fcd34d";
+        ctx.fillText(sb.title, 24, 40, W - 44);
+        ctx.restore();
+      }
+
+      // 7. Diegetic Low-HP / Hurt Crimson Bezel Vignette
       const lowHpPulse = state.hp < 45 ? (0.25 + 0.20 * Math.sin(Date.now() * 0.01)) : 0;
       const hurtAlpha = Math.min(0.75, state.hurtFlash * 1.8 + lowHpPulse);
       if (hurtAlpha > 0.02) {
@@ -4688,7 +5009,7 @@
     }
 
     // =========================================================================
-    // 13. UI & INPUT BINDINGS (Including Panoramic Campaign Map Node Hit-Testing!)
+    // 13. UI & INPUT BINDINGS (Including Panoramic Campaign Map & Mouse Drag Aiming!)
     // =========================================================================
     function syncMenus() {
       document.getElementById("menuHome").classList.toggle("hidden", state.mode !== "MENU");
@@ -4714,17 +5035,17 @@
     function updateTelemetryDOM() {
       const curNode = CAMPAIGN_NODES[state.campaignNodeIdx] || CAMPAIGN_NODES[0];
       document.getElementById("hudScore").textContent = String(state.score);
-      document.getElementById("hudCombo").textContent = `${state.multiplier.toFixed(1)}x`;
+      document.getElementById("hudCombo").textContent = `${state.multiplier.toFixed(1)}倍`;
       document.getElementById("hudHpText").textContent = `${state.hp}%`;
       document.getElementById("hudWaveTarget").textContent = `${curNode.code} · ${state.missionShort}`;
       document.getElementById("hudActiveSkills").textContent =
         state.sectorClearTimer > 0
-          ? "CAMPAIGN_MAP"
+          ? "全景战役图"
           : state.berserkTimer > 0
-            ? `BERSERK_T${state.weaponTier}`
-            : state.wallsBreached > 0
-              ? `BREACH_${state.wallsBreached}`
-              : `${state.moveState}_T${state.weaponTier}`;
+            ? "狂暴超载"
+            : (state.wallsBreached > 0 || state.corpsesGibbed > 0)
+              ? `破墙${state.wallsBreached}·碎尸${state.corpsesGibbed}`
+              : state.moveState;
     }
 
     document.getElementById("btnStartGame").addEventListener("click", () => deployToCampaignNode(state.campaignNodeIdx));
@@ -4749,11 +5070,10 @@
     });
 
     document.getElementById("btnRestart").addEventListener("click", () => {
-      const nextNode = (state.campaignNodeIdx + 1) % CAMPAIGN_NODES.length;
-      if (state.mode === "MENU") {
-        state.campaignNodeIdx = nextNode;
-        syncMenus();
+      if (state.mode !== "PLAYING") {
+        deployToCampaignNode(state.campaignNodeIdx);
       } else {
+        const nextNode = (state.campaignNodeIdx + 1) % CAMPAIGN_NODES.length;
         deployToCampaignNode(nextNode);
       }
     });
@@ -4841,7 +5161,11 @@
     });
     crownDial.addEventListener("pointerup", () => { crownDragging = false; });
 
-    // Click any node on the Panoramic Tactical Campaign Map to deploy directly into that stage!
+    // Click Campaign Map nodes OR drag horizontally on Watch Canvas for 1:1 FPS mouse-aiming + tap/hold firing!
+    let canvasDragging = false;
+    let canvasLastX = 0;
+    let canvasDragSum = 0;
+
     canvas.addEventListener("pointerdown", (e) => {
       const rect = canvas.getBoundingClientRect();
       const lx = ((e.clientX - rect.left) / rect.width) * W;
@@ -4864,8 +5188,26 @@
           return;
         }
       }
+
+      canvasDragging = true;
+      canvasLastX = e.clientX;
+      canvasDragSum = 0;
+      try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
       triggerTapAction();
     });
+
+    canvas.addEventListener("pointermove", (e) => {
+      if (!canvasDragging || state.mode !== "PLAYING" || state.autoPilot) return;
+      const dx = e.clientX - canvasLastX;
+      canvasLastX = e.clientX;
+      canvasDragSum += Math.abs(dx);
+      if (canvasDragSum > 3) {
+        state.yaw = normalizeAngle(state.yaw + dx * 0.011);
+      }
+    });
+
+    canvas.addEventListener("pointerup", () => { canvasDragging = false; });
+    canvas.addEventListener("pointercancel", () => { canvasDragging = false; });
 
     const keys = {};
     window.addEventListener("keydown", (e) => {
@@ -4873,6 +5215,15 @@
       if (e.code === "Space" || e.code === "KeyE") {
         e.preventDefault();
         triggerTapAction();
+      } else if (e.code === "Digit1") {
+        state.weaponIdx = 0;
+        syncArmorySelection();
+      } else if (e.code === "Digit2") {
+        state.weaponIdx = 1;
+        syncArmorySelection();
+      } else if (e.code === "Digit3") {
+        state.weaponIdx = 2;
+        syncArmorySelection();
       } else if (e.code === "KeyM") {
         const nextNode = (state.campaignNodeIdx + 1) % CAMPAIGN_NODES.length;
         deployToCampaignNode(nextNode);
@@ -4883,7 +5234,7 @@
     });
 
     // =========================================================================
-    // 13. MAIN 60 FPS GAME LOOP
+    // 14. MAIN 60 FPS GAME LOOP
     // =========================================================================
     let lastTime = performance.now();
     function frame(now) {
@@ -4905,15 +5256,17 @@
         if (state.blastCooldown > 0) state.blastCooldown = Math.max(0, state.blastCooldown - dt);
         if (state.berserkTimer > 0) state.berserkTimer = Math.max(0, state.berserkTimer - dt);
 
+        if (canvasDragging && canvasDragSum < 5) {
+          state.manualFireRequested = true;
+        }
+
         if (state.sectorClearTimer <= 0) {
           updateAutoPilot(dt);
           stepPlayerMovement(dt, keys);
-          updateCombat(dt);
+          updateCombat(dt, keys);
         }
         updateMissionsAndAudio(dt);
         updateEnemiesAndParticles(dt);
-      } else {
-        state.yaw = normalizeAngle(state.yaw + 0.18 * dt);
       }
 
       renderRaycasterFrame();
