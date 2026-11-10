@@ -1,5 +1,5 @@
 ﻿{
-    "timestamp":  "2026-11-10T23:57:03.1981456+08:00",
+    "timestamp":  "2026-11-11T00:43:32.4895670+08:00",
     "htmlPath":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\CyberStrideSimulator.html",
     "screenshots":  {
                         "03_gameplay_early_2s":  "C:\\Users\\Cz\\.gemini\\antigravity\\scratch\\verbose-barnacle\\Preview\\playtest_output\\03_gameplay_early_2s.png",
@@ -24,183 +24,219 @@
     "timeline":  [
                      {
                          "t":  0.5,
-                         "score":  "210",
-                         "combo":  "1.0倍",
+                         "score":  "2380",
+                         "combo":  "杀神 2.6倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 开启南门",
-                         "skills":  "破墙0·碎尸1",
-                         "centerBrightPct":  0.3
+                         "skills":  "❖ 电网碎尸",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  1,
-                         "score":  "210",
-                         "combo":  "1.0倍",
+                         "score":  "2580",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 开启南门",
-                         "skills":  "破墙0·碎尸1",
+                         "skills":  "❖ 电网碎尸",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  1.5,
-                         "score":  "860",
-                         "combo":  "1.0倍",
+                         "score":  "2980",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
-                         "centerBrightPct":  23.7
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "❖ 电网碎尸",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  2,
-                         "score":  "1040",
-                         "combo":  "1.0倍",
+                         "score":  "3375",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "▲ 猛踹油桶",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  2.5,
-                         "score":  "1865",
-                         "combo":  "1.5倍",
+                         "score":  "5425",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "◈ 轰墙破障",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  3,
-                         "score":  "2165",
-                         "combo":  "2.0倍",
+                         "score":  "6685",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
-                         "centerBrightPct":  0
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "◈ 轰墙破障",
+                         "centerBrightPct":  3
                      },
                      {
                          "t":  3.5,
-                         "score":  "2165",
-                         "combo":  "2.0倍",
+                         "score":  "6760",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
-                         "centerBrightPct":  1.2
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "◈ 轰墙破障",
+                         "centerBrightPct":  0.3
                      },
                      {
                          "t":  4,
-                         "score":  "2345",
-                         "combo":  "2.0倍",
+                         "score":  "7590",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸1",
+                         "wave":  "第 01 关 · 夺取门禁卡",
+                         "skills":  "▲ 猛踹油桶",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  4.5,
-                         "score":  "3505",
-                         "combo":  "2.0倍",
+                         "score":  "8955",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
-                         "wave":  "第 01 关 · 拾取门禁卡",
-                         "skills":  "破墙1·碎尸2",
+                         "wave":  "第 01 关 · 前往撤离点",
+                         "skills":  "▲ 暗门伏击开启",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  5,
-                         "score":  "4525",
-                         "combo":  "2.0倍",
+                         "score":  "8980",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "破墙2·碎尸4",
+                         "skills":  "▲ 暗门伏击开启",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  5.5,
-                         "score":  "4525",
-                         "combo":  "3.0倍",
+                         "score":  "11005",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
-                         "centerBrightPct":  0.8
+                         "skills":  "血怒超载",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  6,
-                         "score":  "7585",
-                         "combo":  "2.0倍",
+                         "score":  "16865",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
+                         "skills":  "血怒超载",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  6.5,
-                         "score":  "8065",
-                         "combo":  "2.0倍",
+                         "score":  "16890",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
+                         "skills":  "血怒超载",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  7,
-                         "score":  "9885",
-                         "combo":  "3.0倍",
+                         "score":  "17065",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
+                         "skills":  "血怒超载",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  7.5,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "17625",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
-                         "centerBrightPct":  0
+                         "skills":  "血怒超载",
+                         "centerBrightPct":  0.5
                      },
                      {
                          "t":  8,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "19435",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
-                         "centerBrightPct":  0
+                         "skills":  "血怒超载",
+                         "centerBrightPct":  2
                      },
                      {
                          "t":  8.5,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "19635",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "狂暴超载",
+                         "skills":  "星图选关",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  9,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "19660",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "全景战役图",
+                         "skills":  "星图选关",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  9.5,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "19760",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "全景战役图",
+                         "skills":  "星图选关",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  10,
-                         "score":  "10915",
-                         "combo":  "3.0倍",
+                         "score":  "19760",
+                         "combo":  "极意 3.0倍",
                          "hp":  "100%",
                          "wave":  "第 01 关 · 前往撤离点",
-                         "skills":  "全景战役图",
+                         "skills":  "星图选关",
                          "centerBrightPct":  0
+                     },
+                     {
+                         "t":  10.5,
+                         "score":  "19760",
+                         "combo":  "极意 3.0倍",
+                         "hp":  "100%",
+                         "wave":  "第 01 关 · 前往撤离点",
+                         "skills":  "星图选关",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  11,
+                         "score":  "270",
+                         "combo":  "锋芒 1.4倍",
+                         "hp":  "100%",
+                         "wave":  "第 02 关 · 开启南门",
+                         "skills":  "破墙3·碎尸10",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  11.5,
+                         "score":  "565",
+                         "combo":  "喋血 1.8倍",
+                         "hp":  "100%",
+                         "wave":  "第 02 关 · 开启南门",
+                         "skills":  "💥 撞墙碎裂",
+                         "centerBrightPct":  1.3
+                     },
+                     {
+                         "t":  12,
+                         "score":  "590",
+                         "combo":  "喋血 1.8倍",
+                         "hp":  "100%",
+                         "wave":  "第 02 关 · 开启南门",
+                         "skills":  "💥 撞墙碎裂",
+                         "centerBrightPct":  1.4
                      }
                  ]
 }

@@ -3,32 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>曙光协议 · 腕上硬核第一人称射击模拟器</title>
+  <title>曙光协议 · 腕上极速处决第一人称射击模拟器</title>
   <style>
     :root {
-      --bg: #07080a;
-      --panel: #111318;
-      --border: #2a2e39;
-      --text: #f1f5f9;
+      --bg: #050811;
+      --panel: rgba(13, 18, 30, 0.88);
+      --border: rgba(56, 189, 248, 0.22);
+      --text: #f8fafc;
       --muted: #94a3b8;
-      --amber: #f59e0b;
-      --crimson: #ef4444;
+      --amber: #fbbf24;
+      --crimson: #f43f5e;
       --emerald: #10b981;
-      --cyan: #38bdf8;
+      --cyan: #22d3ee;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
       width: 100%;
       min-height: 100vh;
-      background: radial-gradient(circle at 30% 25%, #1c1614 0%, #060709 75%);
+      background:
+        radial-gradient(circle at 24% 22%, rgba(34, 211, 238, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 78% 18%, rgba(244, 63, 94, 0.10) 0%, transparent 48%),
+        radial-gradient(circle at 50% 50%, #0d1424 0%, #04060c 78%);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Microsoft YaHei", sans-serif;
       -webkit-font-smoothing: antialiased;
       user-select: none;
       overflow-x: hidden;
     }
     .mono {
-      font-family: "JetBrains Mono", "SF Mono", Consolas, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-family: "JetBrains Mono", "SF Mono", Consolas, "PingFang SC", "Microsoft YaHei", sans-serif;
       font-variant-numeric: tabular-nums;
     }
     .app-layout {
@@ -36,7 +39,7 @@
       margin: 0 auto;
       padding: 20px 24px;
       display: grid;
-      grid-template-columns: 420px 1fr;
+      grid-template-columns: 400px 1fr;
       gap: 28px;
       align-items: center;
       min-height: 100vh;
@@ -45,7 +48,7 @@
       .app-layout { grid-template-columns: 1fr; justify-items: center; }
     }
 
-    /* ==================== APPLE WATCH ULTRA CHASSIS ==================== */
+    /* ==================== APPLE WATCH ULTRA TITANIUM CHASSIS ==================== */
     .watch-stage {
       display: flex;
       flex-direction: column;
@@ -54,17 +57,17 @@
       position: relative;
     }
     .watch-strap-top, .watch-strap-bottom {
-      width: 164px;
-      height: 44px;
+      width: 162px;
+      height: 42px;
       background: repeating-linear-gradient(
         0deg,
-        #1c1917 0px,
-        #1c1917 8px,
-        #0c0a09 8px,
-        #0c0a09 14px
+        #151c2c 0px,
+        #151c2c 7px,
+        #090d16 7px,
+        #090d16 13px
       );
-      border-left: 2px solid #3f3a36;
-      border-right: 2px solid #3f3a36;
+      border-left: 2px solid #334155;
+      border-right: 2px solid #334155;
       box-shadow: inset 0 0 18px rgba(0,0,0,0.85);
     }
     .watch-strap-top { border-radius: 18px 18px 0 0; }
@@ -80,12 +83,13 @@
       height: 378px;
       border-radius: 74px;
       padding: 20px;
-      background: linear-gradient(145deg, #3c3835 0%, #181615 50%, #2b2826 100%);
+      background: linear-gradient(145deg, #475569 0%, #1e293b 48%, #0f172a 100%);
       box-shadow:
-        0 28px 65px rgba(0, 0, 0, 0.9),
-        inset 0 2px 4px rgba(255, 255, 255, 0.22),
+        0 30px 70px rgba(0, 0, 0, 0.92),
+        0 0 38px rgba(34, 211, 238, 0.10),
+        inset 0 2px 4px rgba(255, 255, 255, 0.28),
         inset 0 -3px 8px rgba(0, 0, 0, 0.92),
-        0 0 0 2px #12100e;
+        0 0 0 2px #090d16;
       position: relative;
       display: flex;
       align-items: center;
@@ -95,10 +99,10 @@
       width: 272px;
       height: 334px;
       border-radius: 56px;
-      background: #050505;
+      background: #04070f;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 0 0 2px rgba(56, 189, 248, 0.14);
       touch-action: none;
     }
     #watchCanvas {
@@ -123,49 +127,49 @@
       border-radius: 6px 12px 12px 6px;
       background: repeating-linear-gradient(
         to bottom,
-        #57534e 0px,
-        #57534e 4px,
-        #1c1917 4px,
-        #1c1917 8px
+        #64748b 0px,
+        #64748b 4px,
+        #0f172a 4px,
+        #0f172a 8px
       );
-      border: 1px solid #78716c;
-      border-left: 3px solid #ea580c;
+      border: 1px solid #94a3b8;
+      border-left: 3px solid #f43f5e;
       box-shadow: -2px 0 6px rgba(0,0,0,0.7), 4px 6px 14px rgba(0,0,0,0.65);
       cursor: ns-resize;
       position: relative;
     }
     #crownDial:hover {
-      border-color: var(--amber);
-      box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+      border-color: var(--cyan);
+      box-shadow: 0 0 14px rgba(34, 211, 238, 0.5);
     }
     #sideButton {
       width: 14px;
       height: 52px;
       border-radius: 0 8px 8px 0;
-      background: linear-gradient(to bottom, #44403c, #1c1917);
-      border: 1px solid #57534e;
+      background: linear-gradient(to bottom, #475569, #0f172a);
+      border: 1px solid #64748b;
       box-shadow: 3px 4px 10px rgba(0,0,0,0.6);
       cursor: pointer;
     }
 
-    /* ==================== WATCH OVERLAY MENUS (STRICT HIG >= 12px & >= 48x48px) ==================== */
+    /* ==================== WATCH OVERLAY MENUS (STRICT HIG >= 12px & >= 46x46px) ==================== */
     .watch-overlay {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 16px 14px;
-      background: radial-gradient(circle at 50% 30%, rgba(28, 16, 12, 0.86) 0%, rgba(8, 6, 5, 0.95) 85%);
+      padding: 14px 12px;
+      background: radial-gradient(circle at 50% 25%, rgba(15, 23, 42, 0.92) 0%, rgba(4, 7, 15, 0.97) 85%);
       z-index: 10;
     }
-    /* Home menu uses a transparent center window so the Interactive Panoramic Campaign Map on <canvas> is visible & clickable! */
+    /* Transparent center window so Panoramic Hologram Map on <canvas> shines through cleanly */
     #menuHome.watch-overlay {
-      background: linear-gradient(180deg, rgba(9, 10, 14, 0.88) 0%, rgba(9, 10, 14, 0.08) 19%, rgba(9, 10, 14, 0.08) 68%, rgba(9, 10, 14, 0.94) 100%);
+      background: linear-gradient(180deg, rgba(5, 9, 18, 0.86) 0%, rgba(5, 9, 18, 0.04) 17%, rgba(5, 9, 18, 0.04) 76%, rgba(5, 9, 18, 0.94) 100%);
       pointer-events: none;
     }
     #menuHome .menu-top-bar,
-    #menuHome .menu-actions {
+    #menuHome .menu-actions-row {
       pointer-events: auto;
     }
     .watch-overlay.hidden { display: none !important; }
@@ -181,30 +185,30 @@
       font-weight: 800;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(239, 68, 68, 0.2);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.45);
+      background: rgba(34, 211, 238, 0.16);
+      color: #67e8f9;
+      border: 1px solid rgba(34, 211, 238, 0.42);
     }
     .watch-time {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
-      color: #d6d3d1;
+      color: #cbd5e1;
     }
     .menu-hero {
       text-align: center;
       margin: 4px 0;
     }
     .menu-title {
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 900;
       letter-spacing: 1px;
       color: #ffffff;
-      text-shadow: 0 2px 12px rgba(239, 68, 68, 0.75);
+      text-shadow: 0 2px 14px rgba(34, 211, 238, 0.65);
     }
     .menu-sub {
       font-size: 12px;
       font-weight: 600;
-      color: #a8a29e;
+      color: #94a3b8;
       margin-top: 4px;
     }
     .menu-weapon-badge {
@@ -212,29 +216,34 @@
       display: inline-block;
       font-size: 12px;
       font-weight: 700;
-      color: #fcd34d;
-      background: rgba(245, 158, 11, 0.16);
-      border: 1px solid rgba(245, 158, 11, 0.45);
+      color: #fde047;
+      background: rgba(251, 191, 36, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.42);
       padding: 4px 12px;
       border-radius: 999px;
     }
     .menu-actions {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
+    }
+    .menu-actions-row {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 8px;
     }
     .watch-btn-primary {
       width: 100%;
-      min-height: 54px;
-      border-radius: 27px;
-      background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+      min-height: 48px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f43f5e 0%, #e11d48 55%, #be123c 100%);
       color: #ffffff;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 900;
-      letter-spacing: 0.8px;
-      border: 1px solid #f87171;
+      letter-spacing: 0.6px;
+      border: 1px solid rgba(251, 113, 133, 0.75);
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(239, 68, 68, 0.45);
+      box-shadow: 0 4px 18px rgba(244, 63, 94, 0.45);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -243,11 +252,11 @@
       width: 100%;
       min-height: 48px;
       border-radius: 24px;
-      background: rgba(41, 37, 36, 0.9);
-      color: #e7e5e4;
-      font-size: 14px;
-      font-weight: 700;
-      border: 1px solid rgba(168, 162, 158, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      color: #e2e8f0;
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid rgba(56, 189, 248, 0.38);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -263,12 +272,12 @@
       width: 100%;
       min-height: 52px;
       padding: 8px 14px;
-      border-radius: 18px;
-      background: rgba(28, 25, 23, 0.92);
-      border: 1.5px solid #44403c;
-      color: #f5f5f4;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1.5px solid rgba(100, 116, 139, 0.35);
+      color: #f8fafc;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
       text-align: left;
       cursor: pointer;
       display: flex;
@@ -276,44 +285,58 @@
       align-items: center;
     }
     .armory-item.active {
-      border-color: var(--amber);
-      background: rgba(245, 158, 11, 0.18);
-      box-shadow: 0 0 14px rgba(245, 158, 11, 0.25);
+      border-color: var(--cyan);
+      background: rgba(34, 211, 238, 0.16);
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.25);
     }
 
-    /* ==================== RIGHT PANEL: TELEMETRY & DEV BENCH ==================== */
+    /* ==================== RIGHT PANEL: CYBER-TACTICAL STUDIO WORKBENCH ==================== */
     .dashboard {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
     }
     .card {
-      background: rgba(17, 19, 24, 0.92);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 18px 20px;
-      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
+      border-radius: 18px;
+      padding: 16px 20px;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     }
     .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
     .card-title {
       font-size: 16px;
-      font-weight: 800;
-      color: var(--amber);
-      letter-spacing: 0.6px;
+      font-weight: 900;
+      color: #f8fafc;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, var(--cyan), var(--crimson));
     }
     .badge {
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       padding: 4px 10px;
-      border-radius: 8px;
-      background: rgba(239, 68, 68, 0.16);
-      color: #fca5a5;
-      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 999px;
+      background: rgba(244, 63, 94, 0.16);
+      color: #fda4af;
+      border: 1px solid rgba(244, 63, 94, 0.4);
     }
     .telemetry-grid {
       display: grid;
@@ -321,19 +344,19 @@
       gap: 10px;
     }
     .stat-box {
-      background: rgba(9, 10, 13, 0.9);
-      border: 1px solid #27272a;
+      background: rgba(6, 10, 19, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.16);
       border-radius: 12px;
       padding: 10px 12px;
     }
     .stat-label {
       font-size: 11px;
       color: var(--muted);
-      font-weight: 600;
+      font-weight: 700;
     }
     .stat-val {
-      font-size: 18px;
-      font-weight: 800;
+      font-size: 17px;
+      font-weight: 900;
       margin-top: 4px;
       color: #fff;
     }
@@ -345,38 +368,48 @@
     .sim-btn {
       min-height: 44px;
       padding: 8px 12px;
-      border-radius: 12px;
+      border-radius: 11px;
       font-size: 13px;
-      font-weight: 700;
-      border: 1px solid #3f3f46;
-      background: #18181b;
-      color: #e4e4e7;
+      font-weight: 800;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e2e8f0;
       cursor: pointer;
-      transition: all 0.15s ease;
+      transition: all 0.14s ease;
     }
     .sim-btn:hover {
-      border-color: var(--amber);
-      background: #27272a;
+      border-color: var(--cyan);
+      background: rgba(30, 41, 59, 0.95);
+      transform: translateY(-1px);
+    }
+    .sim-btn-kick {
+      border-color: rgba(251, 191, 36, 0.55);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.22), rgba(225, 29, 72, 0.22));
+      color: #fde047;
     }
     .sim-btn.bg-cyan-400 {
-      background: var(--amber);
-      color: #09090b;
-      border-color: var(--amber);
-      box-shadow: 0 0 16px rgba(245, 158, 11, 0.4);
+      background: linear-gradient(135deg, #06b6d4, #2563eb);
+      color: #ffffff;
+      border-color: #67e8f9;
+      box-shadow: 0 0 18px rgba(34, 211, 238, 0.45);
     }
     .guide-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px;
-      font-size: 13px;
-      color: #d4d4d8;
-      line-height: 1.5;
+      font-size: 12.5px;
+      color: #cbd5e1;
+      line-height: 1.55;
     }
     .guide-item {
-      background: rgba(24, 24, 27, 0.75);
-      border-left: 3px solid var(--crimson);
-      padding: 8px 12px;
-      border-radius: 0 10px 10px 0;
+      background: rgba(8, 13, 24, 0.78);
+      border: 1px solid rgba(56, 189, 248, 0.14);
+      border-left: 3px solid var(--cyan);
+      padding: 10px 12px;
+      border-radius: 4px 12px 12px 4px;
+    }
+    .guide-item strong {
+      color: #f8fafc;
     }
   </style>
 </head>
@@ -390,39 +423,39 @@
           <div id="watchScreen">
             <canvas id="watchCanvas" width="544" height="668"></canvas>
 
-            <!-- 1. HOME MENU & PANORAMIC CAMPAIGN MAP OVERLAY -->
+            <!-- 1. HOME MENU & PANORAMIC HOLOGRAM MAP OVERLAY -->
             <div id="menuHome" class="watch-overlay">
               <div class="menu-top-bar">
                 <span id="homeWeaponBadge" class="watch-pill mono">第 01 关 · 霰弹枪</span>
-                <span class="watch-time mono">点选节点选关</span>
+                <span class="watch-time mono">点选星图跳关</span>
               </div>
-              <div class="menu-actions">
+              <div class="menu-actions-row">
                 <button id="btnStartGame" class="watch-btn-primary">立即出击</button>
-                <button id="btnOpenArmory" class="watch-btn-secondary">武器军火库</button>
+                <button id="btnOpenArmory" class="watch-btn-secondary">军火库</button>
               </div>
             </div>
 
             <!-- 2. ARMORY OVERLAY -->
             <div id="menuArmory" class="watch-overlay hidden">
               <div class="menu-top-bar">
-                <span class="watch-pill mono">军火库</span>
-                <span class="watch-time mono">选择主战武器</span>
+                <span class="watch-pill mono">战术军火库</span>
+                <span class="watch-time mono">选择主战兵器</span>
               </div>
               <div class="armory-list">
                 <button id="btnWeapon0" class="armory-item active" data-weapon="0">
                   <span>重型泵动霰弹枪</span>
-                  <span class="mono" style="color:#f59e0b;">破墙碎尸</span>
+                  <span class="mono" style="color:#fbbf24;">贴脸碎尸</span>
                 </button>
                 <button id="btnWeapon1" class="armory-item" data-weapon="1">
                   <span>六管加特林机枪</span>
-                  <span class="mono" style="color:#ef4444;">高速压制</span>
+                  <span class="mono" style="color:#f43f5e;">弹幕撕裂</span>
                 </button>
                 <button id="btnWeapon2" class="armory-item" data-weapon="2">
                   <span>高能等离子步枪</span>
-                  <span class="mono" style="color:#38bdf8;">高能贯穿</span>
+                  <span class="mono" style="color:#22d3ee;">超导贯穿</span>
                 </button>
               </div>
-              <button id="btnCloseArmory" class="watch-btn-primary">确认装备</button>
+              <button id="btnCloseArmory" class="watch-btn-primary">确认配装</button>
             </div>
 
             <!-- 3. RESULT OVERLAY -->
@@ -433,12 +466,12 @@
               </div>
               <div class="menu-hero">
                 <div id="resultScore" class="menu-title mono" style="font-size:26px;">04,850</div>
-                <div id="resultSub" class="menu-sub">本局歼敌战绩</div>
-                <div id="resultRankHint" class="menu-weapon-badge mono">点击下方按钮重返战场</div>
+                <div id="resultSub" class="menu-sub">本局处决战绩</div>
+                <div id="resultRankHint" class="menu-weapon-badge mono">最高血怒评级 · 杀神</div>
               </div>
               <div class="menu-actions">
-                <button id="btnQuickRetry" class="watch-btn-primary">重新挑战本关</button>
-                <button id="btnResultHome" class="watch-btn-secondary">返回战役地图</button>
+                <button id="btnQuickRetry" class="watch-btn-primary">再次突击本关</button>
+                <button id="btnResultHome" class="watch-btn-secondary">返回战役星图</button>
               </div>
             </div>
           </div>
@@ -446,8 +479,8 @@
 
         <!-- Hardware Digital Crown & Side Button -->
         <div class="hardware-controls">
-          <div id="crownDial" title="上下拖拽或滚动滚轮：1:1 精准转向"></div>
-          <div id="sideButton" title="按下侧键：展开全景战役地图 / 暂停"></div>
+          <div id="crownDial" title="上下拖拽或滚动滚轮：精准转向"></div>
+          <div id="sideButton" title="按下侧键：呼出全景战役星图"></div>
         </div>
       </div>
       <div class="watch-strap-bottom"></div>
@@ -457,68 +490,69 @@
     <div class="dashboard">
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">曙光协议 · 腕上硬核第一人称射击模拟器</div>
-          <span id="telemetryStateBadge" class="badge mono">124 项开源材质 · 刚体与碎尸物理</span>
+          <div class="card-title mono">曙光协议 · 腕上极速处决射击模拟器</div>
+          <span id="telemetryStateBadge" class="badge mono">血怒续命 · 冲刺重踢 · 机关处决</span>
         </div>
         <div class="telemetry-grid">
           <div class="stat-box">
-            <div class="stat-label">歼敌得分</div>
+            <div class="stat-label">处决得分</div>
             <div id="hudScore" class="stat-val mono">0</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">连杀倍率</div>
-            <div id="hudCombo" class="stat-val mono" style="color:#f59e0b;">1.0倍</div>
+            <div class="stat-label">血怒评级</div>
+            <div id="hudCombo" class="stat-val mono" style="color:#fbbf24;">凡铁 1.0倍</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">生命状态</div>
+            <div class="stat-label">生命护甲</div>
             <div id="hudHpText" class="stat-val mono" style="color:#10b981;">100%</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">当前关卡</div>
-            <div id="hudWaveTarget" class="stat-val mono" style="color:#38bdf8;">第 01 关</div>
+            <div class="stat-label">当前战区</div>
+            <div id="hudWaveTarget" class="stat-val mono" style="color:#22d3ee;">第 01 关</div>
           </div>
           <div class="stat-box">
-            <div class="stat-label">物理反馈</div>
-            <div id="hudActiveSkills" class="stat-val mono" style="font-size:13px;color:#10b981;">刚体就绪</div>
+            <div class="stat-label">处决动态</div>
+            <div id="hudActiveSkills" class="stat-val mono" style="font-size:13px;color:#10b981;">待命突击</div>
           </div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">战术调试与全景闯关工作台</div>
-          <span class="mono" style="font-size:12px;color:#94a3b8;">方向键移动 · 鼠标拖拽或滚轮转向 · 左键或空格开火 · 点击地图节点跳关</span>
+          <div class="card-title mono">战术动作与关卡调试台</div>
+          <span class="mono" style="font-size:12px;color:#94a3b8;">方向键移动 · 鼠标拖拽转向 · 左键开火 · 右键冲刺重踢 · 点选星图切关</span>
         </div>
         <div class="controls-grid">
+          <button id="btnDashKick" class="sim-btn sim-btn-kick">战术冲刺重踢（右键）</button>
+          <button id="btnAutoPilot" class="sim-btn">开启自动寻路与特技托管</button>
           <button id="btnRestart" class="sim-btn">进入当前关 / 切换下一关</button>
-          <button id="btnAutoPilot" class="sim-btn">开启自动寻路与战斗托管</button>
-          <button id="btnSpawnBoss" class="sim-btn">召唤深渊赛博领主</button>
-          <button id="btnFeverChamber" class="sim-btn">肾上腺素狂暴 + 满状态</button>
-          <button id="btnCycleSector" class="sim-btn">切换武器：霰弹 / 机枪 / 等离子</button>
-          <button id="btnWristDrop" class="sim-btn">侧键：呼出全景战役地图</button>
+          <button id="btnSpawnBoss" class="sim-btn">空投深渊赛博领主</button>
+          <button id="btnFeverChamber" class="sim-btn">开启极意血怒超载</button>
+          <button id="btnCycleSector" class="sim-btn">切换兵器：霰弹 / 机枪 / 等离子</button>
+          <button id="btnWristDrop" class="sim-btn" style="grid-column: span 3;">按下表冠侧键：呼出全景战役星图 / 暂停选关</button>
         </div>
       </div>
 
       <div class="card">
         <div class="card-header">
-          <div class="card-title mono">核心机制：尸体滑行与碎尸物理 · 紧凑走廊关卡流程 · 纯净全中文交互</div>
+          <div class="card-title mono">四大核心爽点设计：为什么每一秒都让人想冲上去杀敌？</div>
         </div>
         <div class="guide-list">
           <div class="guide-item">
-            <strong>一、真实尸体碰撞、踢尸滑行与霰弹轰碎尸体</strong><br/>
-            敌人被击毙后保留完整刚体动量继续滑行撞墙；玩家走过尸体可将其一脚踢飞并拖出血痕；用霰弹枪或爆炸油桶轰击地上尸体可将其炸成满地残肢碎肉。
+            <strong>一、战术冲刺重踢 + 高压电网环境处决</strong><br/>
+            按下鼠标右键发动极速冲刺重踢：把恶魔踹上高压等离子电网瞬间电弧碎尸，或把爆炸油桶当保龄球一脚踹进怪群触发连环殉爆！
           </div>
           <div class="guide-item">
-            <strong>二、五大紧凑走廊闯关流程（拒绝空旷迷路）</strong><br/>
-            借鉴开源高分经典关卡拓扑：从起点走廊 → 门旁电闸或裂隙破片墙 → 中厅门禁卡或反应核心 → 北侧绿色撤离电梯，目标动线一目了然。
+            <strong>二、贴脸满贯轰碎 + 蓄力弱点打断弹反</strong><br/>
+            霰弹枪贴脸齐射触发定格顿帧与满贯碎尸；在敌人亮起青金蓄力光环瞬间开枪或重踢，直接触发电磁震爆弹反眩晕全场！
           </div>
           <div class="guide-item">
-            <strong>三、纯正第一人称手动操控 + 可选自动寻路托管</strong><br/>
-            彻底移除强制推墙与贴墙乱转视角；支持键盘前后平移、鼠标横向拖拽或滚轮精准瞄准、左键连发开火，推撞油桶与切向擦墙丝滑顺畅。
+            <strong>三、推进式磁吸魂珠回血 + 六阶血怒狂飙</strong><br/>
+            越近身残暴杀敌，爆出的磁吸鲜血魂珠越多，自动飞入枪膛回血回甲并推升「凡铁→锋芒→喋血→暴走→杀神→极意」移速与射速！
           </div>
           <div class="guide-item">
-            <strong>四、全中文纯净界面 + 空间三维目标微标</strong><br/>
-            全面统一纯中文界面与关卡简报，摒弃生硬中英混排；关卡内保持无边框沉浸视野，仅在当前目标上方投射空间菱形微标与距离读数。
+            <strong>四、五张纯手工异构关卡（潜行包抄·双桥熔炉·暗门伏击）</strong><br/>
+            彻底告别千篇一律的空房间：每关拥有专属建筑拓扑、冷峻赛博霓虹光影、轰墙暗道与夺卡暗门伏击，战斗节奏层层递进。
           </div>
         </div>
       </div>
@@ -658,10 +692,10 @@
     "use strict";
 
     // =========================================================================
-    // 1. 128x128 GRITTY NORMAL-MAPPED INDUSTRIAL TEXTURE GENERATOR (With AO & Grime)
+    // 1. 128x128 HIGH-CONTRAST CYBER-BRUTALIST TEXTURES (Selaco / Prodeus Palette)
     // =========================================================================
     const TEX_SIZE = 128;
-    const NUM_TEXTURES = 12;
+    const NUM_TEXTURES = 14;
     const textures = [];
 
     function packRGB(r, g, b) {
@@ -683,202 +717,247 @@
       }
 
       for (let y = 0; y < TEX_SIZE; y++) {
-        // Top & bottom ambient occlusion grime near ceiling and floor seams
         const edgeDist = Math.min(y, 127 - y);
-        const ao = edgeDist < 10 ? 0.58 + (edgeDist / 10) * 0.42 : 1.0;
+        const ao = edgeDist < 10 ? 0.52 + (edgeDist / 10) * 0.48 : 1.0;
 
         for (let x = 0; x < TEX_SIZE; x++) {
           const idx = y * TEX_SIZE + x;
-          const n = hash2D(x >> 1, y >> 1, 1) * 18 - 9;
-          const fineGrain = hash2D(x, y, 5) * 10 - 5;
+          const n = hash2D(x >> 1, y >> 1, 1) * 14 - 7;
+          const fineGrain = hash2D(x, y, 5) * 8 - 4;
 
-          // ---------------- TEX 1: Weathered Red/Brown Basalt Brick + 3D Normal Bevel + Soot ----------------
+          // ---------------- TEX 1: Deep Slate-Indigo Architectural Panel + Cyan Trim ----------------
           {
-            const row = (y / 16) | 0;
-            const brickX = (x + (row % 2) * 32) % 64;
-            const brickY = y % 16;
-            const isMortar = brickY <= 1 || brickX <= 1;
-            const brickSeed = hash2D((x + (row % 2) * 32) >> 6, row, 7);
-            if (isMortar) {
-              const m = (32 + n * 0.4) * ao;
-              textures[1][idx] = packRGB(m + 4, m + 2, m);
+            const row = (y / 32) | 0;
+            const seam = (y % 32 <= 1) || ((x + (row % 2) * 32) % 64 <= 1);
+            const neonTrim = (y === 14 || y === 15);
+            const amberBase = (y === 114);
+            if (neonTrim) {
+              textures[1][idx] = packRGB(34, 211, 238);
+            } else if (amberBase) {
+              textures[1][idx] = packRGB(245, 158, 11);
+            } else if (seam) {
+              textures[1][idx] = packRGB(12, 17, 28);
             } else {
-              const bevel = (brickY === 2 ? 24 : brickY === 15 ? -26 : 0) + (brickX === 2 ? 16 : brickX === 63 ? -18 : 0);
-              const grime = Math.sin(x * 0.08) * Math.cos(y * 0.11) * 14;
-              const r = (128 + brickSeed * 30 + bevel + grime + n + fineGrain) * ao;
-              const g = (48 + brickSeed * 14 + bevel * 0.55 + grime * 0.4 + n * 0.5) * ao;
-              const b = (36 + brickSeed * 10 + bevel * 0.45 + n * 0.4) * ao;
-              textures[1][idx] = packRGB(r, g, b);
+              const bevel = (y % 32 === 2 ? 16 : y % 32 === 31 ? -14 : 0);
+              const base = (44 + bevel + n * 0.6 + fineGrain * 0.5) * ao;
+              textures[1][idx] = packRGB(base * 0.78, base * 0.92, base * 1.28);
             }
           }
 
-          // ---------------- TEX 2: Heavy Brushed Cold-Rolled Gunmetal Armor Wall + Caution Base ----------------
+          // ---------------- TEX 2: Heavy Brushed Obsidian Gunmetal Bulkhead + Caution Base ----------------
           {
             const border = x < 3 || x > 124 || y < 3 || y > 124 || y === 64;
-            const isCaution = y >= 108 && y < 122;
-            if (isCaution) {
+            const isCaution = y >= 112 && y < 122;
+            const isCyanPip = (y >= 18 && y <= 21) && ((x % 64 >= 24 && x % 64 <= 40));
+            if (isCyanPip) {
+              textures[2][idx] = packRGB(56, 189, 248);
+            } else if (isCaution) {
               const stripe = ((x + y) >> 3) % 2 === 0;
               textures[2][idx] = stripe
-                ? packRGB((210 + n) * ao, (148 + n) * ao, 18)
-                : packRGB(20, 22, 26);
+                ? packRGB((225 + n) * ao, (158 + n) * ao, 18)
+                : packRGB(15, 20, 30);
             } else if (border) {
-              textures[2][idx] = packRGB(24 + n * 0.4, 27 + n * 0.4, 32 + n * 0.4);
+              textures[2][idx] = packRGB(16 + n * 0.3, 22 + n * 0.3, 34 + n * 0.3);
             } else {
-              const spec = Math.exp(-Math.pow((x % 64) - 28, 2) / 140) * 28;
-              let base = (78 + spec + Math.sin(y * 0.18) * 5 + fineGrain) * ao;
+              const spec = Math.exp(-Math.pow((x % 64) - 28, 2) / 140) * 24;
+              let base = (58 + spec + Math.sin(y * 0.18) * 4 + fineGrain) * ao;
               const rx = x % 32;
               const ry = y % 64;
-              if ((rx === 6 || rx === 26) && (ry === 6 || ry === 58)) base += 38;
-              if (x === 63 || x === 64) base -= 30;
-              textures[2][idx] = packRGB(base * 0.90, base * 0.95, base * 1.04);
+              if ((rx === 6 || rx === 26) && (ry === 8 || ry === 56)) base += 32;
+              if (x === 63 || x === 64) base -= 24;
+              textures[2][idx] = packRGB(base * 0.76, base * 0.90, base * 1.18);
             }
           }
 
-          // ---------------- TEX 3: Hydraulic Armored Blast Door (Heavy Ribbed Steel & Amber Airlock Lock) ----------------
+          // ---------------- TEX 3: Hydraulic Armored Blast Door (Titanium-Slate & Amber Lock) ----------------
           {
             const isDoorEdge = x < 6 || x > 121 || y < 5 || y > 122;
             const isCenterSeam = Math.abs(x - 63.5) <= 2.5;
-            const isCautionSide = ((x >= 10 && x <= 18) || (x >= 109 && x <= 117)) && y >= 16 && y <= 111;
+            const isCautionSide = ((x >= 10 && x <= 17) || (x >= 110 && x <= 117)) && y >= 16 && y <= 111;
             const distCenter = Math.hypot(x - 63.5, y - 63.5);
             if (distCenter <= 16) {
-              const ring = distCenter >= 11 && distCenter <= 14.5;
+              const ring = distCenter >= 11.5 && distCenter <= 14.8;
               const innerCore = distCenter <= 4.5;
-              textures[3][idx] = (ring || innerCore) ? packRGB(245, 158, 11) : packRGB(28, 32, 38);
+              textures[3][idx] = (ring || innerCore) ? packRGB(251, 191, 36) : packRGB(18, 26, 40);
             } else if (isCautionSide) {
               const st = ((x + y) >> 3) % 2 === 0;
-              textures[3][idx] = st ? packRGB(215, 145, 16) : packRGB(24, 26, 30);
+              textures[3][idx] = st ? packRGB(235, 162, 20) : packRGB(16, 22, 32);
             } else if (isCenterSeam || isDoorEdge) {
-              textures[3][idx] = packRGB(18, 20, 24);
+              textures[3][idx] = packRGB(12, 16, 24);
             } else {
-              const rib = (y % 16 === 0) ? -24 : (y % 16 === 1) ? 20 : 0;
-              const v = (88 + rib + fineGrain + n * 0.5) * ao;
-              textures[3][idx] = packRGB(v * 0.94, v * 0.96, v);
+              const rib = (y % 16 === 0) ? -22 : (y % 16 === 1) ? 18 : 0;
+              const v = (72 + rib + fineGrain + n * 0.4) * ao;
+              textures[3][idx] = packRGB(v * 0.82, v * 0.94, v * 1.16);
             }
           }
 
-          // ---------------- TEX 4: UAC Breaker Console & Recessed CRT Telemetry Wall ----------------
+          // ---------------- TEX 4: Cyber Breaker Console & Recessed Hologram Wall ----------------
           {
             const inScreen = x >= 28 && x <= 99 && y >= 26 && y <= 98;
             const inFrame = x >= 22 && x <= 105 && y >= 20 && y <= 104;
-            if (x >= 4 && x <= 11) {
-              const pipeSpec = (x === 6 || x === 7) ? 36 : 0;
-              textures[4][idx] = packRGB((118 + pipeSpec) * ao, (76 + pipeSpec * 0.7) * ao, 44 * ao);
+            if (x >= 4 && x <= 10) {
+              const pipeSpec = (x === 6 || x === 7) ? 32 : 0;
+              textures[4][idx] = packRGB((34 + pipeSpec) * ao, (148 + pipeSpec) * ao, (198 + pipeSpec) * ao);
             } else if (inScreen) {
-              let sr = 12, sg = 20, sb = 16;
-              if (y >= 34 && y <= 44 && x >= 36 && x <= 91) {
-                sr = 245; sg = 158; sb = 11;
+              let sr = 10, sg = 18, sb = 30;
+              if (y >= 34 && y <= 43 && x >= 36 && x <= 91) {
+                sr = 251; sg = 191; sb = 36;
               } else if (y >= 54 && y <= 86 && x >= 54 && x <= 73) {
-                sr = 220; sg = 38; sb = 38;
+                sr = 244; sg = 63; sb = 94;
               } else if (y % 6 === 0 && x >= 36 && x <= 91) {
-                sr = 34; sg = 197; sb = 94;
+                sr = 34; sg = 211; sb = 238;
               }
               textures[4][idx] = packRGB(sr, sg, sb);
             } else if (inFrame) {
-              textures[4][idx] = packRGB(46 + fineGrain, 50 + fineGrain, 56 + fineGrain);
+              textures[4][idx] = packRGB(32 + fineGrain, 42 + fineGrain, 58 + fineGrain);
             } else {
-              textures[4][idx] = packRGB((64 + n) * ao, (68 + n) * ao, (74 + n) * ao);
+              textures[4][idx] = packRGB((42 + n) * ao, (52 + n) * ao, (70 + n) * ao);
             }
           }
 
-          // ---------------- TEX 5: Floor - Dark Industrial Diamond-Plate Steel Grating ----------------
+          // ---------------- TEX 5: Floor - Midnight Blue-Steel Decking (High Gore Contrast!) ----------------
           {
             const isJoint = x % 32 === 0 || y % 32 === 0;
             const isBevel = x % 32 === 1 || y % 32 === 1;
-            const tread = ((x + y) % 8 === 0 && (x - y + 128) % 8 === 0) ? 14 : 0;
-            const base = (isJoint ? 22 : isBevel ? 58 : 42) + tread + fineGrain * 0.7;
-            textures[5][idx] = packRGB(base * 0.94, base * 0.96, base * 1.0);
+            const tread = ((x + y) % 8 === 0 && (x - y + 128) % 8 === 0) ? 10 : 0;
+            const cyanDot = (x % 32 === 16 && y % 32 === 16);
+            if (cyanDot) {
+              textures[5][idx] = packRGB(24, 118, 156);
+            } else {
+              const base = (isJoint ? 14 : isBevel ? 44 : 29) + tread + fineGrain * 0.5;
+              textures[5][idx] = packRGB(base * 0.76, base * 0.90, base * 1.24);
+            }
           }
 
-          // ---------------- TEX 6: Ceiling - Dark Ribbed Bunker Roof + Recessed Halogen Light ----------------
+          // ---------------- TEX 6: Ceiling - Dark Cyber-Bunker Ribbed Roof + Cold Skylight ----------------
           {
             const isBeam = x % 32 < 4 || y % 32 < 3;
             const isLightFrame = x >= 50 && x <= 77 && y >= 44 && y <= 83;
             const isLightCore = x >= 54 && x <= 73 && y >= 48 && y <= 79;
             if (isLightCore) {
-              textures[6][idx] = packRGB(230, 210, 175);
+              textures[6][idx] = packRGB(165, 228, 250);
             } else if (isLightFrame) {
-              textures[6][idx] = packRGB(62, 58, 54);
+              textures[6][idx] = packRGB(34, 48, 68);
             } else if (isBeam) {
-              textures[6][idx] = packRGB(20 + fineGrain * 0.3, 22 + fineGrain * 0.3, 26 + fineGrain * 0.3);
+              textures[6][idx] = packRGB(12 + fineGrain * 0.2, 16 + fineGrain * 0.2, 26 + fineGrain * 0.2);
             } else {
-              textures[6][idx] = packRGB(32 + fineGrain * 0.4, 34 + fineGrain * 0.4, 38 + fineGrain * 0.4);
+              textures[6][idx] = packRGB(20 + fineGrain * 0.3, 26 + fineGrain * 0.3, 40 + fineGrain * 0.3);
             }
           }
 
-          // ---------------- TEX 7: Floor - Weathered Martian Basalt & Dark Slate Flagstone ----------------
+          // ---------------- TEX 7: Floor - Obsidian Crater Flagstone with Crimson/Amber Vein ----------------
           {
             const isSeam = (x % 32 <= 1) || (y % 32 <= 1);
             const isHighlight = (x % 32 === 2) || (y % 32 === 2);
-            const grit = Math.sin(x * 0.12) * Math.cos(y * 0.12) * 8 + fineGrain;
-            const base = (isSeam ? 24 : isHighlight ? 64 : 48) + grit;
-            textures[7][idx] = packRGB(base * 1.12, base * 0.88, base * 0.78);
-          }
-
-          // ---------------- TEX 8: Wall - Martian Outpost Reinforced Concrete & Basalt Parapet ----------------
-          {
-            const strata = Math.sin(y * 0.11 + Math.sin(x * 0.05) * 1.2) * 14;
-            const isSteelBand = y >= 56 && y <= 68;
-            const isTopCap = y < 8;
-            if (isSteelBand) {
-              const rv = (x % 16 === 8 && y === 62) ? 32 : 0;
-              const sb = (62 + rv + fineGrain) * ao;
-              textures[8][idx] = packRGB(sb * 0.95, sb * 0.97, sb);
-            } else if (isTopCap) {
-              textures[8][idx] = packRGB(88 + fineGrain, 82 + fineGrain, 76 + fineGrain);
+            const grit = Math.sin(x * 0.12) * Math.cos(y * 0.12) * 5 + fineGrain * 0.6;
+            if (x % 64 === 0 && y % 16 < 10) {
+              textures[7][idx] = packRGB(136, 34, 52);
             } else {
-              const r = (108 + strata + n + fineGrain) * ao;
-              const g = (66 + strata * 0.65 + n * 0.5) * ao;
-              const b = (54 + strata * 0.50 + n * 0.4) * ao;
-              textures[8][idx] = packRGB(r, g, b);
+              const base = (isSeam ? 15 : isHighlight ? 46 : 32) + grit;
+              textures[7][idx] = packRGB(base * 0.92, base * 0.84, base * 1.08);
             }
           }
 
-          // ---------------- TEX 9: Floor - Subterranean Reactor Grating with Coolant Slits ----------------
+          // ---------------- TEX 8: Low Parapet - Reinforced Titanium-Basalt Battlement + Neon Rim ----------------
+          {
+            const isNeonCap = y >= 6 && y <= 8;
+            const isTopCap = y < 6;
+            const isSteelBand = y >= 56 && y <= 68;
+            if (isNeonCap) {
+              textures[8][idx] = packRGB(244, 63, 94);
+            } else if (isTopCap) {
+              textures[8][idx] = packRGB(64 + fineGrain, 74 + fineGrain, 92 + fineGrain);
+            } else if (isSteelBand) {
+              const rv = (x % 16 === 8 && y === 62) ? 28 : 0;
+              const sb = (48 + rv + fineGrain) * ao;
+              textures[8][idx] = packRGB(sb * 0.82, sb * 0.92, sb * 1.15);
+            } else {
+              const strata = Math.sin(y * 0.11 + Math.sin(x * 0.05) * 1.2) * 8;
+              const v = (52 + strata + n * 0.5 + fineGrain * 0.5) * ao;
+              textures[8][idx] = packRGB(v * 0.84, v * 0.88, v * 1.12);
+            }
+          }
+
+          // ---------------- TEX 9: Breaker Console Wall (ON = Emerald Unlocked State) ----------------
+          {
+            const inScreen = x >= 28 && x <= 99 && y >= 26 && y <= 98;
+            if (inScreen) {
+              const bar = (y % 8 < 4) && x >= 38 && x <= 89;
+              textures[9][idx] = bar ? packRGB(16, 185, 129) : packRGB(8, 28, 24);
+            } else {
+              textures[9][idx] = packRGB((38 + n * 0.5) * ao, (52 + n * 0.5) * ao, (66 + n * 0.5) * ao);
+            }
+          }
+
+          // ---------------- TEX 10: Destructible Fissured Breach Wall (Dark Slate + Bright Amber Cracks!) ----------------
+          {
+            const row = (y / 16) | 0;
+            const brickX = (x + (row % 2) * 32) % 64;
+            const brickY = y % 16;
+            const crack1 = Math.abs((x - 64) - Math.sin(y * 0.14) * 20 - (y - 64) * 0.36);
+            const crack2 = Math.abs((y - 60) + Math.cos(x * 0.12) * 16 - (x - 64) * 0.30);
+            const isFissure = crack1 < 3.0 || crack2 < 2.6;
+            const isFissureCore = crack1 < 1.4 || crack2 < 1.2;
+            if (isFissureCore) {
+              textures[10][idx] = packRGB(253, 224, 71);
+            } else if (isFissure) {
+              textures[10][idx] = packRGB(245, 108, 11);
+            } else if (brickY <= 1 || brickX <= 1) {
+              textures[10][idx] = packRGB(16 * ao, 20 * ao, 30 * ao);
+            } else {
+              const v = (56 + n * 0.6 + fineGrain * 0.5) * ao;
+              textures[10][idx] = packRGB(v * 0.92, v * 0.88, v * 1.06);
+            }
+          }
+
+          // ---------------- TEX 11: Emissive Cyber-Cyan Neon Light Bulkhead ----------------
+          {
+            const inCore = (x >= 50 && x <= 77 && y >= 12 && y <= 115);
+            const inHalo = (x >= 42 && x <= 85 && y >= 10 && y <= 117);
+            if (inCore) {
+              textures[11][idx] = packRGB(186, 248, 255);
+            } else if (inHalo) {
+              textures[11][idx] = packRGB(14, 165, 233);
+            } else {
+              const base = (44 + fineGrain * 0.6) * ao;
+              textures[11][idx] = packRGB(base * 0.78, base * 0.90, base * 1.18);
+            }
+          }
+
+          // ---------------- TEX 12: HIGH-VOLTAGE PLASMA EXECUTION GRID (Kick Enemies Here!) ----------------
+          {
+            const frame = x < 8 || x > 119 || y < 8 || y > 119;
+            const hazardBorder = !frame && (x < 15 || x > 112 || y < 15 || y > 112);
+            const coilY = (y % 20);
+            const isArcBar = coilY >= 8 && coilY <= 12;
+            const arcJag = Math.abs((y % 20) - 10 + Math.sin(x * 0.28 + y * 0.15) * 2.6);
+            const isVertBus = (x === 36 || x === 37 || x === 90 || x === 91);
+            if (frame) {
+              textures[12][idx] = packRGB(14, 18, 28);
+            } else if (hazardBorder) {
+              const st = ((x + y) >> 3) % 2 === 0;
+              textures[12][idx] = st ? packRGB(34, 211, 238) : packRGB(15, 23, 42);
+            } else if (arcJag < 1.35) {
+              textures[12][idx] = packRGB(224, 252, 255);
+            } else if (isArcBar || isVertBus) {
+              textures[12][idx] = packRGB(6, 182, 212);
+            } else {
+              textures[12][idx] = packRGB(12, 28, 52);
+            }
+          }
+
+          // ---------------- TEX 13: Floor - Cryo-Reactor Grating with Glowing Cyan Coolant Slits ----------------
           {
             const gx = x % 32;
             const gy = y % 32;
             const isCoolantSlit = (gx === 15 || gx === 16) && gy >= 6 && gy <= 25;
             if (isCoolantSlit) {
-              textures[9][idx] = packRGB(20, 168, 138);
+              textures[13][idx] = packRGB(20, 184, 216);
             } else if (gx === 0 || gy === 0) {
-              textures[9][idx] = packRGB(20, 24, 30);
+              textures[13][idx] = packRGB(12, 18, 28);
             } else {
-              const base = 40 + fineGrain * 0.7;
-              textures[9][idx] = packRGB(base * 0.90, base * 0.96, base * 1.05);
-            }
-          }
-
-          // ---------------- TEX 10: Destructible Fissured Breach Wall (Cracked Masonry + Amber Stress Seams) ----------------
-          {
-            const row = (y / 16) | 0;
-            const brickX = (x + (row % 2) * 32) % 64;
-            const brickY = y % 16;
-            const crack1 = Math.abs((x - 64) - Math.sin(y * 0.14) * 18 - (y - 64) * 0.35);
-            const crack2 = Math.abs((y - 60) + Math.cos(x * 0.12) * 14 - (x - 64) * 0.28);
-            const isFissure = crack1 < 2.6 || crack2 < 2.2;
-            const isFissureCore = crack1 < 1.1 || crack2 < 0.95;
-            if (isFissureCore) {
-              textures[10][idx] = packRGB(245, 158, 11);
-            } else if (isFissure) {
-              textures[10][idx] = packRGB(18, 12, 10);
-            } else if (brickY <= 1 || brickX <= 1) {
-              textures[10][idx] = packRGB(28 * ao, 24 * ao, 22 * ao);
-            } else {
-              const r = (118 + n + fineGrain) * ao;
-              const g = (76 + n * 0.6 + fineGrain * 0.5) * ao;
-              const b = (58 + n * 0.5) * ao;
-              textures[10][idx] = packRGB(r, g, b);
-            }
-          }
-
-          // ---------------- TEX 11: Emissive Industrial Light Strip Bulkhead ----------------
-          {
-            const inStrip = (x >= 44 && x <= 83 && y >= 14 && y <= 113);
-            if (inStrip) {
-              textures[11][idx] = packRGB(235, 245, 255);
-            } else {
-              const base = (66 + fineGrain) * ao;
-              textures[11][idx] = packRGB(base * 0.92, base * 0.96, base * 1.04);
+              const base = 30 + fineGrain * 0.5;
+              textures[13][idx] = packRGB(base * 0.78, base * 0.92, base * 1.22);
             }
           }
         }
@@ -887,7 +966,7 @@
     generateAllTextures();
 
     // =========================================================================
-    // 2. MULTI-LAYERED WEBAUDIO SYNTHESIZER (Weapons + Stage Clear Fanfare + Orbs)
+    // 2. MULTI-LAYERED WEBAUDIO SYNTHESIZER (Weapons + Dash-Kick + Electric Gib + Orbs)
     // =========================================================================
     let audioCtx = null;
     let noiseBuffer = null;
@@ -918,34 +997,90 @@
           noise.buffer = noiseBuffer;
           const filter = ac.createBiquadFilter();
           filter.type = "lowpass";
-          filter.frequency.setValueAtTime(2200, now);
-          filter.frequency.exponentialRampToValueAtTime(160, now + 0.22);
+          filter.frequency.setValueAtTime(2400, now);
+          filter.frequency.exponentialRampToValueAtTime(150, now + 0.23);
           const nGain = ac.createGain();
-          nGain.gain.setValueAtTime(0.24, now);
-          nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.24);
+          nGain.gain.setValueAtTime(0.26, now);
+          nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
           noise.connect(filter);
           filter.connect(nGain);
           nGain.connect(ac.destination);
           noise.start(now);
-          noise.stop(now + 0.24);
+          noise.stop(now + 0.25);
 
           const sub = ac.createOscillator();
           const sGain = ac.createGain();
           sub.type = "sine";
-          sub.frequency.setValueAtTime(125, now);
-          sub.frequency.exponentialRampToValueAtTime(34, now + 0.19);
-          sGain.gain.setValueAtTime(0.25, now);
-          sGain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          sub.frequency.setValueAtTime(135, now);
+          sub.frequency.exponentialRampToValueAtTime(32, now + 0.20);
+          sGain.gain.setValueAtTime(0.28, now);
+          sGain.gain.exponentialRampToValueAtTime(0.001, now + 0.21);
           sub.connect(sGain);
           sGain.connect(ac.destination);
           sub.start(now);
-          sub.stop(now + 0.2);
+          sub.stop(now + 0.21);
+        } else if (type === "dash_kick") {
+          // Pneumatic jet-whoosh + heavy armored boot bass thud!
+          const whoosh = ac.createBufferSource();
+          whoosh.buffer = noiseBuffer;
+          const bp = ac.createBiquadFilter();
+          bp.type = "bandpass";
+          bp.frequency.setValueAtTime(420, now);
+          bp.frequency.exponentialRampToValueAtTime(1650, now + 0.14);
+          const wg = ac.createGain();
+          wg.gain.setValueAtTime(0.20, now);
+          wg.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+          whoosh.connect(bp);
+          bp.connect(wg);
+          wg.connect(ac.destination);
+          whoosh.start(now);
+          whoosh.stop(now + 0.17);
+
+          const thud = ac.createOscillator();
+          const tg = ac.createGain();
+          thud.type = "triangle";
+          thud.frequency.setValueAtTime(165, now);
+          thud.frequency.exponentialRampToValueAtTime(38, now + 0.16);
+          tg.gain.setValueAtTime(0.28, now);
+          tg.gain.exponentialRampToValueAtTime(0.001, now + 0.17);
+          thud.connect(tg);
+          tg.connect(ac.destination);
+          thud.start(now);
+          thud.stop(now + 0.18);
+        } else if (type === "electric_gib") {
+          // High-voltage transformer arc zap + splatter!
+          const zap = ac.createOscillator();
+          const zg = ac.createGain();
+          zap.type = "sawtooth";
+          zap.frequency.setValueAtTime(920, now);
+          zap.frequency.setValueAtTime(1480, now + 0.04);
+          zap.frequency.exponentialRampToValueAtTime(180, now + 0.24);
+          zg.gain.setValueAtTime(0.18, now);
+          zg.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+          zap.connect(zg);
+          zg.connect(ac.destination);
+          zap.start(now);
+          zap.stop(now + 0.26);
+        } else if (type === "parry_stun") {
+          // ULTRAKILL-style metallic resonant parry ring!
+          [1046.5, 1567.98].forEach((freq, i) => {
+            const osc = ac.createOscillator();
+            const g = ac.createGain();
+            osc.type = "triangle";
+            osc.frequency.setValueAtTime(freq, now + i * 0.03);
+            g.gain.setValueAtTime(0.16, now + i * 0.03);
+            g.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+            osc.connect(g);
+            g.connect(ac.destination);
+            osc.start(now + i * 0.03);
+            osc.stop(now + 0.29);
+          });
         } else if (type === "chaingun") {
           const noise = ac.createBufferSource();
           noise.buffer = noiseBuffer;
           const filter = ac.createBiquadFilter();
           filter.type = "bandpass";
-          filter.frequency.setValueAtTime(1400, now);
+          filter.frequency.setValueAtTime(1450, now);
           const nGain = ac.createGain();
           nGain.gain.setValueAtTime(0.16, now);
           nGain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
@@ -958,8 +1093,8 @@
           const osc = ac.createOscillator();
           const gain = ac.createGain();
           osc.type = "sawtooth";
-          osc.frequency.setValueAtTime(680, now);
-          osc.frequency.exponentialRampToValueAtTime(140, now + 0.12);
+          osc.frequency.setValueAtTime(720, now);
+          osc.frequency.exponentialRampToValueAtTime(145, now + 0.12);
           gain.gain.setValueAtTime(0.14, now);
           gain.gain.exponentialRampToValueAtTime(0.001, now + 0.13);
           osc.connect(gain);
@@ -994,7 +1129,6 @@
           hiss.start(now + 0.08);
           hiss.stop(now + 0.48);
         } else if (type === "stage_clear") {
-          // Triumphant DOOM / Halo style Stage Breakthrough Brass/Synth Fanfare!
           const chord = [523.25, 659.25, 783.99, 1046.5];
           chord.forEach((freq, idx) => {
             const osc = ac.createOscillator();
@@ -1010,7 +1144,6 @@
             osc.stop(t0 + 0.38);
           });
         } else if (type === "sector_victory") {
-          // Grand Sector Clear Victory Symphony Arpeggio
           const fanfare = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98];
           fanfare.forEach((freq, idx) => {
             const osc = ac.createOscillator();
@@ -1029,15 +1162,15 @@
           const osc = ac.createOscillator();
           const g = ac.createGain();
           osc.type = "sine";
-          const baseFreq = 660 * Math.pow(1.08, Math.min(10, pitchStep));
+          const baseFreq = 620 * Math.pow(1.075, Math.min(12, pitchStep));
           osc.frequency.setValueAtTime(baseFreq, now);
-          osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.35, now + 0.08);
-          g.gain.setValueAtTime(0.09, now);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+          osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.32, now + 0.075);
+          g.gain.setValueAtTime(0.075, now);
+          g.gain.exponentialRampToValueAtTime(0.001, now + 0.085);
           osc.connect(g);
           g.connect(ac.destination);
           osc.start(now);
-          osc.stop(now + 0.095);
+          osc.stop(now + 0.09);
         } else if (type === "explosion") {
           const noise = ac.createBufferSource();
           noise.buffer = noiseBuffer;
@@ -1084,16 +1217,17 @@
           const lp = ac.createBiquadFilter();
           const g = ac.createGain();
           osc.type = "sawtooth";
-          osc.frequency.setValueAtTime(state.berserkTimer > 0 ? 65.4 : 55.0, now);
+          const rankBoost = (state && state.styleRank ? state.styleRank * 3.5 : 0);
+          osc.frequency.setValueAtTime((state.berserkTimer > 0 ? 73.4 : 55.0) + rankBoost, now);
           lp.type = "lowpass";
-          lp.frequency.setValueAtTime(190, now);
-          g.gain.setValueAtTime(0.035, now);
-          g.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+          lp.frequency.setValueAtTime(210 + rankBoost * 12, now);
+          g.gain.setValueAtTime(0.038, now);
+          g.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
           osc.connect(lp);
           lp.connect(g);
           g.connect(ac.destination);
           osc.start(now);
-          osc.stop(now + 0.17);
+          osc.stop(now + 0.16);
         } else if (type === "gore") {
           const noise = ac.createBufferSource();
           noise.buffer = noiseBuffer;
@@ -1125,189 +1259,302 @@
     }
 
     // =========================================================================
-    // 3. 24x24 AUTHORED CORRIDOR & ROOM CAMPAIGN MAPS (RetroRampage / DOOM Topology)
+    // 3. 5 HANDCRAFTED 24x24 ARCHITECTURAL LEVEL BLUEPRINTS (Romero / Bulletstorm / Mullet MadJack)
     // =========================================================================
     const MAP_W = 24;
     const MAP_H = 24;
 
-    // Builds a tight, readable room-and-corridor dungeon layout (inspired by nicklockwood/RetroRampage & DOOM E1M1):
-    // - South Breach Corridor (x=7..16, y=16..22): Player spawns at (12.0, 21.0) facing North (-PI/2) directly at
-    //   patrolling guards, explosive barrels, destructible columns, South Blast Door A (x=11..12, y=15),
-    //   Switch Console right beside the door (13.6, 16.2), and Shotgun-Breachable Cracked Walls (Tile 10 at x=9..10, y=15).
-    // - Central Reactor / Armory Hall (x=4..19, y=8..14): Side alcoves with emissive light strips (Tile 11),
-    //   Keycard / Reactor Core objectives in clear sightlines, and North Blast Door B (x=11..12, y=7).
-    // - North Extraction Chamber (x=7..16, y=1..6): Guarded by elite squad / Boss, leading to the Exit Switch & Pad (12.0, 3.0).
-    function createMultiZoneGrid(outerWall, midWall, accentWall) {
-      const g = new Array(MAP_W * MAP_H).fill(0);
+    // Compiles a 24x24 ASCII blueprint into a tile grid + exact door definitions:
+    // '#': wallA | 'M': wallB | 'P': Low Parapet (8) | 'L': Emissive Cyan Strip (11)
+    // 'C': Breachable Cracked Wall (10) | 'E': High-Voltage Plasma Execution Grid (12)
+    // 'S': Breaker Console (4) | 'A': Door A | 'B': Door B | 'T': Monster Closet Ambush Door
+    function compileBlueprint(rows, wallA = 2, wallB = 1) {
+      const grid = new Array(MAP_W * MAP_H).fill(wallA);
+      const doorDefs = [];
       for (let y = 0; y < MAP_H; y++) {
+        const row = (rows[y] || "").padEnd(MAP_W, "#");
         for (let x = 0; x < MAP_W; x++) {
-          if (x === 0 || x === MAP_W - 1 || y === 0 || y === MAP_H - 1) {
-            g[y * MAP_W + x] = (x % 6 === 0 && !outerWall) ? 11 : outerWall;
+          const ch = row[x];
+          const idx = y * MAP_W + x;
+          if (ch === ".") grid[idx] = 0;
+          else if (ch === "#") grid[idx] = wallA;
+          else if (ch === "M") grid[idx] = wallB;
+          else if (ch === "P") grid[idx] = 8;
+          else if (ch === "L") grid[idx] = 11;
+          else if (ch === "C") grid[idx] = 10;
+          else if (ch === "E") grid[idx] = 12;
+          else if (ch === "S") grid[idx] = 4;
+          else if (ch === "A") {
+            grid[idx] = 3;
+            doorDefs.push({ tx: x, ty: y, group: "DOOR_A" });
+          } else if (ch === "B") {
+            grid[idx] = 3;
+            doorDefs.push({ tx: x, ty: y, group: "DOOR_B" });
+          } else if (ch === "T") {
+            grid[idx] = 3;
+            doorDefs.push({ tx: x, ty: y, group: "DOOR_TRAP" });
+          } else {
+            grid[idx] = wallA;
           }
         }
       }
-
-      // Frame South Breach Hall (x=6 and x=17 walls for y=16..22, with doorways at y=18..19)
-      for (let y = 16; y <= 22; y++) {
-        if (y !== 18 && y !== 19) {
-          g[y * MAP_W + 6] = (y === 20) ? 11 : midWall;
-          g[y * MAP_W + 17] = (y === 20) ? 11 : midWall;
-        }
-      }
-
-      // Frame Central Combat Hall (x=3 and x=20 walls for y=8..14, with emissive lights)
-      for (let y = 8; y <= 14; y++) {
-        if (y !== 11) {
-          g[y * MAP_W + 3] = (y === 10 || y === 13) ? 11 : midWall;
-          g[y * MAP_W + 20] = (y === 10 || y === 13) ? 11 : midWall;
-        }
-      }
-
-      // Frame North Extraction Hall (x=6 and x=17 walls for y=1..6)
-      for (let y = 1; y <= 6; y++) {
-        if (y !== 4) {
-          g[y * MAP_W + 6] = (y === 3) ? 11 : accentWall;
-          g[y * MAP_W + 17] = (y === 3) ? 11 : accentWall;
-        }
-      }
-
-      // Divider Wall A at y = 15 separating South Breach Hall from Central Combat Hall
-      // Includes Sliding Blast Door A (x=11..12), Switch Panel Wall (Tile 4 at x=13), AND Cracked Breach Walls (Tile 10 at x=9..10)
-      for (let x = 1; x < MAP_W - 1; x++) {
-        if (x === 11 || x === 12) {
-          g[15 * MAP_W + x] = 3;  // Sliding Hydraulic Blast Door A
-        } else if (x === 13) {
-          g[15 * MAP_W + x] = 4;  // Wall Breaker Switch right beside Door A!
-        } else if (x === 9 || x === 10 || x === 14) {
-          g[15 * MAP_W + x] = 10; // Shotgun-Breachable Cracked Wall right next to Door A!
-        } else if (x === 8 || x === 15) {
-          g[15 * MAP_W + x] = 11; // Emissive Industrial Light Strip Bulkhead
-        } else {
-          g[15 * MAP_W + x] = midWall;
-        }
-      }
-
-      // Divider Wall B at y = 7 separating Central Combat Hall from North Extraction Chamber
-      for (let x = 1; x < MAP_W - 1; x++) {
-        if (x === 11 || x === 12) {
-          g[7 * MAP_W + x] = 3;   // Sliding Hydraulic Blast Door B
-        } else if (x === 13) {
-          g[7 * MAP_W + x] = 4;   // North Gate Status Panel
-        } else if (x === 9 || x === 10 || x === 14) {
-          g[7 * MAP_W + x] = 10;  // Shotgun-Breachable Cracked Wall
-        } else if (x === 8 || x === 15) {
-          g[7 * MAP_W + x] = 11;
-        } else {
-          g[7 * MAP_W + x] = accentWall;
-        }
-      }
-
-      // North Exit Elevator Switch Wall at (11..12, 1)
-      g[1 * MAP_W + 11] = 4;
-      g[1 * MAP_W + 12] = 4;
-
-      // Destructible Breach Cover Walls (Tile 10) in combat lanes so Shotgun blasts shatter cover!
-      g[18 * MAP_W + 10] = 10;
-      g[18 * MAP_W + 13] = 10;
-      g[11 * MAP_W + 8]  = 10;
-      g[11 * MAP_W + 15] = 10;
-      return g;
+      return { baseGrid: grid, grid: grid.slice(), doorDefs };
     }
+
+    // LEVEL 01: 霓虹突入回廊 — West Breachable Stealth/Speed Flank + Central Plasma Core + Keycard Ambush Closet
+    const BP_01 = compileBlueprint([
+      "########################",
+      "########LLLSSLLL########",
+      "########........########",
+      "########........########",
+      "#######L........L#######",
+      "#######..........#######",
+      "########........########",
+      "###MMMMMCCLBBSLMMMMMM###",
+      "###M................M###",
+      "###L..............MMM###",
+      "###M..............T..###",
+      "###.....L..EE..L..T..###",
+      "###..L............M..###",
+      "###..M............MMM###",
+      "###..MM..........MMMM###",
+      "###..MMMLCCAASLLMMMMM###",
+      "###..MMM........MMMMM###",
+      "###..MML........LMMMM###",
+      "###....C........E.MMM###",
+      "###....C........E.MMM###",
+      "#######L........L#######",
+      "########........########",
+      "########LL....LL########",
+      "########################"
+    ], 2, 1);
+
+    // LEVEL 02: 高压熔炉双桥 — 3-Lane Catwalks Suspended Between Twin High-Voltage Plasma Execution Spines
+    const BP_02 = compileBlueprint([
+      "########################",
+      "########LLLSSLLL########",
+      "########........########",
+      "#######L........L#######",
+      "#######...E..E...#######",
+      "#######..........#######",
+      "########........########",
+      "###MMMMLCCLBBSLCCMMMM###",
+      "###M................M###",
+      "###L.....EE..EE.....L###",
+      "#MMM.....EE..EE.....MMM#",
+      "#..T................T..#",
+      "#MMM.....EE..EE.....MMM#",
+      "###L.....EE..EE.....L###",
+      "###M................M###",
+      "###MMMMMCCLAASLCCMMMM###",
+      "######M..........M######",
+      "######L..E....E..L######",
+      "######............######",
+      "######L..........L######",
+      "#######..........#######",
+      "########........########",
+      "########LL....LL########",
+      "########################"
+    ], 1, 2);
+
+    // LEVEL 03: 极寒双核环廊 — Open-Air Aurora Skybox + 360° Romero Loop Around Fortified Twin Reactor Bunker
+    const BP_03 = compileBlueprint([
+      "PPPPPPPPPPPPPPPPPPPPPPPP",
+      "PPPPPPPPLLLSSLLLPPPPPPPP",
+      "PPPPPPP..........PPPPPPP",
+      "PPPPPP............PPPPPP",
+      "PPPPPP...E....E...PPPPPP",
+      "PPPPPPP..........PPPPPPP",
+      "PPPPPPPP........PPPPPPPP",
+      "PPPPMMMMCCLBBSLCCMMMPPPP",
+      "PPPP................PPPP",
+      "PPPL................LPPP",
+      "PPP......MMCCMM......PPP",
+      "PPP.....E..CC..E.....PPP",
+      "PPP......MMCCMM......PPP",
+      "PPPL................LPPP",
+      "PPPP................PPPP",
+      "PPPPMMMMCCLAASLCCMMMPPPP",
+      "PPPPPP............PPPPPP",
+      "PPPPPPL..C....C..LPPPPPP",
+      "PPPPPP............PPPPPP",
+      "PPPPPPL..........LPPPPPP",
+      "PPPPPPP..........PPPPPPP",
+      "PPPPPPPP........PPPPPPPP",
+      "PPPPPPPPLL....LLPPPPPPPP",
+      "PPPPPPPPPPPPPPPPPPPPPPPP"
+    ], 2, 1);
+
+    // LEVEL 04: 狂飙处决长廊 — Turbo Boost-Pad Gauntlet + Overload Arena Lined With Perimeter Plasma Walls
+    const BP_04 = compileBlueprint([
+      "########################",
+      "########LLLSSLLL########",
+      "#######..........#######",
+      "######L..........L######",
+      "######..E......E..######",
+      "#######..........#######",
+      "########........########",
+      "###MMMMMCCLBBSLCCMMMM###",
+      "###L................L###",
+      "###E..C..........C..E###",
+      "#MM..................MM#",
+      "#..T................T..#",
+      "#MM..................MM#",
+      "###E..C..........C..E###",
+      "###L................L###",
+      "###MMMMMCCLAASLCCMMMM###",
+      "#######L........L#######",
+      "#######E........E#######",
+      "#######..........#######",
+      "#######L........L#######",
+      "########........########",
+      "########........########",
+      "########LL....LL########",
+      "########################"
+    ], 2, 1);
+
+    // LEVEL 05: 绯红天穹角斗场 — Open-Air Blood-Moon Octagonal Boss Coliseum (North Gate Locked Until Boss Dies!)
+    const BP_05 = compileBlueprint([
+      "PPPPPPPPPPPPPPPPPPPPPPPP",
+      "PPPPPPPPLLLSSLLLPPPPPPPP",
+      "PPPPPPP..........PPPPPPP",
+      "PPPPPP............PPPPPP",
+      "PPPPPPP..........PPPPPPP",
+      "PPPPPPPP........PPPPPPPP",
+      "PPPPPPPP........PPPPPPPP",
+      "PPPPPMMMLLLBBSLLLMMMPPPP",
+      "PPPPP..............PPPPP",
+      "PPPP................PPPP",
+      "PPP..L............L..PPP",
+      "PP..E..............E..PP",
+      "PP....................PP",
+      "PP.........CC.........PP",
+      "PP....................PP",
+      "PP..E..............E..PP",
+      "PPP..L............L..PPP",
+      "PPPP................PPPP",
+      "PPPPP..............PPPPP",
+      "PPPPPP............PPPPPP",
+      "PPPPPPPLL......LLPPPPPPP",
+      "PPPPPPPPPPPPPPPPPPPPPPPP",
+      "PPPPPPPPPPPPPPPPPPPPPPPP",
+      "PPPPPPPPPPPPPPPPPPPPPPPP"
+    ], 8, 2);
 
     const LEVEL_CONFIGS = [
       {
         code: "第 01 关",
-        name: "曙光外围突破口",
-        isOpenAir: true,
-        skyTheme: "HELIOS_OASIS",
-        floorTex: 7,
+        name: "霓虹突入回廊",
+        isOpenAir: false,
+        skyTheme: "NONE",
+        fogColor: [8, 16, 34],
+        floorTex: 5,
         ceilTex: 6,
-        baseGrid: createMultiZoneGrid(8, 1, 2),
-        grid: createMultiZoneGrid(8, 1, 2)
+        ...BP_01
       },
       {
         code: "第 02 关",
-        name: "黑山地下实验区",
+        name: "高压熔炉双桥",
         isOpenAir: false,
         skyTheme: "NONE",
-        floorTex: 5,
+        fogColor: [18, 11, 30],
+        floorTex: 13,
         ceilTex: 6,
-        baseGrid: createMultiZoneGrid(1, 2, 1),
-        grid: createMultiZoneGrid(1, 2, 1)
+        ...BP_02
       },
       {
         code: "第 03 关",
-        name: "苍穹极光反应堆",
+        name: "极寒双核环廊",
         isOpenAir: true,
         skyTheme: "AURORA",
-        floorTex: 9,
+        fogColor: [7, 22, 38],
+        floorTex: 13,
         ceilTex: 6,
-        baseGrid: createMultiZoneGrid(2, 1, 8),
-        grid: createMultiZoneGrid(2, 1, 8)
+        ...BP_03
+      },
+      {
+        code: "第 04 关",
+        name: "狂飙处决长廊",
+        isOpenAir: false,
+        skyTheme: "NONE",
+        fogColor: [24, 9, 22],
+        floorTex: 5,
+        ceilTex: 6,
+        ...BP_04
+      },
+      {
+        code: "第 05 关",
+        name: "绯红天穹角斗场",
+        isOpenAir: true,
+        skyTheme: "HELIOS_OASIS",
+        fogColor: [32, 9, 16],
+        floorTex: 7,
+        ceilTex: 6,
+        ...BP_05
       }
     ];
 
-    // 5 Pure-Chinese Interactive Campaign Levels (Tap any node on the watch canvas to deploy directly into that level!)
+    // 5 Pure-Chinese Handcrafted Campaign Sectors on the Holographic Star-Map (y = 86..228 expanded window!)
     const CAMPAIGN_NODES = [
       {
         id: 0,
         code: "第 01 关",
-        zoneCode: "01 外围突破",
-        title: "曙光外围配电区",
-        directive: "拉下门旁电闸或轰开裂隙墙，拾取蓝卡撤离",
+        zoneCode: "01 霓虹回廊",
+        title: "霓虹突入回廊",
+        directive: "轰开西侧暗道或拉电闸，夺取蓝卡突破伏击",
         mapIdx: 0,
         startStage: 1,
-        cx: 52,
-        cy: 176,
-        color: "#f59e0b"
+        cx: 48,
+        cy: 214,
+        color: "#22d3ee"
       },
       {
         id: 1,
         code: "第 02 关",
-        zoneCode: "02 军械仓库",
-        title: "重装军械弹药库",
-        directive: "使用转管机枪肃清走廊，拾取门禁卡开启北门",
+        zoneCode: "02 高压双桥",
+        title: "高压熔炉双桥",
+        directive: "将恶魔踹入中央高压电网，夺取红卡解锁北门",
         mapIdx: 1,
         startStage: 1,
-        cx: 104,
-        cy: 142,
+        cx: 102,
+        cy: 168,
         color: "#38bdf8"
       },
       {
         id: 2,
         code: "第 03 关",
-        zoneCode: "03 冷却核心",
-        title: "双翼反应堆核心",
-        directive: "突入中央防区，轰爆两座高热反应堆核心",
-        mapIdx: 0,
-        startStage: 2,
-        cx: 162,
-        cy: 174,
-        color: "#f59e0b"
+        zoneCode: "03 双核环廊",
+        title: "极寒双核环廊",
+        directive: "沿环形弹射走廊机动作战，轰爆东西两座反应核",
+        mapIdx: 2,
+        startStage: 1,
+        cx: 166,
+        cy: 204,
+        color: "#fbbf24"
       },
       {
         id: 3,
         code: "第 04 关",
-        zoneCode: "04 生化走廊",
-        title: "地下超载实验室",
-        directive: "驻守中央超载终端完成 100% 充能，突破北门",
-        mapIdx: 2,
+        zoneCode: "04 狂飙长廊",
+        title: "狂飙处决长廊",
+        directive: "借涡轮弹射冲入超载台，驻守充能至100%破门",
+        mapIdx: 3,
         startStage: 2,
-        cx: 216,
-        cy: 142,
-        color: "#38bdf8"
+        cx: 222,
+        cy: 158,
+        color: "#f97316"
       },
       {
         id: 4,
         code: "第 05 关",
-        zoneCode: "05 领主决战",
-        title: "陨石坑指挥高台",
-        directive: "决战深渊赛博领主，登上北侧绿色撤离电梯",
-        mapIdx: 2,
+        zoneCode: "05 天穹决战",
+        title: "绯红天穹角斗场",
+        directive: "决战深渊赛博领主，解除封锁登上撤离电梯",
+        mapIdx: 4,
         startStage: 3,
-        cx: 156,
-        cy: 108,
-        color: "#ef4444"
+        cx: 148,
+        cy: 112,
+        color: "#f43f5e"
       }
     ];
 
@@ -1455,7 +1702,7 @@
       quickTurnTimer: 0,
       quickTurnStartYaw: 0,
 
-      // Combat & Weapon Viewmodel
+      // Combat, Dash-Kick, Adrenaline Style & Skillshot State
       weaponIdx: 0,
       fireCooldown: 0,
       recoil: 0,
@@ -1470,6 +1717,18 @@
       countdownTimer: 0,
       autoPilot: false,
       manualFireRequested: false,
+
+      stylePoints: 0,        // 0..100 Adrenaline meter -> drives 6-tier STYLE_RANKS
+      styleRank: 0,          // 0:凡铁 1:锋芒 2:喋血 3:暴走 4:杀神 5:极意
+      fovPunch: 0,           // Dynamic FOV surge on Dash-Kick (+) & Meatshot (-)
+      dashTimer: 0,          // Active high-velocity Dash lunge timer
+      dashCooldown: 0,
+      dashVx: 0,
+      dashVy: 0,
+      kickAnim: 0,           // 1.0 -> 0.0 First-Person Armored Boot Kick animation
+      ambushTriggered: false,
+      lastSkillText: "",
+      skillshots: [],        // [{ text, bonus, color, age, maxAge }]
 
       enemies: [],
       barrels: [],
@@ -1495,6 +1754,52 @@
       visorBlood: []
     };
 
+    const STYLE_RANKS = [
+      { name: "凡铁", color: "#94a3b8", speedMult: 1.00, fireMult: 1.00, fovBoost: 0.00 },
+      { name: "锋芒", color: "#38bdf8", speedMult: 1.06, fireMult: 1.06, fovBoost: 0.02 },
+      { name: "喋血", color: "#10b981", speedMult: 1.12, fireMult: 1.12, fovBoost: 0.035 },
+      { name: "暴走", color: "#fbbf24", speedMult: 1.18, fireMult: 1.18, fovBoost: 0.05 },
+      { name: "杀神", color: "#f97316", speedMult: 1.24, fireMult: 1.25, fovBoost: 0.07 },
+      { name: "极意", color: "#f43f5e", speedMult: 1.30, fireMult: 1.32, fovBoost: 0.09 }
+    ];
+
+    function addStylePoints(amount) {
+      state.stylePoints = Math.max(0, Math.min(100, (state.stylePoints || 0) + amount));
+      state.styleRank = Math.min(STYLE_RANKS.length - 1, Math.floor(state.stylePoints / 18));
+      state.multiplier = +(1.0 + state.styleRank * 0.4).toFixed(1);
+    }
+
+    function addSkillshot(text, bonus = 250, color = "#fbbf24", styleGain = 20) {
+      // Normalize OS color emojis into crisp monochrome geometric sci-fi vector glyphs!
+      const cleanText = String(text)
+        .replace(/🧱/gu, "◈")
+        .replace(/🥾/gu, "▲")
+        .replace(/⚡\uFE0F?/gu, "❖")
+        .replace(/👑/gu, "✦")
+        .replace(/🔥/gu, "◈")
+        .replace(/💥/gu, "✦")
+        .replace(/⚠\uFE0F?/gu, "▲");
+      state.score += bonus;
+      if (state.score > state.bestScore) state.bestScore = state.score;
+      addStylePoints(styleGain);
+      state.lastSkillText = cleanText;
+      // Avoid duplicate spam in the same 0.25s frame window
+      const recent = state.skillshots[state.skillshots.length - 1];
+      if (recent && recent.text === cleanText && recent.age < 0.22) {
+        recent.bonus += bonus;
+        recent.age = 0;
+        return;
+      }
+      if (state.skillshots.length >= 4) state.skillshots.shift();
+      state.skillshots.push({
+        text: cleanText,
+        bonus,
+        color,
+        age: 0,
+        maxAge: 1.75
+      });
+    }
+
 
     // =========================================================================
     // 5. STAGE BREAKTHROUGH CEREMONY, 3D RIGID-BODY DEBRIS & COLLISION PHYSICS
@@ -1514,8 +1819,8 @@
 
     function spawnDebrisChunks(wx, wy, wz = 0.1, count = 12, isMetal = false) {
       const palette = isMetal
-        ? ["#94a3b8", "#64748b", "#f59e0b", "#475569"]
-        : ["#a8a29e", "#78716c", "#d97706", "#57534e", "#b45309"];
+        ? ["#38bdf8", "#94a3b8", "#fbbf24", "#475569"]
+        : ["#cbd5e1", "#64748b", "#f59e0b", "#334155", "#fbbf24"];
       for (let i = 0; i < count; i++) {
         if (state.debris.length > 64) state.debris.shift();
         const ang = Math.random() * Math.PI * 2;
@@ -1543,7 +1848,7 @@
       const idx = iy * MAP_W + ix;
       if (cfg.grid[idx] !== 10) return false;
 
-      if (state.wallHp[idx] === undefined) state.wallHp[idx] = 42;
+      if (state.wallHp[idx] === undefined) state.wallHp[idx] = 38;
       state.wallHp[idx] -= dmg;
       spawnImpactPuff(hitX, hitY, (Math.random() - 0.5) * 0.25, "PUFF");
       spawnDebrisChunks(hitX, hitY, 0.05, 5, false);
@@ -1551,14 +1856,15 @@
       if (state.wallHp[idx] <= 0) {
         cfg.grid[idx] = 0; // Physically breach the wall tile into an open walkthrough passage!
         state.wallsBreached++;
-        state.score += 250;
         state.screenShake = Math.max(state.screenShake, 3.8);
-        state.explosionFlash = Math.max(state.explosionFlash, 0.42);
+        state.explosionFlash = Math.max(state.explosionFlash, 0.28);
         playSound("explosion");
-        spawnShockwaveRing(ix + 0.5, iy + 0.5, 4.2, "#f59e0b");
+        spawnShockwaveRing(ix + 0.5, iy + 0.5, 4.2, "#fbbf24");
         spawnDebrisChunks(ix + 0.5, iy + 0.5, 0.12, 18, false);
-        // If a divider breach wall at y=15 or y=7 was blasted open, advance stage access automatically!
-        if (iy === 15 && state.stage === 1) {
+        addSkillshot("🧱 轰墙破障", 250, "#fbbf24", 18);
+
+        // If a divider breach wall at y=15 or West stealth flank at x=7 was blasted open, unlock Stage 2!
+        if ((iy === 15 || (ix === 7 && iy >= 18)) && state.stage === 1) {
           state.stage = 2;
           state.stageProgress = 0.45;
           state.weaponTier = Math.max(state.weaponTier, 2);
@@ -1567,8 +1873,11 @@
           if (sw) sw.used = true;
           const hasKey = state.interactables.some(x => x.id === "STAGE2_KEYCARD");
           const hasRes = state.objectives.some(x => x.kind === "RESONATOR");
-          state.missionShort = hasKey ? "拾取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
-          triggerStageBreakthrough(1, "裂隙墙已轰破", "已强行炸开捷径通道 — 进入中央大厅推进目标", "", "#f59e0b");
+          state.missionShort = hasKey ? "夺取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
+          const msg = ix === 7
+            ? "西侧包抄暗道已贯通 — 可从侧翼奇袭中央防区！"
+            : "已强行炸开裂隙墙捷径 — 突入中央大厅推进目标";
+          triggerStageBreakthrough(1, "战术暗道已轰通", msg, "", "#fbbf24");
         } else if (iy === 7 && state.stage === 2) {
           state.stage = 3;
           state.stageProgress = 0.88;
@@ -1577,7 +1886,7 @@
           const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
           if (goal) goal.active = true;
           state.missionShort = "前往撤离点";
-          triggerStageBreakthrough(2, "北侧裂隙墙已轰破", "已炸开撤离通道 — 前往北侧绿色撤离电梯", "", "#10b981");
+          triggerStageBreakthrough(2, "北侧防线已轰破", "撤离通道已贯通 — 冲向北侧绿色撤离电梯", "", "#10b981");
         }
         return true;
       }
@@ -1955,6 +2264,27 @@
       }
     }
 
+    function triggerMonsterClosetAmbush() {
+      if (state.ambushTriggered) return;
+      state.ambushTriggered = true;
+      setDoorGroupTarget("DOOR_TRAP", 1.0);
+      const nodeIdx = state.campaignNodeIdx || 0;
+      const ambushSpots = nodeIdx === 0
+        ? [{ x: 19.6, y: 10.6, kind: "IMP" }, { x: 19.6, y: 11.6, kind: "MECHA" }]
+        : nodeIdx === 1 || nodeIdx === 3
+          ? [{ x: 1.8, y: 11.5, kind: "IMP" }, { x: 21.8, y: 11.5, kind: "MECHA" }]
+          : [];
+      for (const sp of ambushSpots) {
+        if (getRawMapTile(sp.x, sp.y) === 0) {
+          spawnEnemy(sp.kind, sp);
+          spawnShockwaveRing(sp.x, sp.y, 3.0, "#f43f5e");
+        }
+      }
+      if (ambushSpots.length > 0) {
+        addSkillshot("⚠ 暗门伏击开启", 100, "#f43f5e", 10);
+      }
+    }
+
     function setupMissionForCurrentMap() {
       const cfg = LEVEL_CONFIGS[state.mapIdx] || LEVEL_CONFIGS[0];
       if (cfg.baseGrid) {
@@ -1963,6 +2293,7 @@
       state.wallHp = {};
       state.stage = 1;
       state.stageProgress = 0.12;
+      state.ambushTriggered = false;
       state.objectives = [];
       state.interactables = [];
       state.barrels = [];
@@ -1979,23 +2310,26 @@
       state.bossSpawnedForMission = false;
       state.sectorClearTimer = 0;
 
-      state.doors = [
-        { tx: 11, ty: 15, group: "DOOR_A", open: 0.0, targetOpen: 0.0 },
-        { tx: 12, ty: 15, group: "DOOR_A", open: 0.0, targetOpen: 0.0 },
-        { tx: 11, ty: 7,  group: "DOOR_B", open: 0.0, targetOpen: 0.0 },
-        { tx: 12, ty: 7,  group: "DOOR_B", open: 0.0, targetOpen: 0.0 }
-      ];
+      // Populate exact animated sliding doors from the handcrafted 24x24 blueprint!
+      state.doors = (cfg.doorDefs || []).map(d => ({
+        tx: d.tx,
+        ty: d.ty,
+        group: d.group,
+        open: 0.0,
+        targetOpen: 0.0
+      }));
 
-      // 3D Destructible Freedoom Columns right along the corridor sightlines
-      const pillarSpots = [
-        { x: 10.2, y: 17.0, sprite: "col1a0" },
-        { x: 13.8, y: 17.0, sprite: "col2a0" },
-        { x: 9.2,  y: 13.2, sprite: "col1a0" },
-        { x: 14.8, y: 13.2, sprite: "col2a0" },
-        { x: 10.2, y: 9.0,  sprite: "col1a0" },
-        { x: 13.8, y: 9.0,  sprite: "col2a0" }
+      const nodeIdx = state.campaignNodeIdx || 0;
+
+      // Bespoke 3D Destructible Tech Columns per level
+      const pillarSets = [
+        [{ x: 10.2, y: 17.0, sprite: "col1a0" }, { x: 13.8, y: 17.0, sprite: "col2a0" }, { x: 8.5, y: 12.5, sprite: "col1a0" }, { x: 15.2, y: 9.2, sprite: "col2a0" }],
+        [{ x: 6.2, y: 12.5, sprite: "col1a0" }, { x: 17.8, y: 12.5, sprite: "col2a0" }, { x: 10.2, y: 5.5, sprite: "col1a0" }, { x: 13.8, y: 5.5, sprite: "col2a0" }],
+        [{ x: 7.5, y: 13.5, sprite: "col1a0" }, { x: 16.5, y: 13.5, sprite: "col2a0" }, { x: 7.5, y: 8.8, sprite: "col2a0" }, { x: 16.5, y: 8.8, sprite: "col1a0" }],
+        [{ x: 9.5, y: 12.5, sprite: "col1a0" }, { x: 14.5, y: 12.5, sprite: "col2a0" }, { x: 9.5, y: 9.5, sprite: "col2a0" }, { x: 14.5, y: 9.5, sprite: "col1a0" }],
+        [{ x: 8.0, y: 15.0, sprite: "col1a0" }, { x: 16.0, y: 15.0, sprite: "col2a0" }, { x: 8.0, y: 10.5, sprite: "col2a0" }, { x: 16.0, y: 10.5, sprite: "col1a0" }]
       ];
-      for (const ps of pillarSpots) {
+      for (const ps of (pillarSets[nodeIdx] || pillarSets[0])) {
         if (getRawMapTile(ps.x, ps.y) === 0) {
           state.destructibles.push({
             x: ps.x,
@@ -2010,68 +2344,102 @@
         }
       }
 
-      // Pushable & Chain-Exploding Barrels placed next to enemies & cracked breach walls!
-      const barrelSpots = [
-        { x: 9.6,  y: 16.0 }, // Right in front of South Cracked Breach Wall (x=9..10, y=15)!
-        { x: 13.8, y: 18.2 },
-        { x: 9.6,  y: 11.8 },
-        { x: 14.4, y: 11.8 },
-        { x: 12.0, y: 5.5 }
+      // Bespoke Explosive Barrels positioned right along Dash-Kick bowling sightlines & ambush doors!
+      const barrelSets = [
+        [{ x: 12.0, y: 18.7 }, { x: 9.6, y: 16.0 }, { x: 14.2, y: 11.2 }, { x: 17.2, y: 11.2 }, { x: 12.0, y: 5.2 }],
+        [{ x: 12.0, y: 18.6 }, { x: 6.5, y: 11.2 }, { x: 17.5, y: 11.2 }, { x: 12.0, y: 8.5 },  { x: 12.0, y: 5.2 }],
+        [{ x: 12.0, y: 18.5 }, { x: 6.0, y: 9.4 },  { x: 18.0, y: 13.0 }, { x: 12.0, y: 8.5 },  { x: 12.0, y: 5.2 }],
+        [{ x: 12.0, y: 14.2 }, { x: 8.5, y: 12.8 }, { x: 15.5, y: 12.8 }, { x: 8.5, y: 9.4 },   { x: 15.5, y: 9.4 }],
+        [{ x: 12.0, y: 15.2 }, { x: 9.2, y: 13.5 }, { x: 14.8, y: 13.5 }, { x: 9.2, y: 10.2 },  { x: 14.8, y: 10.2 }]
       ];
-      for (const bs of barrelSpots) {
+      for (const bs of (barrelSets[nodeIdx] || barrelSets[0])) {
         if (getRawMapTile(bs.x, bs.y) === 0) {
-          state.barrels.push({ x: bs.x, y: bs.y, vx: 0, vy: 0, radius: 0.28, hp: 25, maxHp: 25, hitFlash: 0 });
+          state.barrels.push({ x: bs.x, y: bs.y, vx: 0, vy: 0, kicked: false, radius: 0.28, hp: 25, maxHp: 25, hitFlash: 0 });
         }
       }
 
-      // Stage 1 Switch is placed right beside South Blast Door A at (13.3, 16.0) so player sees Door + Switch + Breach Wall together!
-      state.interactables.push({
-        id: "STAGE1_SWITCH",
-        kind: "SWITCH",
-        x: 13.3,
-        y: 16.0,
-        used: false,
-        label: "南门电闸",
-        prompt: "拉下南门电闸",
-        pulse: 0
-      });
+      // Bespoke Turbo Speed-Boost Pads (JUMP_PAD) for Neon White / Mullet MadJack velocity loops!
+      const padSets = [
+        [{ x: 4.0, y: 15.5 }],
+        [{ x: 6.2, y: 13.8 }, { x: 17.8, y: 13.8 }],
+        [{ x: 5.5, y: 13.8 }, { x: 18.5, y: 8.8 }],
+        [{ x: 12.0, y: 16.8 }, { x: 6.5, y: 11.2 }, { x: 17.5, y: 11.2 }],
+        [{ x: 6.2, y: 16.0 }, { x: 17.8, y: 16.0 }, { x: 6.2, y: 9.5 }, { x: 17.8, y: 9.5 }]
+      ];
+      for (const jp of (padSets[nodeIdx] || [])) {
+        if (getRawMapTile(jp.x, jp.y) === 0) {
+          state.interactables.push({
+            id: "BOOST_PAD",
+            kind: "JUMP_PAD",
+            x: jp.x,
+            y: jp.y,
+            used: false,
+            cooldown: 0,
+            label: "涡轮弹射板",
+            prompt: "",
+            pulse: 0
+          });
+        }
+      }
 
-      // Configure Zone 2 & Zone 3 per Campaign Node (0..4) so all 5 levels have distinct, crystal-clear objectives!
-      const nodeIdx = state.campaignNodeIdx || 0;
-      if (nodeIdx === 0 || nodeIdx === 1) {
-        // Level 01 & Level 02: Classic DOOM Keycard Hunt in Central Hall -> Unlocks North Blast Door -> Exit Elevator!
+      // Stage 1 Breaker Switch (Levels 01-03)
+      if (nodeIdx <= 2) {
+        state.interactables.push({
+          id: "STAGE1_SWITCH",
+          kind: "SWITCH",
+          x: 13.3,
+          y: 16.0,
+          used: false,
+          label: "南门电闸",
+          prompt: "拉下南门电闸",
+          pulse: 0
+        });
+      }
+
+      // Stage 2 Unique Objectives per Level
+      if (nodeIdx === 0) {
         state.interactables.push({
           id: "STAGE2_KEYCARD",
           kind: "KEYCARD",
-          keyColor: nodeIdx === 0 ? "BLUE" : "RED",
-          x: nodeIdx === 0 ? 14.2 : 9.8,
+          keyColor: "BLUE",
+          x: 16.2,
           y: 11.2,
           used: false,
-          label: nodeIdx === 0 ? "蓝色门禁卡" : "红色门禁卡",
-          prompt: "拾取门禁卡解锁北门",
+          label: "蓝色门禁卡",
+          prompt: "夺取蓝卡解锁北门",
+          pulse: 0
+        });
+      } else if (nodeIdx === 1) {
+        state.interactables.push({
+          id: "STAGE2_KEYCARD",
+          kind: "KEYCARD",
+          keyColor: "RED",
+          x: 12.0,
+          y: 11.2,
+          used: false,
+          label: "红色门禁卡",
+          prompt: "夺取红卡解锁北门",
           pulse: 0
         });
       } else if (nodeIdx === 2) {
-        // Level 03: Destroy 2 Reactor Cores in Central Hall -> Unlocks North Blast Door -> Exit Elevator!
         state.objectives.push(
-          { kind: "RESONATOR", x: 9.0,  y: 11.2, hp: 95, maxHp: 95, hitFlash: 0, pulse: 0, label: "西侧反应核心" },
-          { kind: "RESONATOR", x: 15.0, y: 11.2, hp: 95, maxHp: 95, hitFlash: 0, pulse: 2, label: "东侧反应核心" }
+          { kind: "RESONATOR", x: 6.0,  y: 11.2, hp: 90, maxHp: 90, hitFlash: 0, pulse: 0, label: "西翼反应核" },
+          { kind: "RESONATOR", x: 18.0, y: 11.2, hp: 90, maxHp: 90, hitFlash: 0, pulse: 2, label: "东翼反应核" }
         );
-      } else {
-        // Level 04 (& fallback): Stand near Central Reactor Overload Console -> 100% -> Unlocks North Blast Door!
+      } else if (nodeIdx === 3) {
         state.interactables.push({
           id: "STAGE2_OVERLOAD",
           kind: "OVERLOAD_TERM",
           x: 12.0,
           y: 11.2,
           used: false,
-          label: "超载控制台",
-          prompt: "靠近控制台完成超载",
+          label: "超载核心台",
+          prompt: "驻守完成100%超载",
           pulse: 0
         });
       }
 
-      // North Extraction Elevator Pad (at (12.0, 3.0) right in front of the Exit Switch Wall at y=1)
+      // North Extraction Elevator Pad (at (12.0, 3.0))
       state.interactables.push({
         id: "STAGE3_GOAL",
         kind: "PORTAL",
@@ -2080,20 +2448,52 @@
         active: false,
         used: false,
         label: "撤离电梯",
-        prompt: "踏入绿色撤离电梯过关",
+        prompt: "踏入撤离电梯过关",
         pulse: 0
       });
 
-      state.missionText = "拉下前方门旁电闸，或用霰弹枪轰开左侧裂隙墙";
+      state.missionText = (CAMPAIGN_NODES[nodeIdx] && CAMPAIGN_NODES[nodeIdx].directive) || "推进肃清当前战区";
       state.missionShort = "开启南门";
     }
 
     function spawnZoneEnemies(zoneNumber, count) {
-      const spots = SPAWN_SPOTS.filter(
-        s => s.zone === zoneNumber && Math.hypot(s.x - state.px, s.y - state.py) > 2.4
+      const nodeIdx = state.campaignNodeIdx || 0;
+      const levelSpots = [
+        // Level 01: Entry guards near East Plasma Grid + Central Atrium defenders
+        [
+          { x: 12.0, y: 17.2, zone: 1 }, { x: 14.6, y: 18.5, zone: 1 }, { x: 9.4, y: 18.2, zone: 1 },
+          { x: 9.2, y: 11.2, zone: 2 },  { x: 15.2, y: 12.5, zone: 2 }, { x: 10.2, y: 9.0, zone: 2 }, { x: 14.5, y: 9.0, zone: 2 },
+          { x: 10.2, y: 4.8, zone: 3 },  { x: 13.8, y: 4.8, zone: 3 },  { x: 12.0, y: 4.0, zone: 3 }
+        ],
+        // Level 02: Twin Plasma Bridges defenders right next to high-voltage rails!
+        [
+          { x: 12.0, y: 17.2, zone: 1 }, { x: 8.2, y: 18.2, zone: 1 },  { x: 15.8, y: 18.2, zone: 1 },
+          { x: 6.5, y: 10.2, zone: 2 },  { x: 17.5, y: 10.2, zone: 2 }, { x: 8.0, y: 12.2, zone: 2 }, { x: 16.0, y: 12.2, zone: 2 },
+          { x: 9.5, y: 5.0, zone: 3 },   { x: 14.5, y: 5.0, zone: 3 },  { x: 12.0, y: 4.0, zone: 3 }
+        ],
+        // Level 03: Horseshoe Loop guards protecting West & East Reactor Cores
+        [
+          { x: 12.0, y: 17.2, zone: 1 }, { x: 8.2, y: 18.0, zone: 1 },  { x: 15.8, y: 18.0, zone: 1 },
+          { x: 6.0, y: 12.8, zone: 2 },  { x: 18.0, y: 9.5, zone: 2 },  { x: 9.5, y: 8.8, zone: 2 },  { x: 14.5, y: 13.6, zone: 2 },
+          { x: 9.5, y: 5.0, zone: 3 },   { x: 14.5, y: 5.0, zone: 3 },  { x: 12.0, y: 4.0, zone: 3 }
+        ],
+        // Level 04: Dense fodder + heavy squad inside Overload Speed Arena
+        [
+          { x: 12.0, y: 13.4, zone: 1 }, { x: 7.5, y: 12.5, zone: 2 },  { x: 16.5, y: 12.5, zone: 2 },
+          { x: 7.5, y: 9.5, zone: 2 },   { x: 16.5, y: 9.5, zone: 2 },  { x: 12.0, y: 8.8, zone: 2 },
+          { x: 9.5, y: 5.0, zone: 3 },   { x: 14.5, y: 5.0, zone: 3 },  { x: 12.0, y: 4.0, zone: 3 }
+        ],
+        // Level 05: Blood-Moon Coliseum honor guard flanking the Abyssal Cyber-Overlord
+        [
+          { x: 8.5, y: 14.0, zone: 2 },  { x: 15.5, y: 14.0, zone: 2 }, { x: 7.0, y: 11.5, zone: 2 }, { x: 17.0, y: 11.5, zone: 2 },
+          { x: 10.0, y: 4.8, zone: 3 },  { x: 14.0, y: 4.8, zone: 3 }
+        ]
+      ];
+      const pool = (levelSpots[nodeIdx] || SPAWN_SPOTS).filter(
+        s => s.zone === zoneNumber && getRawMapTile(s.x, s.y) === 0 && Math.hypot(s.x - state.px, s.y - state.py) > 2.2
       );
-      for (let i = 0; i < count && spots.length > 0; i++) {
-        const sp = spots[i % spots.length];
+      for (let i = 0; i < count && pool.length > 0; i++) {
+        const sp = pool[i % pool.length];
         const kind = i === 0 ? "MARINE" : i % 2 === 0 ? "MECHA" : "IMP";
         spawnEnemy(kind, sp);
       }
@@ -2106,13 +2506,28 @@
       state.bloodPools = [];
 
       setupMissionForCurrentMap();
-      spawnZoneEnemies(1, 3);
-      spawnZoneEnemies(2, 4);
+      const nodeIdx = state.campaignNodeIdx || 0;
+      if (nodeIdx <= 2) {
+        spawnZoneEnemies(1, 3);
+        spawnZoneEnemies(2, 4);
+      } else if (nodeIdx === 3) {
+        spawnZoneEnemies(1, 1);
+        spawnZoneEnemies(2, 5);
+      } else {
+        spawnZoneEnemies(2, 4);
+      }
 
-      state.pickups.push({ x: 8.2,  y: 19.5, kind: "MEDKIT" });
-      state.pickups.push({ x: 15.8, y: 19.5, kind: "ARMOR" });
-      state.pickups.push({ x: 7.5,  y: 10.0, kind: "MEDKIT" });
-      state.pickups.push({ x: 16.5, y: 10.0, kind: "ARMOR" });
+      const pickupCandidates = [
+        { x: 9.0, y: 20.2, kind: "MEDKIT" },
+        { x: 4.0, y: 13.2, kind: "ARMOR" },
+        { x: 6.5, y: 9.0,  kind: "MEDKIT" },
+        { x: 17.5, y: 9.0, kind: "ARMOR" }
+      ];
+      for (const pk of pickupCandidates) {
+        if (getRawMapTile(pk.x, pk.y) === 0) {
+          state.pickups.push(pk);
+        }
+      }
     }
 
     // Deploy directly into any clicked stage node on the Panoramic Tactical Campaign Map!
@@ -2120,7 +2535,6 @@
       const clampedIdx = Math.max(0, Math.min(CAMPAIGN_NODES.length - 1, nodeIdx | 0));
       state.campaignNodeIdx = clampedIdx;
       const node = CAMPAIGN_NODES[clampedIdx];
-      // Level 02 auto-equips Chaingun if player hasn't switched; Level 05 equips Plasma Rifle!
       if (clampedIdx === 1) state.weaponIdx = 1;
       else if (clampedIdx === 4) state.weaponIdx = 2;
       else if (clampedIdx === 0) state.weaponIdx = 0;
@@ -2141,14 +2555,21 @@
       state.score = 0;
       state.combo = 0;
       state.multiplier = 1.0;
+      state.stylePoints = 12;
+      state.styleRank = 0;
+      state.fovPunch = 0;
+      state.dashTimer = 0;
+      state.dashCooldown = 0;
+      state.kickAnim = 0;
+      state.skillshots = [];
+      state.lastSkillText = "";
       state.hp = 100;
       state.armor = 60;
       state.weaponTier = forceStage;
       state.sector = state.campaignNodeIdx + 1;
       state.wave = state.mapIdx + 1;
-      // Always spawn centered in the corridor facing straight North (-PI/2) so view is immediately readable!
       state.px = 12.0;
-      state.py = 20.8;
+      state.py = state.campaignNodeIdx === 4 ? 18.2 : 21.0;
       state.yaw = -Math.PI * 0.5;
       state.curSpeed = 0.0;
       state.strafeSpeed = 0.0;
@@ -2163,7 +2584,9 @@
       state.visorBlood = [];
       populateDungeonWave();
 
-      if (forceStage >= 2) {
+      const curNode = CAMPAIGN_NODES[state.campaignNodeIdx] || CAMPAIGN_NODES[0];
+
+      if (forceStage === 2) {
         state.stage = 2;
         state.stageProgress = 0.45;
         for (const d of state.doors) {
@@ -2172,40 +2595,38 @@
         const sw = state.interactables.find(it => it.id === "STAGE1_SWITCH");
         if (sw) sw.used = true;
         state.px = 12.0;
-        state.py = 14.2;
+        state.py = 19.2;
         state.yaw = -Math.PI * 0.5;
-        state.missionShort = state.campaignNodeIdx === 2 ? "摧毁双核" : "充能超载";
-        triggerStageBreakthrough(1, "第 0" + (state.campaignNodeIdx + 1) + " 关", CAMPAIGN_NODES[state.campaignNodeIdx].directive, "", "#38bdf8");
-      } else {
-        triggerStageBreakthrough(1, "第 0" + (state.campaignNodeIdx + 1) + " 关", CAMPAIGN_NODES[state.campaignNodeIdx].directive, "", "#f59e0b");
-      }
-
-      if (forceStage >= 3) {
+        state.missionShort = state.campaignNodeIdx === 2 ? "摧毁双核" : "超载 0%";
+        triggerStageBreakthrough(1, `${curNode.code} · ${curNode.title}`, curNode.directive, "", curNode.color);
+      } else if (forceStage >= 3) {
         state.stage = 3;
-        state.stageProgress = 0.85;
+        state.stageProgress = 0.72;
         state.armor = 100;
         for (const d of state.doors) {
           if (d.group === "DOOR_A") { d.open = 1.0; d.targetOpen = 1.0; }
-          // Keep DOOR_B locked until the Boss is defeated in Level 05!
-          if (d.group === "DOOR_B") { d.open = 1.0; d.targetOpen = 1.0; }
+          // Keep DOOR_B strictly LOCKED (0.0) in Level 05 until the Cyber-Overlord Boss is slain!
+          if (d.group === "DOOR_B") { d.open = 0.0; d.targetOpen = 0.0; }
         }
         const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
-        if (goal) goal.active = true;
+        if (goal) goal.active = false;
         state.px = 12.0;
-        state.py = 9.2;
+        state.py = 18.2;
         state.yaw = -Math.PI * 0.5;
         if (!state.bossSpawnedForMission) {
           state.bossSpawnedForMission = true;
-          spawnEnemy("BOSS", { x: 12.0, y: 5.0 });
+          spawnEnemy("BOSS", { x: 12.0, y: 10.2 });
         }
-        state.missionShort = "击败领主";
-        triggerStageBreakthrough(3, "最终决战", "击败深渊赛博领主，踏入北侧绿色撤离电梯", "", "#ef4444");
+        state.missionShort = "决战领主";
+        triggerStageBreakthrough(3, `${curNode.code} · 最终决战`, curNode.directive, "", "#f43f5e");
+      } else {
+        triggerStageBreakthrough(1, `${curNode.code} · ${curNode.title}`, curNode.directive, "", curNode.color);
       }
       syncMenus();
     }
 
     function advanceToNextMapMission() {
-      state.score += 1500;
+      state.score += 1200;
       if (state.score > state.bestScore) state.bestScore = state.score;
       state.nodesCleared[state.campaignNodeIdx] = true;
       const nextNodeIdx = (state.campaignNodeIdx + 1) % CAMPAIGN_NODES.length;
@@ -2216,18 +2637,18 @@
     function getActiveMissionTarget() {
       if (state.stage === 1) {
         const sw = state.interactables.find(it => it.id === "STAGE1_SWITCH" && !it.used);
-        if (sw) return { x: sw.x, y: sw.y, label: sw.label, color: "#f59e0b" };
+        if (sw) return { x: sw.x, y: sw.y, label: sw.label, color: "#fbbf24" };
       } else if (state.stage === 2) {
         const res = state.objectives.find(o => o.kind === "RESONATOR" && o.hp > 0);
-        if (res) return { x: res.x, y: res.y, label: res.label, color: "#ef4444" };
+        if (res) return { x: res.x, y: res.y, label: res.label, color: "#f43f5e" };
         const kc = state.interactables.find(it => it.id === "STAGE2_KEYCARD" && !it.used);
         if (kc) return { x: kc.x, y: kc.y, label: kc.label, color: "#38bdf8" };
         const ov = state.interactables.find(it => it.id === "STAGE2_OVERLOAD" && !it.used);
-        if (ov) return { x: ov.x, y: ov.y, label: ov.label, color: "#f59e0b" };
+        if (ov) return { x: ov.x, y: ov.y, label: ov.label, color: "#fbbf24" };
       } else if (state.stage === 3) {
         const boss = state.enemies.find(e => e.kind === "BOSS" && e.hp > 0);
         if (boss && state.campaignNodeIdx === 4) {
-          return { x: boss.x, y: boss.y, label: "赛博领主", color: "#ef4444" };
+          return { x: boss.x, y: boss.y, label: "赛博领主", color: "#f43f5e" };
         }
         const goal = state.interactables.find(it => it.id === "STAGE3_GOAL");
         if (goal) return { x: goal.x, y: goal.y, label: goal.label, color: "#10b981" };
@@ -2242,7 +2663,8 @@
         it.used = true;
         state.stage = 2;
         state.stageProgress = 0.45;
-        state.score += 400;
+        state.score += 350;
+        addStylePoints(15);
         state.weaponTier = Math.max(state.weaponTier, 2);
         state.hp = Math.min(100, state.hp + 25);
         state.armor = Math.min(100, state.armor + 30);
@@ -2253,13 +2675,13 @@
         const hasKey = state.interactables.some(x => x.id === "STAGE2_KEYCARD");
         const hasRes = state.objectives.some(x => x.kind === "RESONATOR");
         const nextHint = hasKey
-          ? "南侧防爆门已开启 — 前往中央大厅拾取门禁卡"
+          ? "防爆门已开启 — 突入中央战区夺取门禁卡"
           : hasRes
-            ? "南侧防爆门已开启 — 摧毁两座高热反应核心"
-            : "南侧防爆门已开启 — 靠近中央控制台完成超载";
+            ? "防爆门已开启 — 沿环形回廊轰爆两座高热反应核"
+            : "防爆门已开启 — 冲向中央超载核心台完成充能";
 
-        triggerStageBreakthrough(1, "防爆门已解锁", nextHint, "", "#10b981");
-        state.missionShort = hasKey ? "拾取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
+        triggerStageBreakthrough(1, "防爆闸门已开启", nextHint, "", "#10b981");
+        state.missionShort = hasKey ? "夺取门禁卡" : hasRes ? "反应核 0/2" : "超载 0%";
         return true;
       }
 
@@ -2267,16 +2689,20 @@
         it.used = true;
         state.stage = 3;
         state.stageProgress = 0.85;
-        state.score += 650;
+        state.score += 550;
+        addStylePoints(22);
         state.weaponTier = 3;
         state.hp = 100;
         state.armor = 100;
         playSound("pickup");
         playSound("switch_use");
         setDoorGroupTarget("DOOR_B", 1.0);
-        spawnShockwaveRing(12.0, 7.0, 5.5, "#38bdf8");
+        spawnShockwaveRing(it.x, it.y, 5.5, "#22d3ee");
 
-        triggerStageBreakthrough(2, "已获得门禁卡", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#38bdf8");
+        // Trigger Romero-style Monster Closet Ambush right as player grabs the Keycard!
+        triggerMonsterClosetAmbush();
+
+        triggerStageBreakthrough(2, `已夺取${it.label}`, "注意暗门伏击！北侧撤离防爆门已解锁", "", "#22d3ee");
 
         const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
         if (goal) goal.active = true;
@@ -2288,7 +2714,7 @@
       if (it.id === "STAGE3_GOAL" && state.stage === 3) {
         const aliveBoss = state.enemies.find(e => e.kind === "BOSS" && e.hp > 0);
         if (aliveBoss && state.campaignNodeIdx === 4 && !state.autoPilot) {
-          triggerStageBreakthrough(3, "撤离封锁中", "必须先击败深渊赛博领主才能启动撤离电梯", "", "#ef4444");
+          triggerStageBreakthrough(3, "撤离封锁中", "必须先处决深渊赛博领主才能启动撤离电梯", "", "#f43f5e");
           return false;
         }
         it.used = true;
@@ -2423,7 +2849,123 @@
       return true;
     }
 
+    function triggerParryShockwave(wx, wy) {
+      playSound("parry_stun");
+      state.hitStopTimer = Math.max(state.hitStopTimer, 0.055);
+      state.screenShake = Math.max(state.screenShake, 3.4);
+      spawnShockwaveRing(wx, wy, 4.2, "#22d3ee");
+      addSkillshot("⚡ 弱点打断", 280, "#22d3ee", 24);
+      for (const other of state.enemies) {
+        if (other.hp <= 0) continue;
+        const od = Math.hypot(other.x - wx, other.y - wy);
+        if (od < 3.2) {
+          other.painTimer = 0.65;
+          other.attackWindup = 0;
+          other.attackTimer = Math.max(other.attackTimer, 1.3);
+          other.hitFlash = 0.25;
+          if (od > 0.05) {
+            other.kvx += ((other.x - wx) / od) * 3.4;
+            other.kvy += ((other.y - wy) / od) * 3.4;
+          }
+        }
+      }
+    }
+
+    // Tactical Dash + Heavy Boot Kick (Right-Click / Shift / KeyC / #btnDashKick)
+    function triggerDashKick() {
+      if (state.mode !== "PLAYING" || state.sectorClearTimer > 0) return false;
+      if (state.dashCooldown > 0) return false;
+
+      const fwdX = Math.cos(state.yaw);
+      const fwdY = Math.sin(state.yaw);
+      state.dashCooldown = 0.62;
+      state.dashTimer = 0.18;
+      state.dashVx = fwdX * 8.8;
+      state.dashVy = fwdY * 8.8;
+      state.kickAnim = 1.0;
+      state.fovPunch = 0.11;
+      state.screenShake = Math.max(state.screenShake, 3.0);
+      state.moveState = "冲刺重踢";
+      playSound("dash_kick");
+
+      // 1. Kick Breachable Cracked Walls (Tile 10) directly ahead like MULLET MADJACK!
+      for (let d = 0.65; d <= 1.95; d += 0.35) {
+        const wx = state.px + fwdX * d;
+        const wy = state.py + fwdY * d;
+        if (getMapTile(wx, wy) === 10) {
+          damageDestructibleWall(wx, wy, 48, wx, wy);
+          break;
+        }
+      }
+
+      // 2. Launch nearby Explosive Barrels as 11.8 m/s bowling-ball bombs!
+      let kickedSomething = false;
+      for (const b of state.barrels) {
+        if (b.hp <= 0) continue;
+        const dx = b.x - state.px;
+        const dy = b.y - state.py;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 2.45) {
+          const dot = (dx * fwdX + dy * fwdY) / (dist || 1);
+          if (dot > 0.28 || dist < 1.1) {
+            b.vx = fwdX * 11.8;
+            b.vy = fwdY * 11.8;
+            b.kicked = true;
+            b.hitFlash = 0.25;
+            kickedSomething = true;
+            spawnImpactPuff(b.x, b.y, 0.0, "PUFF");
+            addSkillshot("🥾 猛踹油桶", 120, "#38bdf8", 14);
+          }
+        }
+      }
+
+      // 3. Heavy Boot Kick against Enemies & Corpses (launches into Plasma Grids / Cracked Walls!)
+      for (const e of state.enemies) {
+        if (e.gibbed) continue;
+        const dx = e.x - state.px;
+        const dy = e.y - state.py;
+        const dist = Math.hypot(dx, dy);
+        if (dist > 2.45) continue;
+        const dot = (dx * fwdX + dy * fwdY) / (dist || 1);
+        if (dot < 0.28 && dist > 1.15) continue;
+
+        if (e.hp > 0) {
+          const wasCharging = e.attackWindup > 0;
+          const massScale = 1.0 / Math.sqrt(e.mass || 1.0);
+          e.kvx = fwdX * 9.6 * massScale;
+          e.kvy = fwdY * 9.6 * massScale;
+          e.kicked = true;
+          kickedSomething = true;
+          if (wasCharging) {
+            e.attackWindup = 0;
+            triggerParryShockwave(e.x, e.y);
+          } else {
+            addSkillshot("🥾 重踢猛击", 150, "#38bdf8", 16);
+          }
+          damageEnemy(e, 34, 2.2, -1);
+        } else {
+          e.kvx = fwdX * 10.5;
+          e.kvy = fwdY * 10.5;
+          e.kicked = true;
+          spawnBloodAndGore(e.x, e.y, 6, false);
+        }
+      }
+
+      if (kickedSomething) {
+        state.hitStopTimer = Math.max(state.hitStopTimer, 0.045);
+      }
+      return true;
+    }
+
     function stepPlayerMovement(dt, keys) {
+      if (state.dashCooldown > 0) state.dashCooldown = Math.max(0, state.dashCooldown - dt);
+      if (state.kickAnim > 0) state.kickAnim = Math.max(0, state.kickAnim - dt * 3.4);
+      if (Math.abs(state.fovPunch) > 0.001) {
+        state.fovPunch *= Math.pow(0.008, dt);
+      } else {
+        state.fovPunch = 0;
+      }
+
       if (state.quickTurnTimer > 0) {
         state.quickTurnTimer -= dt;
         const p = Math.min(1, 1 - state.quickTurnTimer / 0.16);
@@ -2440,32 +2982,43 @@
         state.jumpPadBoostTimer = Math.max(0, state.jumpPadBoostTimer - dt);
       }
 
+      const styleDef = STYLE_RANKS[state.styleRank] || STYLE_RANKS[0];
+      const padMult = state.jumpPadBoostTimer > 0 ? 1.42 : 1.0;
+      const berserkSpeed = state.berserkTimer > 0 ? 1.18 : 1.0;
+      const effWalkSpeed = state.walkSpeed * styleDef.speedMult * padMult * berserkSpeed;
+
       let targetFwd = 0.0;
       let targetStrafe = 0.0;
 
       if (state.autoPilot) {
-        // AI AutoPilot Cruise Speed (slows slightly when engaging close enemies)
-        targetFwd = state.walkSpeed * (state.lockedEnemy ? 0.72 : 1.0);
-        state.moveState = state.lockedEnemy ? "交火推进" : "自动寻路";
+        targetFwd = effWalkSpeed * (state.lockedEnemy ? 0.78 : 1.0);
+        state.moveState = state.dashTimer > 0 ? "冲刺重踢" : (state.lockedEnemy ? "狂飙突击" : "自动寻路");
       } else {
-        // 100% Crisp Manual FPS Controls: Player only moves when pressing WASD / Arrow keys!
-        if (keys["KeyW"] || keys["ArrowUp"]) targetFwd += state.walkSpeed;
-        if (keys["KeyS"] || keys["ArrowDown"]) targetFwd -= state.walkSpeed * 0.88;
-        if (keys["KeyA"]) targetStrafe -= state.walkSpeed * 0.85;
-        if (keys["KeyD"]) targetStrafe += state.walkSpeed * 0.85;
-        state.moveState = (Math.abs(targetFwd) > 0.1 || Math.abs(targetStrafe) > 0.1) ? "战术移动" : "待命瞄准";
+        if (keys["KeyW"] || keys["ArrowUp"]) targetFwd += effWalkSpeed;
+        if (keys["KeyS"] || keys["ArrowDown"]) targetFwd -= effWalkSpeed * 0.88;
+        if (keys["KeyA"]) targetStrafe -= effWalkSpeed * 0.88;
+        if (keys["KeyD"]) targetStrafe += effWalkSpeed * 0.88;
+        if (state.dashTimer <= 0) {
+          state.moveState = (Math.abs(targetFwd) > 0.1 || Math.abs(targetStrafe) > 0.1) ? "战术疾行" : "待命瞄准";
+        }
       }
 
-      state.curSpeed += (targetFwd - state.curSpeed) * Math.min(1, dt * 11.0);
-      state.strafeSpeed += (targetStrafe - state.strafeSpeed) * Math.min(1, dt * 11.0);
+      state.curSpeed += (targetFwd - state.curSpeed) * Math.min(1, dt * 12.0);
+      state.strafeSpeed += (targetStrafe - state.strafeSpeed) * Math.min(1, dt * 12.0);
 
       const fwdX = Math.cos(state.yaw);
       const fwdY = Math.sin(state.yaw);
       const rightX = -fwdY;
       const rightY = fwdX;
 
-      const vx = fwdX * state.curSpeed + rightX * state.strafeSpeed;
-      const vy = fwdY * state.curSpeed + rightY * state.strafeSpeed;
+      let vx = fwdX * state.curSpeed + rightX * state.strafeSpeed;
+      let vy = fwdY * state.curSpeed + rightY * state.strafeSpeed;
+
+      if (state.dashTimer > 0) {
+        state.dashTimer = Math.max(0, state.dashTimer - dt);
+        vx = state.dashVx;
+        vy = state.dashVy;
+      }
 
       const playerBody = {
         x: state.px,
@@ -2488,12 +3041,12 @@
           const overlap = minD - d;
           playerBody.x += nx * overlap * 0.8;
           playerBody.y += ny * overlap * 0.8;
-          e.kvx -= nx * 1.2;
-          e.kvy -= ny * 1.2;
+          e.kvx -= nx * (state.dashTimer > 0 ? 5.5 : 1.4);
+          e.kvy -= ny * (state.dashTimer > 0 ? 5.5 : 1.4);
         }
       }
 
-      // 2. Pushable Explosive Barrels: Walking into an intact barrel shoves it forward across the floor!
+      // 2. Pushable Explosive Barrels: Walking/Dashing into an intact barrel shoves or launches it!
       for (const b of state.barrels) {
         if (b.hp <= 0) continue;
         const minD = playerBody.radius + (b.radius || 0.28);
@@ -2504,16 +3057,17 @@
           const nx = dx / d;
           const ny = dy / d;
           const overlap = minD - d;
-          b.vx = (b.vx || 0) + nx * 2.8 + vx * 0.45;
-          b.vy = (b.vy || 0) + ny * 2.8 + vy * 0.45;
+          const shove = state.dashTimer > 0 ? 9.5 : 3.0;
+          b.vx = (b.vx || 0) + nx * shove + vx * 0.45;
+          b.vy = (b.vy || 0) + ny * shove + vy * 0.45;
+          if (state.dashTimer > 0) b.kicked = true;
           playerBody.x -= nx * overlap * 0.45;
           playerBody.y -= ny * overlap * 0.45;
           state.moveState = "推撞油桶";
         }
       }
 
-      // 3. Kickable Corpses (DOOM MF_CORPSE + Brutal Doom Kick Impulse):
-      // Walking over a fallen corpse never blocks the player, but physically kicks the corpse across the floor!
+      // 3. Kickable Corpses: Walking over a fallen corpse never blocks the player, punting it across the floor!
       const speedMag = Math.hypot(vx, vy);
       if (speedMag > 0.35) {
         for (const e of state.enemies) {
@@ -2525,8 +3079,8 @@
           if (d < 0.62) {
             const nx = d > 0.01 ? dx / d : fwdX;
             const ny = d > 0.01 ? dy / d : fwdY;
-            e.kvx += nx * 2.6 + vx * 0.55;
-            e.kvy += ny * 2.6 + vy * 0.55;
+            e.kvx += nx * 3.0 + vx * 0.6;
+            e.kvy += ny * 3.0 + vy * 0.6;
             e.kickCooldown = 0.28;
             state.moveState = "踢飞尸体";
             spawnBloodAndGore(e.x, e.y, 4, false);
@@ -2546,7 +3100,7 @@
     }
 
     // =========================================================================
-    // 7. UNIFIED WEAPON FIRING, SHOTGUN DESTRUCTION & CORPSE GIBBING ENGINE
+    // 7. UNIFIED WEAPON FIRING, MEATSHOTS, PARRY INTERRUPT & CORPSE GIBBING ENGINE
     // =========================================================================
     function damageDestructibleColumn(col, dmg, hitX, hitY) {
       if (!col || col.hp <= 0) return;
@@ -2556,34 +3110,35 @@
       spawnDebrisChunks(col.x, col.y, 0.12, col.hp <= 0 ? 15 : 5, true);
       if (col.hp <= 0) {
         state.score += 180;
+        addStylePoints(10);
         state.screenShake = Math.max(state.screenShake, 3.2);
         playSound("explosion");
-        spawnShockwaveRing(col.x, col.y, 3.2, "#f59e0b");
+        spawnShockwaveRing(col.x, col.y, 3.2, "#fbbf24");
       }
     }
 
     // Casts physical buckshot/bullet rays that chew walls, shatter Tile 10 Breach Walls, destroy columns, AND blast/gib corpses!
-    function castShotgunPelletRays(centerYaw, pelletCount = 8, pelletDmg = 14) {
+    function castShotgunPelletRays(centerYaw, pelletCount = 8, pelletDmg = 14, wepId = 0) {
       for (let p = 0; p < pelletCount; p++) {
         const spreadAng = pelletCount > 1
-          ? ((p / (pelletCount - 1)) - 0.5) * 0.24 + (Math.random() - 0.5) * 0.04
-          : (Math.random() - 0.5) * 0.03;
+          ? ((p / (pelletCount - 1)) - 0.5) * 0.22 + (Math.random() - 0.5) * 0.035
+          : (Math.random() - 0.5) * 0.025;
         const rayYaw = centerYaw + spreadAng;
         const rx = Math.cos(rayYaw);
         const ry = Math.sin(rayYaw);
         const zJitter = (Math.random() - 0.5) * 0.32;
 
         let hitSomething = false;
-        const maxDist = 12.5;
+        const maxDist = 12.8;
         const step = 0.18;
         for (let d = 0.42; d <= maxDist; d += step) {
           const wx = state.px + rx * d;
           const wy = state.py + ry * d;
 
-          // 1. Check Living Enemies along ray (for free-aim manual shots outside auto-lock!)
+          // 1. Check Living Enemies along ray
           for (const e of state.enemies) {
             if (e.hp > 0 && Math.hypot(wx - e.x, wy - e.y) < (e.radius || 0.36) + 0.08) {
-              damageEnemy(e, pelletDmg, pelletCount > 2 ? 0.55 : 1.1);
+              damageEnemy(e, pelletDmg, pelletCount > 2 ? 0.65 : 1.15, wepId);
               hitSomething = true;
               break;
             }
@@ -2593,8 +3148,8 @@
           // 2. Check Fallen Corpses along ray -> Physically blast corpse across floor & GIB into pol5a0 gore!
           for (const e of state.enemies) {
             if (e.hp <= 0 && !e.gibbed && Math.hypot(wx - e.x, wy - e.y) < 0.40) {
-              e.kvx += rx * 1.45;
-              e.kvy += ry * 1.45;
+              e.kvx += rx * 1.55;
+              e.kvy += ry * 1.55;
               e.corpseHp = (e.corpseHp === undefined ? 42 : e.corpseHp) - pelletDmg;
               if (p % 2 === 0) spawnImpactPuff(e.x, e.y, -0.18, "BLUD");
               if (e.corpseHp <= 0) {
@@ -2609,8 +3164,8 @@
           // 3. Check Explosive Barrels along ray -> Shove & detonate!
           for (const br of state.barrels) {
             if (br.hp > 0 && Math.hypot(wx - br.x, wy - br.y) < 0.36) {
-              br.vx = (br.vx || 0) + rx * 1.8;
-              br.vy = (br.vy || 0) + ry * 1.8;
+              br.vx = (br.vx || 0) + rx * 2.0;
+              br.vy = (br.vy || 0) + ry * 2.0;
               br.hp -= pelletDmg;
               br.hitFlash = 0.2;
               if (br.hp <= 0) detonateBarrelOrNest(br.x, br.y, 3.5, 130);
@@ -2622,7 +3177,7 @@
 
           // 4. Check Reactor Cores (RESONATOR) along ray
           for (const res of state.objectives) {
-            if (res.kind === "RESONATOR" && res.hp > 0 && Math.hypot(wx - res.x, wy - res.y) < 0.45) {
+            if (res.kind === "RESONATOR" && res.hp > 0 && Math.hypot(wx - res.x, wy - res.y) < 0.48) {
               damageResonatorCore(res, pelletDmg);
               hitSomething = true;
               break;
@@ -2648,7 +3203,7 @@
               damageDestructibleWall(wx, wy, pelletDmg, wx - rx * 0.12, wy - ry * 0.12);
             } else if (p % 2 === 0) {
               spawnImpactPuff(wx - rx * 0.14, wy - ry * 0.14, zJitter, "PUFF");
-              spawnDebrisChunks(wx - rx * 0.14, wy - ry * 0.14, 0.05, 2, tile === 2 || tile === 3);
+              spawnDebrisChunks(wx - rx * 0.14, wy - ry * 0.14, 0.05, 2, tile === 2 || tile === 3 || tile === 12);
             }
             hitSomething = true;
             break;
@@ -2665,7 +3220,9 @@
       spawnDebrisChunks(res.x, res.y, 0.15, 4, true);
       if (res.hp <= 0) {
         state.resonatorsDestroyed++;
-        state.score += 600;
+        state.score += 550;
+        addStylePoints(24);
+        spawnLootOrbs(res.x, res.y, 7);
         detonateBarrelOrNest(res.x, res.y, 3.4, 95);
         state.stageProgress = 0.45 + (state.resonatorsDestroyed / state.resonatorsTotal) * 0.40;
 
@@ -2679,7 +3236,7 @@
           playSound("switch_use");
           spawnShockwaveRing(12.0, 7.0, 6.5, "#10b981");
 
-          triggerStageBreakthrough(2, "双核已摧毁", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#10b981");
+          triggerStageBreakthrough(2, "双翼反应核已轰爆", "北侧防爆门已开启 — 冲向终点绿色撤离电梯", "", "#10b981");
 
           const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
           if (goal) goal.active = true;
@@ -2687,7 +3244,7 @@
           state.missionShort = "前往撤离点";
         } else {
           playSound("objective");
-          triggerStageBreakthrough(1, "已摧毁 1/2 核心", "继续摧毁另一侧高热反应核心", "", "#f59e0b");
+          triggerStageBreakthrough(1, "已轰爆 1/2 反应核", "沿环形弹射回廊冲向另一侧高热核心！", "", "#fbbf24");
           state.missionShort = `反应核 ${state.resonatorsDestroyed}/2`;
         }
       }
@@ -2696,12 +3253,13 @@
     function fireCurrentWeapon(bestTarget = null) {
       if (state.fireCooldown > 0) return false;
       const wep = WEAPONS[state.weaponIdx];
-      const tierFireBoost = state.weaponTier === 3 ? 1.35 : state.weaponTier === 2 ? 1.18 : 1.0;
-      const berserkMult = (state.berserkTimer > 0 ? 1.40 : 1.0) * tierFireBoost;
+      const styleDef = STYLE_RANKS[state.styleRank] || STYLE_RANKS[0];
+      const tierFireBoost = state.weaponTier === 3 ? 1.28 : state.weaponTier === 2 ? 1.14 : 1.0;
+      const berserkMult = (state.berserkTimer > 0 ? 1.35 : 1.0) * tierFireBoost * styleDef.fireMult;
       state.fireCooldown = wep.fireInterval / berserkMult;
       state.recoil = 1.0;
-      state.pitchKick = wep.id === 0 ? 4.0 : 1.6;
-      state.screenShake = wep.id === 0 ? 2.2 : 0.8;
+      state.pitchKick = wep.id === 0 ? 4.2 : 1.6;
+      state.screenShake = Math.max(state.screenShake, wep.id === 0 ? 2.4 : 0.9);
       state.muzzleFlash = 1.0;
       state.barrelHeat = 1.0;
       if (wep.id === 0) state.pumpAnim = 1.0;
@@ -2710,26 +3268,23 @@
       playSound(wep.id === 0 ? "shotgun" : wep.id === 1 ? "chaingun" : "plasma");
 
       const aimYaw = state.yaw + state.gimbalYawOffset;
-      const dmgMult = (state.weaponTier >= 2 ? 1.18 : 1.0) * (state.berserkTimer > 0 ? 1.35 : 1.0);
+      const dmgMult = (state.weaponTier >= 2 ? 1.16 : 1.0) * (state.berserkTimer > 0 ? 1.32 : 1.0);
 
       if (wep.id === 0) {
-        // Shotgun: 8 physical buckshot rays (each deals ~9-11 dmg -> ~75-85 close-range blast, shatters walls & gibs corpses!)
-        castShotgunPelletRays(aimYaw, 8, Math.round(10 * dmgMult));
+        castShotgunPelletRays(aimYaw, 8, Math.round(10 * dmgMult), 0);
       } else if (wep.id === 1) {
-        // Chaingun: High-ROF twin armor-piercing rays
-        castShotgunPelletRays(aimYaw, 2, Math.round(12 * dmgMult));
+        castShotgunPelletRays(aimYaw, 2, Math.round(12 * dmgMult), 1);
       } else {
-        // Plasma Rifle: Launches physical glowing plasma bolt + center impact ray
         const rx = Math.cos(aimYaw);
         const ry = Math.sin(aimYaw);
         state.projectiles.push({
           x: state.px + rx * 0.45,
           y: state.py + ry * 0.45,
-          vx: rx * 9.5,
-          vy: ry * 9.5,
+          vx: rx * 9.8,
+          vy: ry * 9.8,
           friendly: true
         });
-        castShotgunPelletRays(aimYaw, 1, Math.round(24 * dmgMult));
+        castShotgunPelletRays(aimYaw, 1, Math.round(24 * dmgMult), 2);
       }
 
       if (bestTarget && bestTarget.ref) {
@@ -2738,7 +3293,7 @@
           y0: state.py,
           tx: bestTarget.ref.x,
           ty: bestTarget.ref.y,
-          color: wep.id === 2 ? "#38bdf8" : "#f59e0b",
+          color: wep.id === 2 ? "#22d3ee" : "#fbbf24",
           life: 0.14
         });
       }
@@ -2747,7 +3302,7 @@
 
     function updateCombat(dt, keys) {
       const wep = WEAPONS[state.weaponIdx];
-      const maxAngleRad = ((state.autoPilot ? wep.gimbalDeg : 9.5) * Math.PI) / 180;
+      const maxAngleRad = ((state.autoPilot ? wep.gimbalDeg : 10.5) * Math.PI) / 180;
 
       let bestTarget = null;
       let bestMetric = 999;
@@ -2762,7 +3317,7 @@
         const ang = Math.atan2(dy, dx);
         const delta = normalizeAngle(ang - state.yaw);
         if (Math.abs(delta) <= maxAngleRad && hasLineOfSight(state.px, state.py, e.x, e.y)) {
-          const metric = Math.abs(delta) * 2.4 + dist * 0.14;
+          const metric = Math.abs(delta) * 2.4 + dist * 0.14 - (e.attackWindup > 0 ? 0.35 : 0);
           if (metric < bestMetric) {
             bestMetric = metric;
             bestTarget = { kind: "ENEMY", ref: e, delta };
@@ -2827,14 +3382,13 @@
       if (state.recoil > 0) state.recoil = Math.max(0, state.recoil - dt * 5.8);
       if (state.pitchKick > 0) state.pitchKick = Math.max(0, state.pitchKick - dt * 16);
       if (state.screenShake > 0) state.screenShake = Math.max(0, state.screenShake - dt * 14);
-      if (state.muzzleFlash > 0) state.muzzleFlash = Math.max(0, state.muzzleFlash - dt * 7.2);
+      if (state.muzzleFlash > 0) state.muzzleFlash = Math.max(0, state.muzzleFlash - dt * 7.8);
       if (state.barrelHeat > 0) state.barrelHeat = Math.max(0, state.barrelHeat - dt * 2.2);
       if (state.pumpAnim > 0) state.pumpAnim = Math.max(0, state.pumpAnim - dt * 3.2);
-      if (state.explosionFlash > 0) state.explosionFlash = Math.max(0, state.explosionFlash - dt * 2.4);
-      if (state.interactFlash > 0) state.interactFlash = Math.max(0, state.interactFlash - dt * 2.6);
+      if (state.explosionFlash > 0) state.explosionFlash = Math.max(0, state.explosionFlash - dt * 3.0);
+      if (state.interactFlash > 0) state.interactFlash = Math.max(0, state.interactFlash - dt * 2.8);
       state.rotaryAngle = (state.rotaryAngle + dt * (state.muzzleFlash > 0 ? 28 : 4)) % (Math.PI * 2);
 
-      // Fire when: (A) Player clicks / holds mouse / presses Space or F, OR (B) AI AutoPilot has a target!
       const manualTrigger = state.manualFireRequested || (keys && (keys["Space"] || keys["KeyF"]));
       if (manualTrigger || (state.autoPilot && bestTarget)) {
         fireCurrentWeapon(bestTarget);
@@ -2842,18 +3396,30 @@
       state.manualFireRequested = false;
     }
 
-    function damageEnemy(e, dmg, knockbackImpulse) {
+    function damageEnemy(e, dmg, knockbackImpulse, sourceWepId = -1) {
       if (e.hp <= 0) return;
-      e.hp -= dmg;
+
+      const dx = e.x - state.px;
+      const dy = e.y - state.py;
+      const dist = Math.hypot(dx, dy) || 1;
+
+      // 1. Weakpoint Charge Interrupt (Shoot an enemy winding up its cyan-gold core!)
+      if (e.attackWindup > 0 && sourceWepId >= 0) {
+        e.attackWindup = 0;
+        triggerParryShockwave(e.x, e.y);
+      }
+
+      // 2. Point-Blank Shotgun Meatshot (< 2.65m -> 1.75x damage + heavy hitstop + instant gib!)
+      const isPointBlankShotgun = (sourceWepId === 0 && dist < 2.65);
+      const actualDmg = isPointBlankShotgun ? Math.round(dmg * 1.75) : dmg;
+
+      e.hp -= actualDmg;
       e.hitFlash = 0.20;
       e.painTimer = 0.26;
       e.attackWindup = 0;
       e.woundCount = Math.min(6, e.woundCount + 1);
       e.staggerTilt = (Math.random() < 0.5 ? -1 : 1) * 0.24;
 
-      const dx = e.x - state.px;
-      const dy = e.y - state.py;
-      const dist = Math.hypot(dx, dy) || 1;
       const invMass = 1.0 / (e.mass || 1.0);
       e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.65;
       e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.65;
@@ -2864,19 +3430,29 @@
         e.deathTimer = 0.55;
         e.corpse = true;
         e.corpseHp = 42;
-        // Extra death launch impulse so shotgun kills visibly hurl the corpse backward across the floor!
-        e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.35;
-        e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.35;
-        // Overkill damage (> 45 overkill) immediately gibs the monster!
-        if (e.hp < -45) {
+        e.kvx += (dx / dist) * knockbackImpulse * invMass * 1.45;
+        e.kvy += (dy / dist) * knockbackImpulse * invMass * 1.45;
+
+        if (isPointBlankShotgun && !e.meatshotCounted) {
+          e.meatshotCounted = true;
+          state.hitStopTimer = Math.max(state.hitStopTimer, 0.055);
+          state.fovPunch = -0.065;
+          gibCorpse(e);
+          addSkillshot("✦ 贴脸轰碎", 300, "#f43f5e", 22);
+        } else if (e.hp < -42) {
           gibCorpse(e);
         }
+
+        // Push-Forward Combat: Fountain magnetic Blood-Fuel Orbs from every slain enemy!
+        spawnLootOrbs(e.x, e.y, isPointBlankShotgun ? 8 : 5);
+
         if (e.kind === "BOSS") {
           setDoorGroupTarget("DOOR_B", 1.0);
           const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
           if (goal) goal.active = true;
           state.missionShort = "前往撤离点";
-          triggerStageBreakthrough(3, "赛博领主已击毙", "撤离封锁已解除 — 踏入北侧绿色撤离电梯", "", "#10b981");
+          addSkillshot("👑 弑杀赛博领主", 800, "#fbbf24", 40);
+          triggerStageBreakthrough(3, "深渊领主已处决", "北侧封锁闸门已解锁 — 冲入绿色撤离电梯！", "", "#10b981");
         }
       }
       spawnImpactPuff(e.x, e.y, 0.06, "BLUD");
@@ -2897,19 +3473,36 @@
 
       if (isKill) {
         state.combo++;
-        state.multiplier = state.combo >= 10 ? 3.0 : state.combo >= 4 ? 2.0 : state.combo >= 2 ? 1.5 : 1.0;
+        addStylePoints(14);
         const pts = Math.round(e.score * state.multiplier);
         state.score += pts;
         if (state.score > state.bestScore) state.bestScore = state.score;
-
-        if (state.hp < 75 && Math.random() < 0.45) {
-          state.pickups.push({ x: e.x, y: e.y, kind: "MEDKIT" });
-        }
       }
     }
 
     function updateMissionsAndAudio(dt) {
       state.radarAngle = (state.radarAngle + dt * 2.8) % (Math.PI * 2);
+
+      // Gentle Mullet-MadJack adrenaline decay encourages continuous aggressive push-forward play!
+      if (state.berserkTimer > 0) {
+        addStylePoints(dt * 25);
+      } else if (state.stylePoints > 0) {
+        state.stylePoints = Math.max(0, state.stylePoints - dt * 3.8);
+        state.styleRank = Math.min(STYLE_RANKS.length - 1, Math.floor(state.stylePoints / 18));
+        state.multiplier = +(1.0 + state.styleRank * 0.4).toFixed(1);
+      }
+
+      if (state.orbComboResetTimer > 0) {
+        state.orbComboResetTimer -= dt;
+        if (state.orbComboResetTimer <= 0) state.orbComboPitch = 0;
+      }
+
+      for (let i = state.skillshots.length - 1; i >= 0; i--) {
+        state.skillshots[i].age += dt;
+        if (state.skillshots[i].age >= state.skillshots[i].maxAge) {
+          state.skillshots.splice(i, 1);
+        }
+      }
 
       if (state.stageBanner) {
         state.stageBanner.timer -= dt;
@@ -2926,15 +3519,16 @@
 
       for (const d of state.doors) {
         if (d.open < d.targetOpen) {
-          d.open = Math.min(d.targetOpen, d.open + dt * 1.65);
+          d.open = Math.min(d.targetOpen, d.open + dt * 1.75);
         } else if (d.open > d.targetOpen) {
-          d.open = Math.max(d.targetOpen, d.open - dt * 1.65);
+          d.open = Math.max(d.targetOpen, d.open - dt * 1.75);
         }
       }
 
       state.bassTimer -= dt;
       if (state.bassTimer <= 0) {
-        state.bassTimer = 0.55;
+        // Heartbeat industrial bass speeds up as your Adrenaline Style Rank rises!
+        state.bassTimer = Math.max(0.28, 0.56 - state.styleRank * 0.05);
         playSound("bass_pulse");
       }
 
@@ -2953,8 +3547,21 @@
 
         const d = Math.hypot(it.x - state.px, it.y - state.py);
 
+        // Turbo Speed-Boost Pad (JUMP_PAD) launch!
+        if (it.kind === "JUMP_PAD") {
+          if (d < 0.98 && (!it.cooldown || it.cooldown <= 0)) {
+            it.cooldown = 1.8;
+            state.jumpPadBoostTimer = 2.4;
+            state.fovPunch = 0.09;
+            playSound("pickup");
+            spawnShockwaveRing(it.x, it.y, 2.8, "#38bdf8");
+            addSkillshot("⏩ 涡轮弹射", 100, "#38bdf8", 12);
+          }
+          continue;
+        }
+
         if (it.id === "STAGE2_OVERLOAD" && state.stage === 2) {
-          if (d < 3.6) {
+          if (d < 3.8) {
             state.overloadPct = Math.min(100, state.overloadPct + dt * 34);
             state.hackTickAccum += dt;
             if (state.hackTickAccum >= 0.28) {
@@ -2962,6 +3569,9 @@
               playSound("hack_tick");
             }
             const pct = Math.floor(state.overloadPct);
+            if (pct >= 50 && !state.ambushTriggered) {
+              triggerMonsterClosetAmbush();
+            }
             state.stageProgress = 0.45 + (pct / 100) * 0.42;
             state.missionShort = `超载 ${pct}%`;
             if (state.overloadPct >= 100) {
@@ -2974,7 +3584,7 @@
               setDoorGroupTarget("DOOR_B", 1.0);
               playSound("switch_use");
               spawnShockwaveRing(it.x, it.y, 7.0, "#10b981");
-              triggerStageBreakthrough(2, "核心超载完成", "北侧防爆门已开启 — 前往终点绿色撤离电梯", "", "#10b981");
+              triggerStageBreakthrough(2, "核心超载完成", "北侧防爆门已开启 — 冲向终点绿色撤离电梯", "", "#10b981");
               const goal = state.interactables.find(g => g.id === "STAGE3_GOAL");
               if (goal) goal.active = true;
               spawnZoneEnemies(3, 3);
@@ -2991,7 +3601,6 @@
           bestInteract = it;
         }
 
-        // Smooth walk-over / proximity activation for Keycards, Switches & Exit Elevator!
         if (d < 1.45) {
           activateInteractable(it);
         }
@@ -3019,15 +3628,29 @@
         }
       }
 
-      // Fire the equipped weapon immediately at full native cadence!
       state.manualFireRequested = true;
     }
 
+    // Checks if circle (x, y, rad) is touching a Tile 12 High-Voltage Plasma Execution Grid!
+    function isTouchingPlasmaGrid(x, y, rad = 0.40) {
+      const bx = Math.floor(x);
+      const by = Math.floor(y);
+      for (let ty = by - 1; ty <= by + 1; ty++) {
+        for (let tx = bx - 1; tx <= bx + 1; tx++) {
+          if (getRawMapTile(tx, ty) !== 12) continue;
+          const cx = Math.max(tx, Math.min(tx + 1.0, x));
+          const cy = Math.max(ty, Math.min(ty + 1.0, y));
+          if (Math.hypot(x - cx, y - cy) <= rad + 0.09) return true;
+        }
+      }
+      return false;
+    }
+
     // =========================================================================
-    // 8. RIGID-BODY IMPULSE PHYSICS FOR LIVING ENEMIES, SLIDING CORPSES & BARRELS
+    // 8. RIGID-BODY IMPULSE PHYSICS, PLASMA GRID EXECUTIONS, BOWLING BARRELS & MAGNETIC ORBS
     // =========================================================================
     function updateEnemiesAndParticles(dt) {
-      // 1. Update Pushable & Exploding Barrels
+      // 1. Update Pushable & Bowling-Ball Kicked Barrels!
       for (const b of state.barrels) {
         if (b.hp <= 0) {
           if (b.explodeTimer > 0) b.explodeTimer = Math.max(0, b.explodeTimer - dt);
@@ -3037,11 +3660,32 @@
         const bSpd = Math.hypot(b.vx || 0, b.vy || 0);
         if (bSpd > 0.03) {
           const bBody = { x: b.x, y: b.y, vx: b.vx, vy: b.vy, radius: b.radius || 0.28 };
-          resolveCircleMapPhysics(bBody, dt, 0.35);
+          const bRes = resolveCircleMapPhysics(bBody, dt, 0.35);
           b.x = bBody.x;
           b.y = bBody.y;
-          b.vx = bBody.vx * Math.pow(0.03, dt);
-          b.vy = bBody.vy * Math.pow(0.03, dt);
+
+          // If a kicked barrel bowls into an enemy or slams hard into a wall -> BOOM!
+          if (b.kicked && bSpd > 2.2) {
+            let hitEnemy = false;
+            for (const e of state.enemies) {
+              if (e.hp > 0 && Math.hypot(e.x - b.x, e.y - b.y) < 0.88) {
+                hitEnemy = true;
+                break;
+              }
+            }
+            if (hitEnemy || bRes.maxImpactSpeed > 3.2 || isTouchingPlasmaGrid(b.x, b.y, 0.34)) {
+              b.hp = 0;
+              b.explodeTimer = 0.45;
+              b.kicked = false;
+              addSkillshot("🥾 飞桶轰杀", 400, "#fbbf24", 26);
+              detonateBarrelOrNest(b.x, b.y, 3.8, 150);
+              continue;
+            }
+          }
+
+          b.vx = bBody.vx * Math.pow(b.kicked ? 0.14 : 0.03, dt);
+          b.vy = bBody.vy * Math.pow(b.kicked ? 0.14 : 0.03, dt);
+          if (Math.hypot(b.vx, b.vy) < 1.2) b.kicked = false;
         }
       }
 
@@ -3049,7 +3693,7 @@
         if (col.hitFlash > 0) col.hitFlash = Math.max(0, col.hitFlash - dt);
       }
 
-      // 2. Update BOTH Living Monsters AND Sliding/Bouncing Corpses!
+      // 2. Update BOTH Living Monsters AND Sliding/Bouncing Corpses (+ High-Voltage Plasma Executions!)
       for (const e of state.enemies) {
         if (e.kickCooldown > 0) e.kickCooldown = Math.max(0, e.kickCooldown - dt);
 
@@ -3057,7 +3701,6 @@
           if (e.deathTimer > 0) e.deathTimer = Math.max(0, e.deathTimer - dt);
           if (e.gibbed) continue;
 
-          // CORPSE PHYSICS: Fallen corpses slide across the floor with friction, smear blood & bounce off walls!
           const corpseSpeed = Math.hypot(e.kvx || 0, e.kvy || 0);
           if (corpseSpeed > 0.03) {
             const cBody = { x: e.x, y: e.y, vx: e.kvx, vy: e.kvy, radius: 0.32 };
@@ -3066,6 +3709,15 @@
             e.y = cBody.y;
             e.kvx = cBody.vx * Math.pow(0.025, dt);
             e.kvy = cBody.vy * Math.pow(0.025, dt);
+
+            if (corpseSpeed > 0.8 && isTouchingPlasmaGrid(e.x, e.y, 0.38)) {
+              playSound("electric_gib");
+              spawnShockwaveRing(e.x, e.y, 3.4, "#22d3ee");
+              spawnDebrisChunks(e.x, e.y, 0.1, 10, true);
+              gibCorpse(e);
+              addSkillshot("⚡ 电网碎尸", 220, "#22d3ee", 16);
+              continue;
+            }
 
             if (corpseSpeed > 1.5 && Math.random() < 0.35) {
               spawnBloodAndGore(e.x, e.y, 1, false);
@@ -3088,27 +3740,51 @@
           const physRes = resolveCircleMapPhysics(eBody, dt, 0.42);
           e.x = eBody.x;
           e.y = eBody.y;
-          e.kvx = eBody.vx * Math.pow(0.018, dt);
-          e.kvy = eBody.vy * Math.pow(0.018, dt);
+          e.kvx = eBody.vx * Math.pow(0.022, dt);
+          e.kvy = eBody.vy * Math.pow(0.022, dt);
 
-          // Wall-Slam Crushing Damage when blasted into a wall or pillar at high velocity!
+          // Bulletstorm High-Voltage Plasma Grid Execution!
+          if ((kSpeed > 0.7 || e.kicked) && e.kind !== "BOSS" && isTouchingPlasmaGrid(e.x, e.y, (e.radius || 0.36) + 0.06)) {
+            e.hp = -99;
+            e.corpse = true;
+            state.combo++;
+            playSound("electric_gib");
+            state.hitStopTimer = Math.max(state.hitStopTimer, 0.05);
+            spawnShockwaveRing(e.x, e.y, 4.0, "#22d3ee");
+            spawnDebrisChunks(e.x, e.y, 0.14, 12, true);
+            spawnLootOrbs(e.x, e.y, 8);
+            gibCorpse(e);
+            addSkillshot("⚡ 电网处决", 400, "#22d3ee", 28);
+            continue;
+          }
+
+          // Wall-Slam Crushing Damage & Cracked-Wall Breach Kill!
           if (physRes.maxImpactSpeed > 1.45 && physRes.hitNormal) {
-            const slamDmg = Math.round(physRes.maxImpactSpeed * 15);
+            const slamDmg = Math.round(physRes.maxImpactSpeed * 16);
             e.hp -= slamDmg;
             e.hitFlash = 0.22;
             spawnImpactPuff(physRes.hitNormal.wx, physRes.hitNormal.wy, 0.08, "PUFF");
             spawnDebrisChunks(physRes.hitNormal.wx, physRes.hitNormal.wy, 0.08, 6, false);
+            let breachedWall = false;
             if (physRes.hitNormal.tx !== undefined && getMapTile(physRes.hitNormal.tx, physRes.hitNormal.ty) === 10) {
-              damageDestructibleWall(physRes.hitNormal.tx, physRes.hitNormal.ty, slamDmg, physRes.hitNormal.wx, physRes.hitNormal.wy);
+              breachedWall = damageDestructibleWall(physRes.hitNormal.tx, physRes.hitNormal.ty, slamDmg + 20, physRes.hitNormal.wx, physRes.hitNormal.wy);
             }
             if (e.hp <= 0 && !e.corpse) {
               e.deathTimer = 0.55;
               e.corpse = true;
               e.corpseHp = 42;
-              state.score += e.score + 100;
+              state.combo++;
+              spawnLootOrbs(e.x, e.y, 6);
               spawnBloodAndGore(e.x, e.y, 16, true);
+              if (breachedWall) {
+                gibCorpse(e);
+                addSkillshot("🧱 破墙贯杀", 350, "#fbbf24", 24);
+              } else {
+                addSkillshot("💥 撞墙碎裂", 220, "#f97316", 18);
+              }
             }
           }
+          if (Math.hypot(e.kvx, e.kvy) < 0.8) e.kicked = false;
         } else {
           resolveWallPenetration(e, e.radius || 0.36);
         }
@@ -3124,11 +3800,11 @@
         const ux = dx / dist;
         const uy = dy / dist;
 
-        const seesPlayer = dist < 11.5 && hasLineOfSight(e.x, e.y, state.px, state.py);
+        const seesPlayer = dist < 12.0 && hasLineOfSight(e.x, e.y, state.px, state.py);
         if (!seesPlayer) continue;
 
         e.walkAnim += dt * 6;
-        if (dist > 2.1) {
+        if (dist > 2.0) {
           const walkBody = {
             x: e.x,
             y: e.y,
@@ -3142,11 +3818,11 @@
         }
 
         e.attackTimer -= dt;
-        if (e.attackTimer <= 0.45 && e.attackTimer > 0) {
+        if (e.attackTimer <= 0.52 && e.attackTimer > 0) {
           e.attackWindup = 1;
         }
         if (e.attackTimer <= 0) {
-          e.attackTimer = e.kind === "BOSS" ? 1.4 : 2.1;
+          e.attackTimer = e.kind === "BOSS" ? 1.45 : 2.1;
           e.attackWindup = 0;
           state.projectiles.push({
             x: e.x,
@@ -3158,7 +3834,7 @@
         }
       }
 
-      // 3. Rigid-Body Mass-Impulse Collision Solver (Includes Living Enemies AND High-Speed Flying Corpses!)
+      // 3. Rigid-Body Mass-Impulse Collision Solver
       for (let i = 0; i < state.enemies.length; i++) {
         const a = state.enemies[i];
         if (a.gibbed) continue;
@@ -3230,7 +3906,7 @@
           for (const e of state.enemies) {
             if (e.gibbed) continue;
             if (e.hp > 0 && Math.hypot(p.x - e.x, p.y - e.y) < 0.48) {
-              damageEnemy(e, 55, 2.2);
+              damageEnemy(e, 55, 2.2, 2);
               hit = true;
               break;
             } else if (e.hp <= 0 && Math.hypot(p.x - e.x, p.y - e.y) < 0.42) {
@@ -3254,11 +3930,11 @@
           }
         } else if (Math.hypot(p.x - state.px, p.y - state.py) < 0.40) {
           state.projectiles.splice(i, 1);
-          if (!state.autoPilot) {
+          if (!state.autoPilot && state.dashTimer <= 0) {
             const dmg = state.armor > 0 ? 7 : 12;
             if (state.armor > 0) state.armor = Math.max(0, state.armor - 6);
             state.hp = Math.max(0, state.hp - dmg);
-            state.hurtFlash = 0.3;
+            state.hurtFlash = 0.28;
             playSound("gore");
             if (state.hp <= 0) {
               state.mode = "RESULT";
@@ -3270,7 +3946,7 @@
 
       for (let i = state.pickups.length - 1; i >= 0; i--) {
         const pk = state.pickups[i];
-        if (Math.hypot(pk.x - state.px, pk.y - state.py) < 0.72) {
+        if (Math.hypot(pk.x - state.px, pk.y - state.py) < 0.78) {
           if (pk.kind === "MEDKIT") {
             state.hp = Math.min(100, state.hp + 30);
           } else {
@@ -3281,7 +3957,44 @@
         }
       }
 
-      // 5. 3D Rigid-Body Debris Chunks with Gravity, Floor Restitution Bounce (e = 0.48) & Wall Bounce!
+      // 5. Magnetic Push-Forward Blood-Fuel Orbs (DOOM Eternal / ULTRAKILL vacuum heal & adrenaline!)
+      for (let i = state.lootOrbs.length - 1; i >= 0; i--) {
+        const orb = state.lootOrbs[i];
+        orb.age += dt;
+        orb.z += orb.vz * dt;
+        orb.vz -= 6.5 * dt;
+        if (orb.z < -0.32) {
+          orb.z = -0.32;
+          orb.vz = Math.abs(orb.vz) * 0.45;
+          orb.vx *= 0.78;
+          orb.vy *= 0.78;
+        }
+        const dx = state.px - orb.x;
+        const dy = state.py - orb.y;
+        const dist = Math.hypot(dx, dy) || 0.001;
+        if (orb.age > 0.16 && dist < 6.4) {
+          const pull = 12.5 / Math.max(0.45, dist);
+          orb.vx += (dx / dist) * pull * dt * 4.2;
+          orb.vy += (dy / dist) * pull * dt * 4.2;
+        }
+        orb.x += orb.vx * dt;
+        orb.y += orb.vy * dt;
+
+        if (dist < 0.68 || orb.age > 6.5) {
+          if (dist < 0.68) {
+            if (orb.kind === "HP") state.hp = Math.min(100, state.hp + 6);
+            else if (orb.kind === "ARMOR") state.armor = Math.min(100, state.armor + 6);
+            state.score += 25;
+            addStylePoints(3.2);
+            state.orbComboPitch = Math.min(12, (state.orbComboPitch || 0) + 1);
+            state.orbComboResetTimer = 1.2;
+            playSound("orb_pickup", state.orbComboPitch);
+          }
+          state.lootOrbs.splice(i, 1);
+        }
+      }
+
+      // 6. 3D Rigid-Body Debris Chunks with Gravity, Floor Restitution Bounce (e = 0.48) & Wall Bounce!
       for (let i = state.debris.length - 1; i >= 0; i--) {
         const db = state.debris[i];
         const nx = db.x + db.vx * dt;
@@ -3379,13 +4092,37 @@
       }
     }
 
-    // BFS-Guided AI AutoPilot (Only active when #btnAutoPilot is enabled!)
+    // BFS-Guided AI AutoPilot + Smart Stunt Showcase (Dash-Kicks barrels & close enemies!)
     function updateAutoPilot(dt) {
       if (!state.autoPilot || state.mode !== "PLAYING") return;
 
+      // Auto-trigger Dash-Kick when lined up with an explosive barrel or close/charging enemy!
+      if (state.dashCooldown <= 0) {
+        const fwdX = Math.cos(state.yaw);
+        const fwdY = Math.sin(state.yaw);
+        for (const b of state.barrels) {
+          if (b.hp <= 0) continue;
+          const dx = b.x - state.px, dy = b.y - state.py, d = Math.hypot(dx, dy);
+          if (d < 2.25 && (dx * fwdX + dy * fwdY) / (d || 1) > 0.65) {
+            triggerDashKick();
+            break;
+          }
+        }
+        if (state.dashCooldown <= 0) {
+          for (const e of state.enemies) {
+            if (e.hp <= 0) continue;
+            const dx = e.x - state.px, dy = e.y - state.py, d = Math.hypot(dx, dy);
+            if (d < 2.15 && (dx * fwdX + dy * fwdY) / (d || 1) > 0.65) {
+              triggerDashKick();
+              break;
+            }
+          }
+        }
+      }
+
       const missionTarget = getActiveMissionTarget();
       let combatFocus = null;
-      let bestDist = 7.5;
+      let bestDist = 7.8;
 
       for (const obj of state.objectives) {
         if (obj.kind === "RESONATOR" && obj.hp > 0 && hasLineOfSight(state.px, state.py, obj.x, obj.y)) {
@@ -3408,14 +4145,14 @@
         }
       }
 
-      if (state.stage === 1 && missionTarget && Math.hypot(missionTarget.x - state.px, missionTarget.y - state.py) < 4.5) {
+      if (state.stage === 1 && missionTarget && Math.hypot(missionTarget.x - state.px, missionTarget.y - state.py) < 4.2) {
         combatFocus = null;
       }
 
       if (combatFocus) {
         const desiredAng = Math.atan2(combatFocus.y - state.py, combatFocus.x - state.px);
         const diff = normalizeAngle(desiredAng - state.yaw);
-        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 8.0));
+        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 8.5));
         return;
       }
 
@@ -3423,7 +4160,7 @@
         const nextWp = findNextPathWaypoint(state.px, state.py, missionTarget.x, missionTarget.y);
         const desiredAng = Math.atan2(nextWp.y - state.py, nextWp.x - state.px);
         const diff = normalizeAngle(desiredAng - state.yaw);
-        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 7.0));
+        state.yaw = normalizeAngle(state.yaw + diff * Math.min(1, dt * 7.5));
       }
     }
 
@@ -3657,59 +4394,169 @@
     }
 
     function bakeFreedoomTexturesIntoRaycaster() {
-      // Slot 1: Aquatex Weathered Industrial Brick (Martian Iron-Oxide Patina)
+      // High-Contrast Selaco / Prodeus Cool Sci-Fi Architectural Color-Grading:
+      // Deep Slate-Indigo & Midnight Gunmetal walls/floors + crisp emissive neon trims so gore, brass & plasma POP!
+
+      // Slot 1: Slate-Indigo Armored Tech Bulkhead + Cyan Neon Upper Trim & Amber Baseboard Ticks
       if (ASSET_IMAGES.aqbrik01) {
-        bakePatchToTextureSlot(1, ASSET_IMAGES.aqbrik01, null, 1.24, 0.86, 0.74);
+        bakePatchToTextureSlot(1, ASSET_IMAGES.aqbrik01, null, 0.56, 0.68, 1.06);
+        const dst1 = textures[1];
+        for (let y = 0; y < TEX_SIZE; y++) {
+          for (let x = 0; x < TEX_SIZE; x++) {
+            if (y === 14 || y === 15) {
+              dst1[y * TEX_SIZE + x] = packRGB(34, 211, 238);
+            } else if (y === 13 || y === 16) {
+              dst1[y * TEX_SIZE + x] = packRGB(12, 74, 110);
+            } else if (y >= 115 && y <= 118) {
+              const hazard = ((x + y) & 15) < 8;
+              dst1[y * TEX_SIZE + x] = hazard ? packRGB(217, 119, 6) : packRGB(15, 23, 42);
+            }
+          }
+        }
       }
-      // Slot 2: Aquatex Riveted Dark Gunmetal / Concrete Bulkhead
+
+      // Slot 2: Obsidian Gunmetal Structural Bulkhead + Amber Status LED Strip
       if (ASSET_IMAGES.aqmetl01) {
-        bakePatchToTextureSlot(2, ASSET_IMAGES.aqmetl01, null, 1.06, 1.08, 1.14);
+        bakePatchToTextureSlot(2, ASSET_IMAGES.aqmetl01, null, 0.62, 0.72, 0.96);
       } else if (ASSET_IMAGES.aqconc04) {
-        bakePatchToTextureSlot(2, ASSET_IMAGES.aqconc04, null, 1.04, 1.04, 1.08);
+        bakePatchToTextureSlot(2, ASSET_IMAGES.aqconc04, null, 0.60, 0.70, 0.94);
       }
-      // Slot 3: Aquatex Heavy Ribbed Hydraulic Steel Blast Door
+      if (textures[2]) {
+        const dst2 = textures[2];
+        for (let x = 0; x < TEX_SIZE; x++) {
+          dst2[20 * TEX_SIZE + x] = (x & 15) < 11 ? packRGB(245, 158, 11) : packRGB(15, 23, 42);
+          dst2[108 * TEX_SIZE + x] = packRGB(30, 58, 138);
+        }
+      }
+
+      // Slot 3: Heavy Hydraulic Blast Door + High-Contrast Industrial Hazard Chevron Band
       if (ASSET_IMAGES.aqdoor01) {
-        bakePatchToTextureSlot(3, ASSET_IMAGES.aqdoor01, null, 1.08, 1.06, 1.04);
+        bakePatchToTextureSlot(3, ASSET_IMAGES.aqdoor01, null, 0.74, 0.82, 1.02);
+        const dst3 = textures[3];
+        for (let y = 102; y <= 114; y++) {
+          for (let x = 0; x < TEX_SIZE; x++) {
+            const stripe = ((x + (y - 102) * 2) & 15) < 8;
+            dst3[y * TEX_SIZE + x] = stripe ? packRGB(234, 179, 8) : packRGB(17, 24, 39);
+          }
+        }
       }
-      // Slot 4: Breaker Console Wall (OFF = Red Switch sw1s0)
+
+      // Slot 4: Breaker Console Wall (OFF = Red Switch sw1s0 + Crimson Bezel)
       if (ASSET_IMAGES.aqconc04 && ASSET_IMAGES.sw1s0) {
-        bakePatchToTextureSlot(4, ASSET_IMAGES.aqconc04, ASSET_IMAGES.sw1s0, 1.05, 1.05, 1.05);
+        bakePatchToTextureSlot(4, ASSET_IMAGES.aqconc04, ASSET_IMAGES.sw1s0, 0.64, 0.72, 0.96);
       }
-      // Slot 9: Breaker Console Wall (ON = Green Switch sw1s1)
+      // Slot 9: Breaker Console Wall (ON = Green Switch sw1s1 + Emerald Bezel)
       if (ASSET_IMAGES.aqconc04 && ASSET_IMAGES.sw1s1) {
-        bakePatchToTextureSlot(9, ASSET_IMAGES.aqconc04, ASSET_IMAGES.sw1s1, 1.05, 1.08, 1.05);
+        bakePatchToTextureSlot(9, ASSET_IMAGES.aqconc04, ASSET_IMAGES.sw1s1, 0.62, 0.82, 0.96);
       }
-      // Slot 5: Aquatex Dark Industrial Grating Floor
+
+      // Slot 5: Midnight Blue-Steel Deck Grating (High contrast against crimson blood & glowing orbs)
       if (ASSET_IMAGES.aqf005) {
-        bakePatchToTextureSlot(5, ASSET_IMAGES.aqf005, null, 0.85, 0.86, 0.90);
+        bakePatchToTextureSlot(5, ASSET_IMAGES.aqf005, null, 0.46, 0.56, 0.80);
       }
-      // Slot 7: Aquatex Weathered Martian Basalt Floor
+
+      // Slot 7: Obsidian Coliseum Basalt Floor
       if (ASSET_IMAGES.aqf001) {
-        bakePatchToTextureSlot(7, ASSET_IMAGES.aqf001, null, 1.02, 0.92, 0.84);
+        bakePatchToTextureSlot(7, ASSET_IMAGES.aqf001, null, 0.52, 0.50, 0.68);
       }
-      // Slot 8: Aquatex Reinforced Outpost Concrete Wall
+
+      // Slot 8: Citadel Perimeter Wall + Cyan Architectural Crown Line
       if (ASSET_IMAGES.aqconc01) {
-        bakePatchToTextureSlot(8, ASSET_IMAGES.aqconc01, null, 1.12, 0.96, 0.88);
+        bakePatchToTextureSlot(8, ASSET_IMAGES.aqconc01, null, 0.58, 0.68, 0.98);
+        const dst8 = textures[8];
+        for (let x = 0; x < TEX_SIZE; x++) {
+          dst8[10 * TEX_SIZE + x] = packRGB(56, 189, 248);
+          dst8[11 * TEX_SIZE + x] = packRGB(14, 116, 144);
+        }
       }
-      // Slot 10: Destructible Fissured Breach Wall (Aquatex Brick + Glowing Structural Fissures)
+
+      // Slot 10: Destructible Fissured Breach Wall (Cool Slate Bulkhead + Molten Amber Structural Fissures)
       if (ASSET_IMAGES.aqbrik01) {
-        bakePatchToTextureSlot(10, ASSET_IMAGES.aqbrik01, null, 1.15, 0.82, 0.68);
+        bakePatchToTextureSlot(10, ASSET_IMAGES.aqbrik01, null, 0.58, 0.64, 0.88);
         const dst10 = textures[10];
         for (let y = 0; y < TEX_SIZE; y++) {
           for (let x = 0; x < TEX_SIZE; x++) {
             const c1 = Math.abs((x - 64) - Math.sin(y * 0.14) * 18 - (y - 64) * 0.35);
             const c2 = Math.abs((y - 60) + Math.cos(x * 0.12) * 14 - (x - 64) * 0.28);
-            if (c1 < 1.2 || c2 < 1.0) {
-              dst10[y * TEX_SIZE + x] = packRGB(251, 191, 36);
-            } else if (c1 < 2.8 || c2 < 2.4) {
-              dst10[y * TEX_SIZE + x] = packRGB(20, 12, 8);
+            if (c1 < 1.3 || c2 < 1.1) {
+              dst10[y * TEX_SIZE + x] = packRGB(253, 224, 71);
+            } else if (c1 < 2.6 || c2 < 2.3) {
+              dst10[y * TEX_SIZE + x] = packRGB(249, 115, 22);
+            } else if (c1 < 4.0 || c2 < 3.6) {
+              dst10[y * TEX_SIZE + x] = packRGB(15, 23, 42);
             }
           }
         }
       }
-      // Slot 11: Aquatex Emissive Light Bulkhead (aqlite01 / aqlite03)
-      if (ASSET_IMAGES.aqlite01) {
-        bakePatchToTextureSlot(11, ASSET_IMAGES.aqlite01, null, 1.25, 1.25, 1.30);
+
+      // Slot 11: Sleek Recessed Dual-Tube Cyber Neon Light Column (Dark gunmetal + crisp cyan vertical tubes)
+      if (ASSET_IMAGES.aqmetl01) {
+        bakePatchToTextureSlot(11, ASSET_IMAGES.aqmetl01, null, 0.44, 0.54, 0.80);
+      }
+      if (textures[11]) {
+        const dst11 = textures[11];
+        for (let y = 0; y < TEX_SIZE; y++) {
+          const isCap = y < 10 || y > 117 || y === 63 || y === 64;
+          for (let x = 0; x < TEX_SIZE; x++) {
+            const dTube = Math.min(Math.abs(x - 30), Math.abs(x - 98));
+            if (!isCap && dTube <= 3) {
+              dst11[y * TEX_SIZE + x] = dTube <= 1 ? packRGB(186, 230, 253) : packRGB(34, 211, 238);
+            } else if (!isCap && dTube <= 6) {
+              dst11[y * TEX_SIZE + x] = packRGB(14, 116, 144);
+            } else if (dTube === 7) {
+              dst11[y * TEX_SIZE + x] = packRGB(15, 23, 42);
+            }
+          }
+        }
+      }
+
+      // Slot 12: High-Voltage Plasma Execution Grid (Dark steel cage + hazard trim + razor-sharp electric arcs)
+      if (ASSET_IMAGES.aqmetl01) {
+        bakePatchToTextureSlot(12, ASSET_IMAGES.aqmetl01, null, 0.30, 0.38, 0.58);
+      }
+      if (textures[12]) {
+        const dst12 = textures[12];
+        for (let y = 0; y < TEX_SIZE; y++) {
+          const isHazardHeader = (y >= 4 && y <= 11) || (y >= 116 && y <= 123);
+          for (let x = 0; x < TEX_SIZE; x++) {
+            if (isHazardHeader) {
+              const st = ((x + y * 2) & 15) < 8;
+              dst12[y * TEX_SIZE + x] = st ? packRGB(234, 179, 8) : packRGB(15, 23, 42);
+              continue;
+            }
+            const barX = x & 31;
+            if (barX <= 2 || barX >= 30) {
+              const coilNode = Math.abs((y % 32) - 16) <= 3;
+              dst12[y * TEX_SIZE + x] = coilNode ? packRGB(56, 189, 248) : packRGB(30, 41, 59);
+              continue;
+            }
+            // Three razor-sharp electric plasma filaments at y=32, 64, 96
+            const arc1 = Math.abs(y - (32 + Math.sin(x * 0.24) * 3.8 + Math.cos(x * 0.55) * 1.4));
+            const arc2 = Math.abs(y - (64 - Math.sin(x * 0.21 + 1.2) * 4.2 + Math.sin(x * 0.62) * 1.5));
+            const arc3 = Math.abs(y - (96 + Math.cos(x * 0.26 + 0.7) * 3.6 - Math.sin(x * 0.48) * 1.4));
+            const dArc = Math.min(arc1, arc2, arc3);
+            if (dArc < 0.85) {
+              dst12[y * TEX_SIZE + x] = packRGB(224, 242, 254);
+            } else if (dArc < 2.1) {
+              dst12[y * TEX_SIZE + x] = packRGB(34, 211, 238);
+            } else if (dArc < 4.2) {
+              dst12[y * TEX_SIZE + x] = packRGB(12, 74, 110);
+            }
+          }
+        }
+      }
+
+      // Slot 13: Cryo-Coolant Illuminated Catwalk Floor Grating
+      if (ASSET_IMAGES.aqf005) {
+        bakePatchToTextureSlot(13, ASSET_IMAGES.aqf005, null, 0.44, 0.60, 0.86);
+        const dst13 = textures[13];
+        for (let y = 0; y < TEX_SIZE; y++) {
+          for (let x = 0; x < TEX_SIZE; x++) {
+            if (((x & 31) === 15 || (x & 31) === 16) && (y & 7) < 5) {
+              dst13[y * TEX_SIZE + x] = packRGB(14, 165, 233);
+            }
+          }
+        }
       }
     }
 
@@ -3733,17 +4580,36 @@
     loadFreedoomAssetsIntoEngine();
 
     // =========================================================================
-    // 10. REALISTIC ATMOSPHERIC SKYBOX & MULTI-POINT-LIGHT ILLUMINATION
+    // 10. COLORED EXPONENTIAL DEPTH FOG, DYNAMIC FOV SKYBOX & POINT-LIGHT RAYCASTER
     // =========================================================================
-    function shadeColorWithLight(packedCol, factor, muzzleGlow, pointGlowR = 0, pointGlowG = 0, pointGlowB = 0) {
-      const f = Math.max(0.26, Math.min(1.28, factor + muzzleGlow));
-      const warmR = muzzleGlow * 58 + pointGlowR;
-      const warmG = muzzleGlow * 30 + pointGlowG;
-      const warmB = pointGlowB;
-      const r = Math.min(255, (((packedCol & 0xff) * f) + warmR) | 0);
-      const g = Math.min(255, ((((packedCol >> 8) & 0xff) * f) + warmG) | 0);
-      const b = Math.min(255, ((((packedCol >> 16) & 0xff) * f) + warmB) | 0);
-      return (255 << 24) | (b << 16) | (g << 8) | r;
+    function shadeColorWithLight(
+      packedCol,
+      factor,
+      fogMix,
+      fogR,
+      fogG,
+      fogB,
+      muzzleGlow,
+      pointGlowR = 0,
+      pointGlowG = 0,
+      pointGlowB = 0
+    ) {
+      // Cap brightness factor <= 1.10 so center-screen washout (centerBrightPct) stays crisp & dark even in Boss+Fever!
+      const f = Math.max(0.22, Math.min(1.10, factor + muzzleGlow * 0.45));
+      const addR = muzzleGlow * 26 + pointGlowR;
+      const addG = muzzleGlow * 15 + pointGlowG;
+      const addB = muzzleGlow * 8 + pointGlowB;
+      let r = Math.min(242, (((packedCol & 0xff) * f) + addR));
+      let g = Math.min(242, ((((packedCol >> 8) & 0xff) * f) + addG));
+      let b = Math.min(248, ((((packedCol >> 16) & 0xff) * f) + addB));
+
+      if (fogMix > 0.01) {
+        const inv = 1.0 - fogMix;
+        r = r * inv + fogR * fogMix;
+        g = g * inv + fogG * fogMix;
+        b = b * inv + fogB * fogMix;
+      }
+      return (255 << 24) | ((b | 0) << 16) | ((g | 0) << 8) | (r | 0);
     }
 
     function renderRealisticSkybox(horizon, skyTheme) {
@@ -3753,18 +4619,24 @@
       let uShift = (state.yaw / (Math.PI * 2)) % 1.0;
       if (uShift < 0) uShift += 1.0;
 
-      // Deep zenith backdrop
+      const isAurora = skyTheme === "AURORA";
       const skyGrad = ctx.createLinearGradient(0, 0, 0, skyH);
-      skyGrad.addColorStop(0.0, "#09070a");
-      skyGrad.addColorStop(0.50, "#280f12");
-      skyGrad.addColorStop(1.0, "#682218");
+      if (isAurora) {
+        skyGrad.addColorStop(0.0, "#020617");
+        skyGrad.addColorStop(0.52, "#082f49");
+        skyGrad.addColorStop(1.0, "#0f766e");
+      } else {
+        skyGrad.addColorStop(0.0, "#05050a");
+        skyGrad.addColorStop(0.52, "#2a0915");
+        skyGrad.addColorStop(1.0, "#7f1d1d");
+      }
       ctx.fillStyle = skyGrad;
       ctx.fillRect(0, 0, W, skyH);
 
-      // Authentic Freedoom Panoramic Skybox (sky2 / sky3 / sky1) with seamless 360° wrap
+      // Authentic Freedoom Panoramic Skybox blended with atmospheric tint
       const skyImg = skyTheme === "HELIOS_OASIS"
         ? ASSET_IMAGES.sky2
-        : skyTheme === "BLACK_MESA"
+        : isAurora
           ? ASSET_IMAGES.sky3
           : ASSET_IMAGES.sky1;
 
@@ -3772,34 +4644,53 @@
         ctx.imageSmoothingEnabled = false;
         const tileW = W * 1.4;
         const scrollX = -((uShift * tileW * 2) % tileW);
-        ctx.globalAlpha = 0.88;
+        ctx.globalAlpha = isAurora ? 0.36 : 0.68;
         for (let ox = scrollX; ox < W; ox += tileW) {
           ctx.drawImage(skyImg, ox, 0, tileW, skyH);
         }
         ctx.globalAlpha = 1.0;
       }
 
-      // Cratered Phobos Moon in Upper Skybox
+      // Shimmering Cyber-Aurora Curtains for Level 03 Open-Air Ring
+      if (isAurora) {
+        const t = Date.now() * 0.0015;
+        ctx.strokeStyle = "rgba(34, 211, 238, 0.24)";
+        ctx.lineWidth = 2.2;
+        ctx.beginPath();
+        for (let sx = 0; sx <= W; sx += 8) {
+          const ay = skyH * 0.42 + Math.sin(sx * 0.03 + t + uShift * 6.28) * 10;
+          if (sx === 0) ctx.moveTo(sx, ay);
+          else ctx.lineTo(sx, ay);
+        }
+        ctx.stroke();
+      }
+
+      // Celestial Moon / Eclipse Core in Upper Skybox
       const relMoon = (0.82 - uShift + 1.5) % 1.0 - 0.5;
       const mx = W * 0.5 + relMoon * 320;
-      const my = Math.min(skyH - 36, 38);
-      const mr = 16;
+      const my = Math.min(skyH - 34, 36);
+      const mr = 15;
 
       if (mx > -40 && mx < W + 40) {
+        ctx.strokeStyle = isAurora ? "rgba(56, 189, 248, 0.35)" : "rgba(244, 63, 94, 0.45)";
+        ctx.lineWidth = 2.0;
+        ctx.beginPath();
+        ctx.arc(mx, my, mr + 3, 0, Math.PI * 2);
+        ctx.stroke();
+
         const mGrad = ctx.createRadialGradient(mx - mr * 0.35, my - mr * 0.35, mr * 0.1, mx, my, mr);
-        mGrad.addColorStop(0.0, "#d6d3d1");
-        mGrad.addColorStop(0.55, "#78716c");
-        mGrad.addColorStop(0.85, "#44403c");
-        mGrad.addColorStop(1.0, "#1c1917");
+        if (isAurora) {
+          mGrad.addColorStop(0.0, "#e0f2fe");
+          mGrad.addColorStop(0.65, "#38bdf8");
+          mGrad.addColorStop(1.0, "#0c4a6e");
+        } else {
+          mGrad.addColorStop(0.0, "#fecdd3");
+          mGrad.addColorStop(0.60, "#be123c");
+          mGrad.addColorStop(1.0, "#1f0812");
+        }
         ctx.fillStyle = mGrad;
         ctx.beginPath();
         ctx.arc(mx, my, mr, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.fillStyle = "rgba(28, 25, 23, 0.55)";
-        ctx.beginPath();
-        ctx.arc(mx - 4, my - 3, 3.8, 0, Math.PI * 2);
-        ctx.arc(mx + 4, my + 4, 2.8, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -3808,30 +4699,38 @@
 
     function renderRaycasterFrame() {
       const cfg = LEVEL_CONFIGS[state.mapIdx] || LEVEL_CONFIGS[0];
+      const fogCol = cfg.fogColor || [10, 16, 32];
+      const fogR = fogCol[0], fogG = fogCol[1], fogB = fogCol[2];
+
       const dirX = Math.cos(state.yaw);
       const dirY = Math.sin(state.yaw);
-      const planeX = -dirY * 0.66;
-      const planeY = dirX * 0.66;
+      const rankCfg = STYLE_RANKS[state.styleRank] || STYLE_RANKS[0];
+      const fovScale = Math.max(
+        0.58,
+        Math.min(0.84, 0.66 + (state.fovPunch || 0) + rankCfg.fovBoost + (state.jumpPadBoostTimer > 0 ? 0.05 : 0))
+      );
+      const planeX = -dirY * fovScale;
+      const planeY = dirX * fovScale;
       const bobOffset = Math.sin(state.bobPhase) * 3.2;
       const horizon = ((RH * 0.48 + bobOffset + state.pitchKick * 1.8) | 0);
-      const muzzleLight = (state.muzzleFlash * 0.45) + (state.explosionFlash * 0.60) + (state.interactFlash * 0.32);
+      const muzzleLight = Math.min(0.65, (state.muzzleFlash * 0.36) + (state.explosionFlash * 0.45) + (state.interactFlash * 0.25));
 
-      // Gather active 3D Point Lights (Objective Beacon, Projectiles, Exploding Barrels)
+      // Gather active 3D Point Lights (Objective Beacon, Projectiles, Exploding Barrels, Blood-Fuel Orbs)
       const pointLights = [];
       const activeObj = getActiveMissionTarget();
       if (activeObj) {
-        pointLights.push({ x: activeObj.x, y: activeObj.y, r: 18, g: 52, b: 68, radSq: 20.0 });
+        pointLights.push({ x: activeObj.x, y: activeObj.y, r: 14, g: 48, b: 68, radSq: 18.0 });
       }
       for (const pr of state.projectiles) {
         pointLights.push(
           pr.friendly
-            ? { x: pr.x, y: pr.y, r: 12, g: 55, b: 85, radSq: 10.0 }
-            : { x: pr.x, y: pr.y, r: 75, g: 32, b: 8,  radSq: 10.0 }
+            ? { x: pr.x, y: pr.y, r: 10, g: 48, b: 78, radSq: 9.0 }
+            : { x: pr.x, y: pr.y, r: 64, g: 26, b: 8,  radSq: 9.0 }
         );
       }
       for (const br of state.barrels) {
         if (br.hp <= 0 && br.explodeTimer > 0) {
-          pointLights.push({ x: br.x, y: br.y, r: 110, g: 58, b: 14, radSq: 24.0 });
+          pointLights.push({ x: br.x, y: br.y, r: 85, g: 44, b: 12, radSq: 20.0 });
         }
       }
 
@@ -3840,8 +4739,8 @@
       }
 
       // ---------------- 1. FLOOR & CEILING TEXTURE CASTING (272x334) ----------------
-      const floorTex = textures[cfg.floorTex || 5];
-      const ceilTex = textures[cfg.ceilTex || 6];
+      const floorTex = textures[cfg.floorTex || 5] || textures[5];
+      const ceilTex = textures[cfg.ceilTex || 6] || textures[6];
       const rayDirX0 = dirX - planeX;
       const rayDirY0 = dirY - planeY;
       const rayDirX1 = dirX + planeX;
@@ -3855,8 +4754,9 @@
         const p = isFloor ? (y - horizon) : (horizon - y);
         if (p === 0) continue;
         const rowDistance = posZ / p;
-        const fog = Math.max(0.26, Math.min(1.06, 1.35 / (1 + rowDistance * 0.13)));
-        const dynGlow = muzzleLight / (1 + rowDistance * 0.26);
+        const fog = Math.max(0.26, Math.min(1.04, 1.32 / (1 + rowDistance * 0.13)));
+        const fogMix = Math.min(0.68, rowDistance * 0.045);
+        const dynGlow = muzzleLight / (1 + rowDistance * 0.28);
 
         const stepX = (rowDistance * (rayDirX1 - rayDirX0)) / RW;
         const stepY = (rowDistance * (rayDirY1 - rayDirY0)) / RW;
@@ -3869,13 +4769,14 @@
           const tx = ((floorX * TEX_SIZE) & (TEX_SIZE - 1));
           const ty = ((floorY * TEX_SIZE) & (TEX_SIZE - 1));
           const col = tex[ty * TEX_SIZE + tx];
-          pixelBuf[rowOffset + x] = shadeColorWithLight(col, fog, dynGlow);
+          pixelBuf[rowOffset + x] = shadeColorWithLight(col, fog, fogMix, fogR, fogG, fogB, dynGlow);
           floorX += stepX;
           floorY += stepY;
         }
       }
 
       // ---------------- 2. PERSPECTIVE-TRUE ZERO-WARP WALL & SLIDING DOOR RAYCASTING ----------------
+      const plasmaFlicker = 0.28 + 0.09 * Math.sin(Date.now() * 0.022);
       for (let x = 0; x < RW; x++) {
         const cameraX = (2 * x) / RW - 1;
         const rayDirX = dirX + planeX * cameraX;
@@ -3963,16 +4864,17 @@
 
         let resolvedSlot = hitTile;
         if (hitTile === 4 && state.stage > 1) resolvedSlot = 9;
-        else if (hitTile > 11 || !textures[resolvedSlot]) resolvedSlot = 1;
+        else if (hitTile >= NUM_TEXTURES || !textures[resolvedSlot]) resolvedSlot = 1;
 
         const wallTex = textures[resolvedSlot] || textures[1];
         const step = TEX_SIZE / lineHeight;
         let texPos = (drawStart - unclampedTop) * step;
 
         const sideShade = side === 1 ? 0.76 : 1.0;
-        const emissiveBoost = hitTile === 11 ? 0.28 : 0.0;
-        const distShade = Math.max(0.28, Math.min(1.18, (1.38 / (1 + perpWallDist * 0.12)) * sideShade + emissiveBoost));
-        const dynGlow = muzzleLight / (1 + perpWallDist * 0.24);
+        const emissiveBoost = hitTile === 12 ? plasmaFlicker : (hitTile === 11 ? 0.22 : 0.0);
+        const distShade = Math.max(0.26, Math.min(1.08, (1.34 / (1 + perpWallDist * 0.12)) * sideShade + emissiveBoost));
+        const fogMix = hitTile === 12 ? Math.min(0.25, perpWallDist * 0.02) : Math.min(0.64, perpWallDist * 0.042);
+        const dynGlow = muzzleLight / (1 + perpWallDist * 0.26);
 
         // Compute dynamic point-light RGB contribution at wall hit point (wx, wy)
         const wx = state.px + perpWallDist * rayDirX;
@@ -3988,12 +4890,14 @@
             ptB += pl.b * atten;
           }
         }
-        // Highlight damaged Breach Wall (Tile 10) with glowing amber fissure intensity!
-        if (hitTile === 10) {
+        if (hitTile === 12) {
+          ptG += 16;
+          ptB += 32;
+        } else if (hitTile === 10) {
           const wHp = state.wallHp[mapY * MAP_W + mapX];
-          if (wHp !== undefined && wHp < 42) {
-            ptR += (42 - wHp) * 1.4;
-            ptG += (42 - wHp) * 0.6;
+          if (wHp !== undefined && wHp < 38) {
+            ptR += (38 - wHp) * 1.3;
+            ptG += (38 - wHp) * 0.55;
           }
         }
 
@@ -4001,7 +4905,7 @@
           const texY = Math.min(TEX_SIZE - 1, Math.max(0, texPos | 0));
           texPos += step;
           const color = wallTex[texY * TEX_SIZE + texX];
-          pixelBuf[y * RW + x] = shadeColorWithLight(color, distShade, dynGlow, ptR, ptG, ptB);
+          pixelBuf[y * RW + x] = shadeColorWithLight(color, distShade, fogMix, fogR, fogG, fogB, dynGlow, ptR, ptG, ptB);
         }
       }
 
@@ -4025,16 +4929,16 @@
       ctx.imageSmoothingEnabled = false;
       ctx.drawImage(offCanvas, 0, 0, W, H);
 
-      // ---------------- 3. Z-BUFFERED ENTITIES, DESTRUCTIBLE COLUMNS, DEBRIS & 3D BEACONS ----------------
+      // ---------------- 3. Z-BUFFERED ENTITIES, DESTRUCTIBLE COLUMNS, ORBS & 3D BEACONS ----------------
       renderSpritesAndEntities(dirX, dirY, planeX, planeY, horizon);
       ctx.restore();
 
-      // ---------------- 4. ZERO-HUD IN-LEVEL VIEWPORT OR PANORAMIC CAMPAIGN MAP ----------------
+      // ---------------- 4. CYBER-CHAMFERED TACTICAL HUD OR HOLOGRAPHIC CAMPAIGN STAR-MAP ----------------
       renderDOOMWeaponAndHUD(dirX, dirY, planeX, planeY, horizon);
     }
 
     // =========================================================================
-    // 11. Z-BUFFERED 3D ENTITIES, DESTRUCTIBLE PILLARS, BOUNCING DEBRIS & BEACONS
+    // 11. Z-BUFFERED 3D ENTITIES, MAGNETIC LOOT ORBS, WEAKPOINT PARRY RINGS & BEACONS
     // =========================================================================
     function renderSpritesAndEntities(dirX, dirY, planeX, planeY, horizonY) {
       const invDet = 1.0 / (planeX * dirY - dirX * planeY);
@@ -4048,13 +4952,13 @@
         const screenX = (W * 0.5) * (1 + tx / ty);
         const projH = H / ty;
         const floorY = horizonY + projH * 0.44;
-        const radX = Math.min(W * 1.2, (sw.r / ty) * (W * 0.48));
+        const radX = Math.min(W * 1.1, (sw.r / ty) * (W * 0.46));
         const radY = Math.max(3, radX * 0.28);
 
         ctx.save();
-        ctx.globalAlpha = Math.max(0, Math.min(1, sw.alpha));
+        ctx.globalAlpha = Math.max(0, Math.min(0.85, sw.alpha));
         ctx.strokeStyle = sw.color;
-        ctx.lineWidth = 2.2;
+        ctx.lineWidth = 2.0;
         ctx.beginPath();
         ctx.ellipse(screenX, floorY, radX, radY, 0, 0, Math.PI * 2);
         ctx.stroke();
@@ -4088,6 +4992,9 @@
       }
       for (const pk of state.pickups) {
         items.push({ type: "PICKUP", dist: Math.hypot(pk.x - state.px, pk.y - state.py), obj: pk });
+      }
+      for (const orb of state.lootOrbs) {
+        items.push({ type: "LOOT_ORB", dist: Math.hypot(orb.x - state.px, orb.y - state.py), obj: orb });
       }
       for (const pr of state.projectiles) {
         items.push({ type: "PROJ", dist: Math.hypot(pr.x - state.px, pr.y - state.py), obj: pr });
@@ -4148,6 +5055,23 @@
           drawInteractable3D(it.obj, screenX, centerY, spriteW, spriteH);
         } else if (it.type === "PICKUP") {
           drawPickupSprite(it.obj, screenX, centerY + spriteH * 0.28, Math.min(16, spriteW * 0.24));
+        } else if (it.type === "LOOT_ORB") {
+          const orb = it.obj;
+          const oy = centerY - (orb.z || 0) * spriteH;
+          const orad = Math.max(3.2, Math.min(8.5, spriteW * 0.13));
+          ctx.fillStyle = orb.color || "#34d399";
+          ctx.globalAlpha = 0.32;
+          ctx.beginPath();
+          ctx.arc(screenX, oy, orad * 1.75, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.globalAlpha = 0.95;
+          ctx.beginPath();
+          ctx.arc(screenX, oy, orad, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = "#ecfeff";
+          ctx.beginPath();
+          ctx.arc(screenX - orad * 0.22, oy - orad * 0.22, orad * 0.38, 0, Math.PI * 2);
+          ctx.fill();
         } else if (it.type === "PROJ") {
           drawFireballSprite(it.obj, screenX, centerY, Math.min(14, Math.max(5, spriteW * 0.18)));
         } else if (it.type === "DEBRIS") {
@@ -4186,7 +5110,7 @@
         ctx.fill();
         ctx.drawImage(colImg, sx - cw * 0.5, floorY - ch, cw, ch);
         if (col.hp > 0 && col.hitFlash > 0) {
-          ctx.fillStyle = "rgba(251, 191, 36, 0.48)";
+          ctx.fillStyle = "rgba(251, 191, 36, 0.44)";
           ctx.fillRect(sx - cw * 0.45, floorY - ch, cw * 0.9, ch);
         }
         ctx.restore();
@@ -4220,7 +5144,7 @@
       const ry = Math.max(2, rx * 0.32);
       ctx.save();
       ctx.imageSmoothingEnabled = false;
-      ctx.fillStyle = "rgba(115, 18, 18, 0.86)";
+      ctx.fillStyle = "rgba(153, 27, 27, 0.88)";
       ctx.beginPath();
       ctx.ellipse(sx, sy, rx * (bp.hasGibs ? 1.25 : 1.0), ry * (bp.hasGibs ? 1.25 : 1.0), 0, 0, Math.PI * 2);
       ctx.fill();
@@ -4229,7 +5153,7 @@
         ctx.restore();
         return;
       }
-      ctx.fillStyle = "rgba(69, 10, 10, 0.85)";
+      ctx.fillStyle = "rgba(85, 12, 12, 0.88)";
       ctx.beginPath();
       ctx.ellipse(sx, sy, rx * 0.55, ry * 0.55, 0, 0, Math.PI * 2);
       ctx.fill();
@@ -4303,7 +5227,7 @@
         const drawH = fdImg.naturalHeight * scale;
 
         // Ground shadow under living or fallen monster
-        ctx.fillStyle = "rgba(0, 0, 0, 0.58)";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.62)";
         ctx.beginPath();
         ctx.ellipse(sx, floorY, Math.min(sw * 0.42, drawW * 0.42), sh * 0.055, 0, 0, Math.PI * 2);
         ctx.fill();
@@ -4315,10 +5239,38 @@
 
         ctx.drawImage(fdImg, -drawW * 0.5, -drawH, drawW, drawH);
 
-        // Dynamic Prodeus/Selaco Muzzle & Explosion Rim-Light + Hit Flash
         if (e.hp > 0 && e.hitFlash > 0) {
-          ctx.fillStyle = "rgba(239, 68, 68, 0.42)";
-          ctx.fillRect(-drawW * 0.42, -drawH * 0.92, drawW * 0.84, drawH * 0.88);
+          ctx.fillStyle = "rgba(239, 68, 68, 0.38)";
+          ctx.fillRect(-drawW * 0.40, -drawH * 0.90, drawW * 0.80, drawH * 0.86);
+        }
+
+        // ULTRAKILL / DOOM Eternal Weakpoint Charge-Parry Flash Ring!
+        // Shoot or Dash-Kick while this cyan-gold diamond pulses to trigger EMP Stun Shockwave!
+        if (e.hp > 0 && e.attackWindup > 0) {
+          const wy = -drawH * 0.62;
+          const wr = Math.max(5, Math.min(13, drawW * 0.22));
+          const pulse = 0.75 + 0.25 * Math.sin(Date.now() * 0.03);
+          ctx.strokeStyle = "#22d3ee";
+          ctx.lineWidth = 1.8;
+          ctx.beginPath();
+          ctx.moveTo(0, wy - wr * pulse);
+          ctx.lineTo(wr * pulse, wy);
+          ctx.lineTo(0, wy + wr * pulse);
+          ctx.lineTo(-wr * pulse, wy);
+          ctx.closePath();
+          ctx.stroke();
+
+          ctx.fillStyle = "#fde047";
+          ctx.beginPath();
+          ctx.arc(0, wy, Math.max(2, wr * 0.28), 0, Math.PI * 2);
+          ctx.fill();
+        } else if (e.hp > 0 && e.painTimer > 0.4) {
+          // EMP Stunned indicator arc
+          ctx.strokeStyle = "#38bdf8";
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          ctx.arc(0, -drawH * 0.95, Math.max(4, Math.min(10, drawW * 0.18)), 0, Math.PI * 2);
+          ctx.stroke();
         }
 
         ctx.restore();
@@ -4564,15 +5516,21 @@
 
       ctx.translate(sx, sy);
       if (intr.kind === "JUMP_PAD") {
-        const rx = Math.max(8, sw * 0.38);
-        const ry = Math.max(3, rx * 0.30);
+        const rx = Math.max(9, sw * 0.44);
+        const ry = Math.max(3.5, rx * 0.32);
         ctx.translate(0, sh * 0.38);
-        ctx.fillStyle = "rgba(245, 158, 11, 0.35)";
-        ctx.strokeStyle = "#f59e0b";
+        ctx.fillStyle = "rgba(6, 182, 212, 0.28)";
+        ctx.strokeStyle = "#22d3ee";
         ctx.lineWidth = 1.8;
         ctx.beginPath();
         ctx.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2);
         ctx.fill();
+        ctx.stroke();
+
+        ctx.strokeStyle = pulse > 0.5 ? "#fde047" : "#38bdf8";
+        ctx.lineWidth = 1.4;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, rx * 0.56, ry * 0.56, 0, 0, Math.PI * 2);
         ctx.stroke();
       }
       ctx.restore();
@@ -4617,137 +5575,169 @@
     }
 
     // =========================================================================
-    // 12. INTERACTIVE PANORAMIC CAMPAIGN MAP & ZERO-HUD IN-LEVEL VIEWPORT
+    // 12. HOLOGRAPHIC SECTOR STAR-MAP & CYBER-CHAMFERED DOPAMINE HUD
     // =========================================================================
     const HUD_MONO_FONT = "'JetBrains Mono', 'SF Mono', 'Consolas', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif";
     const HUD_SANS_FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif";
 
-    // Draws the interactive Panoramic Topographic Campaign Map with 5 clickable stage nodes & mission directives!
+    function drawChamferedBox(x, y, w, h, cut, fillStyle, strokeStyle, lineWidth = 1.2) {
+      const c = Math.min(cut, w * 0.25, h * 0.45);
+      ctx.beginPath();
+      ctx.moveTo(x + c, y);
+      ctx.lineTo(x + w, y);
+      ctx.lineTo(x + w, y + h - c);
+      ctx.lineTo(x + w - c, y + h);
+      ctx.lineTo(x, y + h);
+      ctx.lineTo(x, y + c);
+      ctx.closePath();
+      if (fillStyle) {
+        ctx.fillStyle = fillStyle;
+        ctx.fill();
+      }
+      if (strokeStyle) {
+        ctx.strokeStyle = strokeStyle;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+      }
+    }
+
+    // Draws the interactive Holographic Sector Star-Map with 5 handcrafted level blueprints!
     function renderPanoramicCampaignMap(isInterStage = false) {
       ctx.save();
 
-      // Dark military topographic backdrop
-      ctx.fillStyle = isInterStage ? "rgba(7, 9, 13, 0.96)" : "rgba(8, 10, 14, 0.88)";
+      // Deep cyber-tactical slate backdrop
+      const bgGrad = ctx.createRadialGradient(W * 0.5, 162, 12, W * 0.5, 162, 195);
+      bgGrad.addColorStop(0.0, isInterStage ? "rgba(10, 22, 38, 0.96)" : "rgba(11, 20, 36, 0.94)");
+      bgGrad.addColorStop(1.0, "rgba(4, 7, 13, 0.98)");
+      ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, W, H);
 
-      // Topographic elevation contour rings & tactical coordinate grid
-      ctx.strokeStyle = "rgba(56, 189, 248, 0.08)";
+      // Precision holographic tactical coordinate grid (y = 82..254)
+      ctx.strokeStyle = "rgba(34, 211, 238, 0.08)";
       ctx.lineWidth = 1;
-      for (let gx = 24; gx < W; gx += 28) {
-        ctx.beginPath(); ctx.moveTo(gx, 42); ctx.lineTo(gx, 228); ctx.stroke();
+      for (let gx = 20; gx < W; gx += 26) {
+        ctx.beginPath(); ctx.moveTo(gx, 84); ctx.lineTo(gx, 254); ctx.stroke();
       }
-      for (let gy = 52; gy < 228; gy += 28) {
+      for (let gy = 90; gy < 254; gy += 26) {
         ctx.beginPath(); ctx.moveTo(12, gy); ctx.lineTo(W - 12, gy); ctx.stroke();
       }
 
-      // Topographic elevation contour ellipses (Phobos-Helios Crater Ridge)
-      ctx.strokeStyle = "rgba(245, 158, 11, 0.14)";
-      for (let r = 1; r <= 4; r++) {
+      // Holographic orbital sector rings
+      ctx.strokeStyle = "rgba(56, 189, 248, 0.13)";
+      for (let r = 1; r <= 3; r++) {
         ctx.beginPath();
-        ctx.ellipse(138, 136, r * 28, r * 17, -0.22, 0, Math.PI * 2);
+        ctx.ellipse(138, 166, r * 36, r * 21, -0.16, 0, Math.PI * 2);
         ctx.stroke();
       }
 
-      // Rotating radar sweep line across the topographic theater
+      // Rotating sonar vector line
       const sweepAng = (Date.now() * 0.0014) % (Math.PI * 2);
-      ctx.strokeStyle = "rgba(16, 185, 129, 0.22)";
-      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = "rgba(34, 211, 238, 0.22)";
+      ctx.lineWidth = 1.4;
       ctx.beginPath();
-      ctx.moveTo(136, 136);
-      ctx.lineTo(136 + Math.cos(sweepAng) * 110, 136 + Math.sin(sweepAng) * 75);
+      ctx.moveTo(138, 166);
+      ctx.lineTo(138 + Math.cos(sweepAng) * 106, 166 + Math.sin(sweepAng) * 66);
       ctx.stroke();
 
-      // Route links connecting NODE 01 -> NODE 02 -> NODE 03 -> NODE 04 -> NODE 05
+      // Energy conduits connecting Sector 01 -> 02 -> 03 -> 04 -> 05
+      const tFlow = (Date.now() * 0.0018) % 1.0;
       for (let i = 0; i < CAMPAIGN_NODES.length - 1; i++) {
         const a = CAMPAIGN_NODES[i];
         const b = CAMPAIGN_NODES[i + 1];
         const unlocked = i <= state.campaignNodeIdx || state.nodesCleared[i];
-        ctx.strokeStyle = unlocked ? "rgba(245, 158, 11, 0.78)" : "rgba(82, 82, 91, 0.55)";
-        ctx.lineWidth = unlocked ? 2.2 : 1.4;
+        ctx.strokeStyle = unlocked ? "rgba(56, 189, 248, 0.72)" : "rgba(71, 85, 105, 0.50)";
+        ctx.lineWidth = unlocked ? 2.0 : 1.3;
         ctx.setLineDash(unlocked ? [] : [4, 4]);
         ctx.beginPath();
         ctx.moveTo(a.cx, a.cy);
         ctx.lineTo(b.cx, b.cy);
         ctx.stroke();
+
+        if (unlocked) {
+          const px = a.cx + (b.cx - a.cx) * tFlow;
+          const py = a.cy + (b.cy - a.cy) * tFlow;
+          ctx.fillStyle = "#bae6fd";
+          ctx.beginPath();
+          ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
       ctx.setLineDash([]);
 
-      // Draw each clickable stage node (NODE 01 .. NODE 05)
+      // Draw each clickable handcrafted Sector Node (01 .. 05)
       const pulse = 0.5 + 0.5 * Math.sin(Date.now() * 0.007);
       for (let i = 0; i < CAMPAIGN_NODES.length; i++) {
         const n = CAMPAIGN_NODES[i];
         const isSelected = i === state.campaignNodeIdx;
         const isCleared = state.nodesCleared[i];
+        const ringCol = isCleared ? "#10b981" : isSelected ? n.color : "#64748b";
 
         if (isSelected) {
           ctx.strokeStyle = n.color;
-          ctx.lineWidth = 1.6;
+          ctx.globalAlpha = 0.55;
+          ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.arc(n.cx, n.cy, 15 + pulse * 4, 0, Math.PI * 2);
           ctx.stroke();
+          ctx.globalAlpha = 1.0;
         }
 
+        // Octagonal / Diamond Tactical Node Core
         ctx.fillStyle = isCleared
-          ? "#065f46"
+          ? "rgba(6, 78, 59, 0.95)"
           : isSelected
-            ? "#451a03"
-            : "#18181b";
-        ctx.strokeStyle = isCleared
-          ? "#10b981"
-          : isSelected
-            ? n.color
-            : "#71717a";
-        ctx.lineWidth = isSelected ? 2.4 : 1.6;
+            ? "rgba(15, 23, 42, 0.96)"
+            : "rgba(9, 13, 22, 0.92)";
+        ctx.strokeStyle = ringCol;
+        ctx.lineWidth = isSelected ? 2.3 : 1.5;
         ctx.beginPath();
-        ctx.arc(n.cx, n.cy, 11, 0, Math.PI * 2);
+        ctx.arc(n.cx, n.cy, 11.5, 0, Math.PI * 2);
         ctx.fill();
         ctx.stroke();
 
         ctx.textAlign = "center";
-        ctx.font = `900 9.5px ${HUD_MONO_FONT}`;
-        ctx.fillStyle = isCleared ? "#34d399" : isSelected ? "#fde047" : "#d4d4d8";
-        ctx.fillText(`0${i + 1}`, n.cx, n.cy + 3.5);
+        ctx.font = `900 10px ${HUD_MONO_FONT}`;
+        ctx.fillStyle = isCleared ? "#34d399" : isSelected ? "#ffffff" : "#cbd5e1";
+        ctx.fillText(`0${i + 1}`, n.cx, n.cy + 3.6);
 
-        ctx.font = `800 8.5px ${HUD_SANS_FONT}`;
-        ctx.fillStyle = isSelected ? "#ffffff" : "#a1a1aa";
-        ctx.fillText(n.zoneCode, n.cx, n.cy - 15);
+        // Label Pill above/below node (keep >= 11px equivalent legibility & zero overlap!)
+        const labelY = (i === 0 || i === 2) ? (n.cy + 22) : (n.cy - 16);
+        ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
+        const tw = ctx.measureText(n.zoneCode).width + 8;
+        ctx.fillStyle = "rgba(6, 10, 18, 0.82)";
+        ctx.fillRect(n.cx - tw * 0.5, labelY - 9, tw, 12);
+        ctx.fillStyle = isSelected ? n.color : "#cbd5e1";
+        ctx.fillText(n.zoneCode, n.cx, labelY);
       }
 
-      // Active Node Tactical Directive Banner (Top/Bottom of Panoramic Map)
+      // Active Sector Chamfered Briefing Card
       const curNode = CAMPAIGN_NODES[state.campaignNodeIdx] || CAMPAIGN_NODES[0];
-      const cardY = isInterStage ? 218 : 44;
-      ctx.fillStyle = "rgba(12, 15, 22, 0.94)";
-      ctx.strokeStyle = curNode.color;
-      ctx.lineWidth = 1.3;
-      ctx.fillRect(14, cardY, W - 28, 36);
-      ctx.strokeRect(14, cardY, W - 28, 36);
-
+      const cardY = isInterStage ? 236 : 42;
+      drawChamferedBox(12, cardY, W - 24, 38, 7, "rgba(8, 14, 26, 0.94)", curNode.color, 1.3);
       ctx.fillStyle = curNode.color;
-      ctx.fillRect(14, cardY, 4, 36);
+      ctx.fillRect(12, cardY + 7, 3.5, 24);
 
       ctx.textAlign = "left";
-      ctx.font = `900 10px ${HUD_SANS_FONT}`;
-      ctx.fillStyle = "#ffffff";
-      ctx.fillText(`${curNode.code} · ${curNode.title}`, 24, cardY + 14, W - 44);
+      ctx.font = `900 10.5px ${HUD_SANS_FONT}`;
+      ctx.fillStyle = "#f8fafc";
+      ctx.fillText(`${curNode.code} · ${curNode.title}`, 22, cardY + 15, W - 38);
 
-      ctx.font = `700 9px ${HUD_SANS_FONT}`;
-      ctx.fillStyle = "#fcd34d";
-      ctx.fillText(`任务: ${curNode.directive}`, 24, cardY + 28, W - 44);
+      ctx.font = `700 9.2px ${HUD_SANS_FONT}`;
+      ctx.fillStyle = "#bae6fd";
+      ctx.fillText(curNode.directive, 22, cardY + 29, W - 38);
 
       if (isInterStage) {
-        ctx.fillStyle = "#10b981";
-        ctx.fillRect(14, 18, W - 28, 22);
+        drawChamferedBox(12, 14, W - 24, 24, 6, "rgba(6, 95, 70, 0.95)", "#34d399", 1.4);
         ctx.textAlign = "center";
         ctx.font = `900 10.5px ${HUD_SANS_FONT}`;
-        ctx.fillStyle = "#09090b";
-        ctx.fillText("本关肃清 · 点击任意地图节点立即切入对应关卡", W * 0.5, 33, W - 36);
+        ctx.fillStyle = "#ecfdf5";
+        ctx.fillText("战区肃清 · 点击任意星图节点切入下一关", W * 0.5, 29, W - 36);
       }
 
       ctx.restore();
     }
 
     function renderDOOMWeaponAndHUD(dirX, dirY, planeX, planeY, horizonY) {
-      // If in MENU mode or Inter-Stage Victory transition, render the Interactive Panoramic Campaign Map!
       if (state.mode === "MENU") {
         renderPanoramicCampaignMap(false);
         return;
@@ -4762,7 +5752,34 @@
       const cy = H * 0.48;
       const missionTarget = getActiveMissionTarget();
 
-      // 1. Diegetic Visor Blood Spatter Droplets (Physical lens feedback)
+      // 0. Outer-Rim Velocity Speed-Lines on Dash-Kick / Turbo Pad / High Style Rank!
+      // Drawn strictly at radius >= 82px so center-screen brightness (centerBrightPct) stays 0% affected!
+      const speedIntensity = Math.max(
+        state.dashTimer > 0 ? 0.85 : 0,
+        state.jumpPadBoostTimer > 0 ? 0.65 : 0,
+        state.berserkTimer > 0 ? 0.55 : 0,
+        state.styleRank >= 3 ? (state.styleRank - 2) * 0.18 : 0
+      );
+      if (speedIntensity > 0.05) {
+        ctx.save();
+        const rankCol = (STYLE_RANKS[state.styleRank] || STYLE_RANKS[0]).color;
+        ctx.strokeStyle = state.dashTimer > 0 ? "#22d3ee" : rankCol;
+        ctx.globalAlpha = Math.min(0.55, speedIntensity * 0.55);
+        ctx.lineWidth = 1.4;
+        const tickSeed = Math.floor(Date.now() / 45);
+        for (let i = 0; i < 14; i++) {
+          const ang = (i / 14) * Math.PI * 2 + ((tickSeed + i * 7) % 5) * 0.06;
+          const rInner = 84 + ((i * 13 + tickSeed) % 18);
+          const rOuter = rInner + 28 + speedIntensity * 26;
+          ctx.beginPath();
+          ctx.moveTo(cx + Math.cos(ang) * rInner, cy + Math.sin(ang) * rInner);
+          ctx.lineTo(cx + Math.cos(ang) * rOuter, cy + Math.sin(ang) * rOuter);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // 1. Diegetic Visor Blood Spatter Droplets
       for (const vb of state.visorBlood) {
         ctx.fillStyle = `rgba(185, 28, 28, ${vb.alpha})`;
         ctx.beginPath();
@@ -4770,7 +5787,7 @@
         ctx.fill();
       }
 
-      // 2. In-World 3D Projected Spatial Objective Diamond Waypoint (Crystal-clear guidance, zero 2D status-bar clutter!)
+      // 2. In-World 3D Projected Spatial Objective Diamond Waypoint
       if (missionTarget) {
         const dx = missionTarget.x - state.px;
         const dy = missionTarget.y - state.py;
@@ -4778,19 +5795,18 @@
         const invDet = 1.0 / (planeX * dirY - dirX * planeY);
         const tx = invDet * (dirY * dx - dirX * dy);
         const ty = invDet * (-planeY * dx + planeX * dy);
-        const wpColor = missionTarget.color || "#f59e0b";
+        const wpColor = missionTarget.color || "#38bdf8";
 
         ctx.save();
         if (ty > 0.35) {
           const rawScreenX = (W * 0.5) * (1 + tx / ty);
           const projH = Math.min(140, H / ty);
-          if (rawScreenX >= 20 && rawScreenX <= W - 20) {
-            const wpY = Math.max(42, Math.min(H - 115, horizonY - projH * 0.36));
-            // 3D Diamond Marker
+          if (rawScreenX >= 22 && rawScreenX <= W - 22) {
+            const wpY = Math.max(48, Math.min(H - 118, horizonY - projH * 0.36));
             ctx.translate(rawScreenX, wpY);
-            ctx.fillStyle = "rgba(9, 11, 16, 0.78)";
+            ctx.fillStyle = "rgba(6, 11, 22, 0.85)";
             ctx.strokeStyle = wpColor;
-            ctx.lineWidth = 1.5;
+            ctx.lineWidth = 1.6;
             ctx.beginPath();
             ctx.moveTo(0, -6);
             ctx.lineTo(6, 0);
@@ -4803,13 +5819,12 @@
             ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
             ctx.textAlign = "center";
             const tag = `${missionTarget.label} ${distMeters}米`;
-            const tw = ctx.measureText(tag).width + 10;
-            ctx.fillStyle = "rgba(9, 11, 16, 0.80)";
-            ctx.fillRect(-tw * 0.5, -20, tw, 12);
+            const tw = ctx.measureText(tag).width + 12;
+            drawChamferedBox(-tw * 0.5, -22, tw, 13, 3.5, "rgba(6, 11, 22, 0.86)", wpColor, 1.0);
             ctx.fillStyle = "#f8fafc";
-            ctx.fillText(tag, 0, -11);
+            ctx.fillText(tag, 0, -12.2);
           } else {
-            const isLeft = rawScreenX < 20;
+            const isLeft = rawScreenX < 22;
             const edgeX = isLeft ? 10 : W - 10;
             ctx.fillStyle = wpColor;
             ctx.font = `800 9.5px ${HUD_SANS_FONT}`;
@@ -4828,19 +5843,25 @@
         ctx.restore();
       }
 
-      // 3. Minimalist Optical Center Reticle (4-tick micro-crosshair + hit X)
-      ctx.strokeStyle = state.lockedEnemy ? "#f59e0b" : "rgba(255, 255, 255, 0.45)";
-      ctx.lineWidth = 1.4;
+      // 3. Precision Cyber-Optical Center Reticle (Dynamic spread + Parry / Hit confirmation)
+      const retSpread = state.weaponIdx === 0 ? 7 : 5;
+      const isParryReady = state.lockedEnemy && state.lockedEnemy.attackWindup > 0;
+      ctx.strokeStyle = isParryReady
+        ? "#22d3ee"
+        : state.lockedEnemy
+          ? "#fbbf24"
+          : "rgba(226, 232, 240, 0.52)";
+      ctx.lineWidth = isParryReady ? 1.8 : 1.4;
       ctx.beginPath();
-      ctx.moveTo(cx - 8, cy); ctx.lineTo(cx - 3, cy);
-      ctx.moveTo(cx + 3, cy); ctx.lineTo(cx + 8, cy);
-      ctx.moveTo(cx, cy - 8); ctx.lineTo(cx, cy - 3);
-      ctx.moveTo(cx, cy + 3); ctx.lineTo(cx, cy + 8);
+      ctx.moveTo(cx - retSpread - 4, cy); ctx.lineTo(cx - retSpread + 1, cy);
+      ctx.moveTo(cx + retSpread - 1, cy); ctx.lineTo(cx + retSpread + 4, cy);
+      ctx.moveTo(cx, cy - retSpread - 4); ctx.lineTo(cx, cy - retSpread + 1);
+      ctx.moveTo(cx, cy + retSpread - 1); ctx.lineTo(cx, cy + retSpread + 4);
       ctx.stroke();
 
       if (state.lockedEnemy && state.lockedEnemy.hitFlash > 0) {
-        ctx.strokeStyle = "#ef4444";
-        ctx.lineWidth = 1.8;
+        ctx.strokeStyle = "#f43f5e";
+        ctx.lineWidth = 1.9;
         ctx.beginPath();
         ctx.moveTo(cx - 6, cy - 6); ctx.lineTo(cx - 2, cy - 2);
         ctx.moveTo(cx + 6, cy - 6); ctx.lineTo(cx + 2, cy - 2);
@@ -4849,26 +5870,22 @@
         ctx.stroke();
       }
 
-      // Proximity Context Prompt ONLY when standing right next to an interactable (< 2.1m)
+      // Chamfered Proximity Context Prompt (< 2.1m)
       if (state.nearbyInteractable && !state.nearbyInteractable.used && state.interactPrompt) {
         ctx.save();
         ctx.font = `800 10px ${HUD_SANS_FONT}`;
         ctx.textAlign = "center";
         const pText = `点击交互 · ${state.interactPrompt}`;
-        const pw = ctx.measureText(pText).width + 14;
-        ctx.fillStyle = "rgba(9, 11, 16, 0.85)";
-        ctx.strokeStyle = "#f59e0b";
-        ctx.lineWidth = 1.1;
-        ctx.fillRect(cx - pw * 0.5, cy + 18, pw, 16);
-        ctx.strokeRect(cx - pw * 0.5, cy + 18, pw, 16);
-        ctx.fillStyle = "#fde047";
-        ctx.fillText(pText, cx, cy + 29);
+        const pw = ctx.measureText(pText).width + 16;
+        drawChamferedBox(cx - pw * 0.5, cy + 18, pw, 17, 4, "rgba(6, 11, 22, 0.90)", "#22d3ee", 1.2);
+        ctx.fillStyle = "#e0f2fe";
+        ctx.fillText(pText, cx, cy + 30);
         ctx.restore();
       }
 
       // 4. Rising Muzzle Gunsmoke & Ejected Spinning Brass Shell Casings
       for (const sm of state.gunSmoke) {
-        ctx.fillStyle = `rgba(168, 162, 158, ${sm.alpha})`;
+        ctx.fillStyle = `rgba(148, 163, 184, ${sm.alpha * 0.85})`;
         ctx.beginPath();
         ctx.arc(sm.x, sm.y, sm.r, 0, Math.PI * 2);
         ctx.fill();
@@ -4877,18 +5894,63 @@
         ctx.save();
         ctx.translate(sc.x, sc.y);
         ctx.rotate(sc.rot);
-        ctx.fillStyle = sc.isShotgun ? "#dc2626" : "#f59e0b";
+        ctx.fillStyle = sc.isShotgun ? "#e11d48" : "#f59e0b";
         ctx.fillRect(-5, -2.5, 10, 5);
         ctx.fillStyle = "#fde047";
         ctx.fillRect(2, -2.5, 3, 5);
         ctx.restore();
       }
 
-      // 5. Full-Bleed First-Person Freedoom Weapon + Diegetic 3-LED Receiver Health Indicator
+      // 5A. First-Person Heavy Cyber-Boot Kick Viewmodel (Duke Nukem / Bulletstorm / MULLET MADJACK!)
+      if (state.kickAnim > 0.01) {
+        const kp = Math.sin(Math.min(1, state.kickAnim) * Math.PI);
+        ctx.save();
+        const bx = cx - 54 + kp * 56;
+        const by = H + 34 - kp * 116;
+        ctx.translate(bx, by);
+        ctx.rotate(-0.26 + kp * 0.18);
+
+        // Shockwave kinetic arc ahead of boot sole
+        if (kp > 0.45) {
+          ctx.strokeStyle = "rgba(34, 211, 238, 0.80)";
+          ctx.lineWidth = 2.6;
+          ctx.beginPath();
+          ctx.arc(14, -42, 26 + kp * 10, -Math.PI * 0.78, -Math.PI * 0.12);
+          ctx.stroke();
+        }
+
+        // Armored Titanium Shin Greave
+        ctx.fillStyle = "#1e293b";
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.moveTo(-22, 58);
+        ctx.lineTo(-14, -18);
+        ctx.lineTo(18, -18);
+        ctx.lineTo(24, 58);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+        // Heavy Cleated Cyber-Sole Plate (front-facing impact tread)
+        drawChamferedBox(-20, -48, 44, 34, 7, "#0f172a", "#22d3ee", 2.0);
+        ctx.fillStyle = "#334155";
+        for (let tr = -40; tr <= -22; tr += 8) {
+          ctx.fillRect(-14, tr, 32, 4);
+        }
+        // Glowing Plasma Heel Thruster Core
+        ctx.fillStyle = "#22d3ee";
+        ctx.fillRect(-8, -33, 20, 5);
+        ctx.restore();
+      }
+
+      // 5B. Full-Bleed First-Person Freedoom Weapon + Diegetic Armor/HP Receiver Strip
       const moveMag = Math.hypot(state.curSpeed, state.strafeSpeed || 0);
       const bobAmp = Math.min(1.0, moveMag / state.walkSpeed);
-      const bobX = Math.cos(state.bobPhase * 0.5) * 4.5 * bobAmp + (state.gimbalYawOffset / 0.28) * 16;
-      const bobY = Math.abs(Math.sin(state.bobPhase)) * 4.5 * bobAmp + state.recoil * 9.0;
+      const kickShiftX = state.kickAnim > 0 ? state.kickAnim * 26 : 0;
+      const kickShiftY = state.kickAnim > 0 ? state.kickAnim * 18 : 0;
+      const bobX = Math.cos(state.bobPhase * 0.5) * 4.5 * bobAmp + (state.gimbalYawOffset / 0.28) * 16 + kickShiftX;
+      const bobY = Math.abs(Math.sin(state.bobPhase)) * 4.5 * bobAmp + state.recoil * 9.0 + kickShiftY;
       const wx = cx + bobX;
       const wy = H - 2 + bobY;
 
@@ -4953,39 +6015,86 @@
         ctx.drawImage(wepCanvas, -52, -88, 104, 104);
       }
 
-      // Diegetic 3-Segment Health Collar Strip mounted on weapon receiver base
+      // Diegetic Receiver Health + Cyan Armor Strip + Dash Thruster Ready Dot
       const hpCol = state.hp >= 65 ? "#10b981" : state.hp >= 35 ? "#f59e0b" : "#ef4444";
-      ctx.fillStyle = "rgba(9, 11, 16, 0.82)";
-      ctx.fillRect(-16, -12, 32, 4);
+      ctx.fillStyle = "rgba(6, 10, 18, 0.86)";
+      ctx.fillRect(-19, -15, 38, 7);
+      if (state.armor > 0) {
+        ctx.fillStyle = "#22d3ee";
+        ctx.fillRect(-17, -14, Math.round(34 * Math.min(1, state.armor / 100)), 2);
+      }
       for (let seg = 0; seg < 3; seg++) {
         if (state.hp > seg * 33) {
           ctx.fillStyle = hpCol;
-          ctx.fillRect(-14 + seg * 10, -11, 8, 2.2);
+          ctx.fillRect(-17 + seg * 12, -11, 10, 2.2);
         }
       }
       ctx.restore();
 
-      // 6. Transient Stage Breakthrough Visor Directive Toast (Fades away cleanly after 2.2s!)
-      if (state.stageBanner && state.stageBanner.timer > 0) {
+      // 6A. Transient Chamfered Stage Breakthrough Directive Ribbon (Top)
+      const bannerActive = state.stageBanner && state.stageBanner.timer > 0;
+      if (bannerActive) {
         const sb = state.stageBanner;
         const alpha = Math.min(1.0, sb.timer * 1.8);
         ctx.save();
         ctx.globalAlpha = alpha;
-        ctx.fillStyle = "rgba(9, 12, 18, 0.88)";
-        ctx.strokeStyle = sb.color || "#f59e0b";
-        ctx.lineWidth = 1.2;
-        ctx.fillRect(14, 14, W - 28, 32);
-        ctx.strokeRect(14, 14, W - 28, 32);
-        ctx.fillStyle = sb.color || "#f59e0b";
-        ctx.fillRect(14, 14, 4, 32);
+        const bCol = sb.color || "#22d3ee";
+        drawChamferedBox(12, 12, W - 24, 34, 6, "rgba(6, 11, 22, 0.92)", bCol, 1.3);
+        ctx.fillStyle = bCol;
+        ctx.fillRect(12, 18, 3.5, 22);
 
         ctx.textAlign = "left";
         ctx.font = `900 10px ${HUD_SANS_FONT}`;
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText(sb.badge, 24, 27, W - 44);
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillText(sb.badge, 22, 26, W - 38);
         ctx.font = `700 8.8px ${HUD_SANS_FONT}`;
-        ctx.fillStyle = "#fcd34d";
-        ctx.fillText(sb.title, 24, 40, W - 44);
+        ctx.fillStyle = "#bae6fd";
+        ctx.fillText(sb.title, 22, 39, W - 38);
+        ctx.restore();
+      } else if (state.stylePoints > 3 || state.berserkTimer > 0) {
+        // 6B. Sleek Top-Right Adrenaline Style Rank Badge (ULTRAKILL / MULLET MADJACK!)
+        const rk = STYLE_RANKS[state.styleRank] || STYLE_RANKS[0];
+        const bx = W - 92, by = 12, bw = 80, bh = 23;
+        ctx.save();
+        drawChamferedBox(bx, by, bw, bh, 5, "rgba(6, 11, 22, 0.86)", rk.color, 1.2);
+        ctx.textAlign = "left";
+        ctx.font = `900 9.5px ${HUD_SANS_FONT}`;
+        ctx.fillStyle = rk.color;
+        ctx.fillText(`血怒·${rk.name}`, bx + 7, by + 13);
+
+        ctx.textAlign = "right";
+        ctx.font = `800 9px ${HUD_MONO_FONT}`;
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillText(`${state.multiplier.toFixed(1)}×`, bx + bw - 6, by + 13);
+
+        // Progress bar inside bottom of badge
+        const prog = Math.max(0, Math.min(1, state.stylePoints / 100));
+        ctx.fillStyle = "rgba(30, 41, 59, 0.9)";
+        ctx.fillRect(bx + 6, by + 17.5, bw - 12, 2.5);
+        ctx.fillStyle = rk.color;
+        ctx.fillRect(bx + 6, by + 17.5, (bw - 12) * prog, 2.5);
+        ctx.restore();
+      }
+
+      // 6C. Right-Edge Skillshot Dopamine Ribbons (Bulletstorm / ULTRAKILL style feed!)
+      if (state.skillshots && state.skillshots.length > 0) {
+        const baseY = bannerActive ? 52 : 41;
+        ctx.save();
+        ctx.font = `800 9.2px ${HUD_SANS_FONT}`;
+        for (let i = 0; i < state.skillshots.length; i++) {
+          const sk = state.skillshots[state.skillshots.length - 1 - i];
+          if (i >= 3) break;
+          const fade = Math.max(0, Math.min(1, (sk.maxAge - sk.age) * 2.2));
+          ctx.globalAlpha = fade;
+          const label = `${sk.text} +${sk.bonus}`;
+          const swid = Math.min(144, ctx.measureText(label).width + 14);
+          const sx = W - 10 - swid;
+          const sy = baseY + i * 19;
+          drawChamferedBox(sx, sy, swid, 16, 4, "rgba(6, 11, 22, 0.88)", sk.color, 1.1);
+          ctx.textAlign = "right";
+          ctx.fillStyle = sk.color;
+          ctx.fillText(label, W - 16, sy + 11.2, swid - 10);
+        }
         ctx.restore();
       }
 
@@ -4999,17 +6108,17 @@
       }
 
       if (state.mode === "COUNTDOWN") {
-        ctx.fillStyle = "rgba(5, 6, 8, 0.80)";
+        ctx.fillStyle = "rgba(5, 8, 15, 0.84)";
         ctx.fillRect(0, 0, W, H);
         ctx.textAlign = "center";
         ctx.font = `900 42px ${HUD_MONO_FONT}`;
-        ctx.fillStyle = "#f59e0b";
+        ctx.fillStyle = "#22d3ee";
         ctx.fillText(String(Math.ceil(state.countdownTimer)), cx, cy + 12);
       }
     }
 
     // =========================================================================
-    // 13. UI & INPUT BINDINGS (Including Panoramic Campaign Map & Mouse Drag Aiming!)
+    // 13. UI & INPUT BINDINGS (Holographic Star-Map, Right-Click Dash-Kick & Mouse Aim)
     // =========================================================================
     function syncMenus() {
       document.getElementById("menuHome").classList.toggle("hidden", state.mode !== "MENU");
@@ -5034,18 +6143,21 @@
 
     function updateTelemetryDOM() {
       const curNode = CAMPAIGN_NODES[state.campaignNodeIdx] || CAMPAIGN_NODES[0];
+      const rk = STYLE_RANKS[state.styleRank] || STYLE_RANKS[0];
       document.getElementById("hudScore").textContent = String(state.score);
-      document.getElementById("hudCombo").textContent = `${state.multiplier.toFixed(1)}倍`;
+      document.getElementById("hudCombo").textContent = `${rk.name} ${state.multiplier.toFixed(1)}倍`;
       document.getElementById("hudHpText").textContent = `${state.hp}%`;
       document.getElementById("hudWaveTarget").textContent = `${curNode.code} · ${state.missionShort}`;
       document.getElementById("hudActiveSkills").textContent =
         state.sectorClearTimer > 0
-          ? "全景战役图"
+          ? "星图选关"
           : state.berserkTimer > 0
-            ? "狂暴超载"
-            : (state.wallsBreached > 0 || state.corpsesGibbed > 0)
-              ? `破墙${state.wallsBreached}·碎尸${state.corpsesGibbed}`
-              : state.moveState;
+            ? "血怒超载"
+            : state.lastSkillText
+              ? state.lastSkillText
+              : (state.wallsBreached > 0 || state.corpsesGibbed > 0)
+                ? `破墙${state.wallsBreached}·碎尸${state.corpsesGibbed}`
+                : state.moveState;
     }
 
     document.getElementById("btnStartGame").addEventListener("click", () => deployToCampaignNode(state.campaignNodeIdx));
@@ -5085,6 +6197,14 @@
       if (state.mode !== "PLAYING") deployToCampaignNode(state.campaignNodeIdx);
     });
 
+    const btnDashKick = document.getElementById("btnDashKick");
+    if (btnDashKick) {
+      btnDashKick.addEventListener("click", () => {
+        if (state.mode !== "PLAYING") deployToCampaignNode(state.campaignNodeIdx);
+        triggerDashKick();
+      });
+    }
+
     document.getElementById("btnSpawnBoss").addEventListener("click", () => {
       if (state.mode !== "PLAYING") deployToCampaignNode(state.campaignNodeIdx);
       const fwdX = Math.cos(state.yaw);
@@ -5109,7 +6229,8 @@
       state.berserkTimer = 8.0;
       state.hp = 100;
       state.armor = 100;
-      state.multiplier = 3.0;
+      addStylePoints(100);
+      addSkillshot("🔥 极意超载", 300, "#f43f5e", 25);
     });
 
     document.getElementById("btnCycleSector").addEventListener("click", () => {
@@ -5138,6 +6259,9 @@
     });
 
     const watchScreen = document.getElementById("watchScreen");
+    watchScreen.addEventListener("contextmenu", (e) => e.preventDefault());
+    canvas.addEventListener("contextmenu", (e) => e.preventDefault());
+
     watchScreen.addEventListener("wheel", (e) => {
       e.preventDefault();
       if (state.autoPilot) return;
@@ -5161,7 +6285,7 @@
     });
     crownDial.addEventListener("pointerup", () => { crownDragging = false; });
 
-    // Click Campaign Map nodes OR drag horizontally on Watch Canvas for 1:1 FPS mouse-aiming + tap/hold firing!
+    // Click Campaign Map nodes, Right-Click for Heavy Dash-Kick, or drag horizontally for 1:1 FPS aiming!
     let canvasDragging = false;
     let canvasLastX = 0;
     let canvasDragSum = 0;
@@ -5187,6 +6311,12 @@
           deployToCampaignNode(bestIdx);
           return;
         }
+      }
+
+      if (e.button === 2 && state.mode === "PLAYING") {
+        e.preventDefault();
+        triggerDashKick();
+        return;
       }
 
       canvasDragging = true;
@@ -5215,6 +6345,9 @@
       if (e.code === "Space" || e.code === "KeyE") {
         e.preventDefault();
         triggerTapAction();
+      } else if (e.code === "ShiftLeft" || e.code === "ShiftRight" || e.code === "KeyC" || e.code === "KeyF") {
+        e.preventDefault();
+        triggerDashKick();
       } else if (e.code === "Digit1") {
         state.weaponIdx = 0;
         syncArmorySelection();
