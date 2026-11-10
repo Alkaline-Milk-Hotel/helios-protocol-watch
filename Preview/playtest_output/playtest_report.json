@@ -1,5 +1,5 @@
 ﻿{
-    "timestamp":  "2026-11-10T19:32:25.7817953+08:00",
+    "timestamp":  "2026-11-10T20:16:51.6439793+08:00",
     "htmlPath":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\CyberStrideSimulator.html",
     "screenshots":  {
                         "03_gameplay_early_2s":  "C:\\Users\\Cz\\.gemini\\antigravity\\brain\\f3b821f3-c524-49dc-8c86-0d760c297a53\\playtest_output\\03_gameplay_early_2s.png",
@@ -24,147 +24,219 @@
     "timeline":  [
                      {
                          "t":  0.5,
-                         "score":  "150",
+                         "score":  "180",
                          "combo":  "1.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S1 · 开启总闸",
-                         "skills":  "ADVANCE_T1",
-                         "centerBrightPct":  0
+                         "wave":  "NODE 02 · S2 · 中央防区",
+                         "skills":  "JUMP_BOOST_T2",
+                         "centerBrightPct":  0.3
                      },
                      {
                          "t":  1,
-                         "score":  "150",
-                         "combo":  "1.0x",
+                         "score":  "2380",
+                         "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S1 · 开启总闸",
-                         "skills":  "ADVANCE_T1",
+                         "wave":  "NODE 02 · S2 · 中央防区",
+                         "skills":  "BREACH_1",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  1.5,
-                         "score":  "650",
-                         "combo":  "1.0x",
+                         "score":  "2560",
+                         "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "ADVANCE_T2",
-                         "centerBrightPct":  2.5
+                         "wave":  "NODE 02 · S2 · 中央防区",
+                         "skills":  "BREACH_1",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  2,
-                         "score":  "1175",
-                         "combo":  "1.5x",
+                         "score":  "2560",
+                         "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "ENGAGING_T2",
-                         "centerBrightPct":  2.5
+                         "wave":  "NODE 02 · S2 · 中央防区",
+                         "skills":  "BREACH_1",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  2.5,
-                         "score":  "1475",
-                         "combo":  "1.5x",
+                         "score":  "3160",
+                         "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "ENGAGING_T2",
-                         "centerBrightPct":  2.5
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_1",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  3,
-                         "score":  "1475",
-                         "combo":  "1.5x",
+                         "score":  "3660",
+                         "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "ENGAGING_T2",
-                         "centerBrightPct":  2.5
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_3",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  3.5,
-                         "score":  "2175",
+                         "score":  "3660",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "ENGAGING_T2",
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_3",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  4,
-                         "score":  "2475",
+                         "score":  "3660",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 0/2",
-                         "skills":  "INTERACT",
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_3",
                          "centerBrightPct":  0
                      },
                      {
                          "t":  4.5,
-                         "score":  "3375",
+                         "score":  "3840",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
-                         "skills":  "INTERACT",
-                         "centerBrightPct":  2.2
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_3",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  5,
-                         "score":  "3375",
+                         "score":  "3840",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
-                         "skills":  "INTERACT",
-                         "centerBrightPct":  2.2
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BREACH_3",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  5.5,
-                         "score":  "3775",
-                         "combo":  "2.0x",
+                         "score":  "3840",
+                         "combo":  "3.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S2 · 冷却塔 1/2",
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
                          "skills":  "BERSERK_T2",
-                         "centerBrightPct":  2.2
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  6,
-                         "score":  "4375",
+                         "score":  "6840",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S3 · 终端撤离",
-                         "skills":  "BERSERK_T3",
-                         "centerBrightPct":  3
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  6.5,
-                         "score":  "4375",
+                         "score":  "6840",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S3 · 终端撤离",
-                         "skills":  "BERSERK_T3",
-                         "centerBrightPct":  2.9
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  7,
-                         "score":  "7375",
+                         "score":  "6840",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S3 · 终端撤离",
-                         "skills":  "BERSERK_T3",
-                         "centerBrightPct":  3
+                         "wave":  "NODE 02 · S2 · 冷却塔 1/2",
+                         "skills":  "BERSERK_T2",
+                         "centerBrightPct":  3.2
                      },
                      {
                          "t":  7.5,
-                         "score":  "7375",
+                         "score":  "7440",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S3 · 终端撤离",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
                          "skills":  "BERSERK_T3",
-                         "centerBrightPct":  3
+                         "centerBrightPct":  0
                      },
                      {
                          "t":  8,
-                         "score":  "7375",
+                         "score":  "7940",
                          "combo":  "2.0x",
                          "hp":  "100%",
-                         "wave":  "E1M1 · S3 · 终端撤离",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
                          "skills":  "BERSERK_T3",
                          "centerBrightPct":  0
+                     },
+                     {
+                         "t":  8.5,
+                         "score":  "7940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  9,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  9.5,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  10,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  10.5,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "BERSERK_T3",
+                         "centerBrightPct":  0
+                     },
+                     {
+                         "t":  11,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "CAMPAIGN_MAP",
+                         "centerBrightPct":  0.4
+                     },
+                     {
+                         "t":  11.5,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "CAMPAIGN_MAP",
+                         "centerBrightPct":  0.4
+                     },
+                     {
+                         "t":  12,
+                         "score":  "10940",
+                         "combo":  "2.0x",
+                         "hp":  "100%",
+                         "wave":  "NODE 02 · S3 · 终端撤离",
+                         "skills":  "CAMPAIGN_MAP",
+                         "centerBrightPct":  0.4
                      }
                  ]
 }
